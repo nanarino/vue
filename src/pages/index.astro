@@ -1,0 +1,150 @@
+---
+import App from "@/layouts/app.astro"
+import vue from "@/assets/vue.svg?raw"
+import clover from "@/assets/clover.svg?raw"
+import Menu from "@/components/Menu/menu.astro"
+import { getMenu } from "@/utils/server"
+
+const menu = await getMenu("./src/pages")
+const base = import.meta.env.BASE_URL
+---
+
+<App github="https://github.com/nanarino/nanarinostyl-glue">
+    <header>
+        <!-- prettier-ignore -->
+        <css-doodle grid="20x10" is:raw>
+            :doodle {
+                perspective: 10px;
+            }
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 2px;
+            height: 2px;
+            border-radius: 50%;
+            top: @r(1%, 100%, 1.5);
+            left: @r(1%, 100%, 1.5);
+            background: hsl(@r(200, 255, 3), @r(70%, 90%), @r(70%, 90%));
+            animation: move 8s infinite @r(-8, 0)s @p(linear, ease-in, ease-in-out) alternate;
+            transform: rotate(@r(360deg)) translate(@r(-50, 50)vmin, @r(-50, 50)vmin);
+            zoom: @rn(.1, 5, 3);
+            box-shadow: 0 0 1px #fff, 0 0 3px #fff;
+            @keyframes move {
+                100% {
+                    transform: rotate(0) translate(0, 0);
+                }
+            }
+        </css-doodle>
+        <nav class="logo">
+            <a
+                class="logo clover"
+                title="nanarinostyl"
+                href="https://nanarino.github.io/nanarinostyl/"
+                target="_blank"
+            >
+                <Fragment set:html={clover} />
+                <i>nanarinostyl design</i>
+            </a>
+            <a
+                class="logo vue"
+                title="vue"
+                href="https://vuejs.org/"
+                target="_blank"
+            >
+                <Fragment set:html={vue} />
+                <i>vuejs</i>
+            </a>
+        </nav>
+        <h1 class="na-font-mono">glue</h1>
+        <p>一個nanarinostyl設計語言試作的vue元件合集</p>
+    </header>
+    <nav class="page">
+        <Menu menu={menu} base={base} />
+    </nav>
+</App>
+
+<style>
+    header {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+        user-select: none;
+        display: grid;
+        gap: 16px;
+        align-content: center;
+        height: 100vh;
+
+        @supports (height: 100dvh) {
+            & {
+                height: 100dvh;
+            }
+        }
+    }
+
+    css-doodle {
+        position: absolute;
+        inset: 0;
+    }
+
+    h1,
+    p {
+        text-align: center;
+        margin: 0;
+    }
+
+    h1 {
+        font-size: 5.5rem;
+        font-weight: 400;
+    }
+
+    p {
+        font-size: 1.5rem;
+    }
+
+    nav.logo {
+        display: grid;
+        grid-template-rows: repeat(2, min-content);
+        grid-template-columns: repeat(2, min-content);
+        justify-content: center;
+        align-content: center;
+    }
+
+    a.logo {
+        display: inline-flex;
+        position: relative;
+        border-radius: 50%;
+
+        & i {
+            font-size: 0;
+        }
+
+        & :global(svg) {
+            width: 6em;
+            height: 6em;
+            padding: 1.5em;
+        }
+    }
+
+    a.clover :global(path) {
+        transition: 0.3s;
+
+        &:hover {
+            --pinkpurple-6: var(--lime-6);
+            transform: scale(1.05) translate(-12px, -12px);
+        }
+    }
+
+    a.vue :global(svg) {
+        transition: 0.3s;
+
+        &:hover {
+            --magenta-5: var(--green-9);
+            --pinkpurple-5: var(--green-5);
+        }
+    }
+
+    nav.page {
+        padding: 32px;
+        background-color: rgb(var(--black));
+    }
+</style>

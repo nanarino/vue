@@ -1,0 +1,85 @@
+---
+import type { page, menu } from "./interface"
+interface Props {
+    menu: Array<page | menu>
+    base?: string
+}
+const { menu } = Astro.props
+const base = Astro.props.base ?? ""
+const getName = (path: string) => path?.match?.(/[^/]*$/)?.[0]
+---
+
+<nav class="na-menu">
+    {
+        menu.map(item => {
+            /**
+             * 菜单
+             */
+            if (
+                Array.isArray((item as menu).children) &&
+                (item as menu).children.length > 0
+            ) {
+                return (
+                    <details
+                        name="menu"
+                        class="na-menu"
+                        open={RegExp(`^${base}${item.path}`).test(
+                            Astro.url.pathname
+                        )}
+                        style="order:1"
+                    >
+                        <summary class="na-menu-submenu">
+                            <div class="na-menu-submenu-title">
+                                <span>{getName(item.path)}</span>
+                                <i class="na-menu-submenu-title-arrow" />
+                            </div>
+                        </summary>
+                        <Astro.self
+                            menu={(item as menu).children}
+                            base={base}
+                        />
+                    </details>
+                )
+            }
+            /**
+             * 當前页面
+             */
+            if (RegExp(`^${base}${item.path}\/?$`).test(Astro.url.pathname)) {
+                return
+                /* 因爲只有主頁顯示菜單 故而不顯示當前頁面了
+                return (
+                    <div
+                        class="na-menu-item na-watermark"
+                        data-selected
+                        style={{
+                            order: getName(item.path) ? 1 : 0,
+                            "--opacity-watermark": 1,
+                        }}
+                    >
+                        {getName(item.path) || "readme"}
+                    </div>
+                )*/
+            }
+            /**
+             * 页面
+             */
+            return (
+                <div
+                    class="na-menu-item"
+                    style={{ order: getName(item.path) ? 1 : 0 }}
+                >
+                    <a class="na-menu-item-link" href={base + item.path}>
+                        {getName(item.path) || "readme"}
+                    </a>
+                </div>
+            )
+        })
+    }
+</nav>
+
+<style>
+    .na-menu-item {
+        mix-blend-mode: difference;
+        color: #fff;
+    }
+</style>

@@ -1,0 +1,94 @@
+---
+import { ClientRouter } from "astro:transitions"
+import clover from "@/assets/clover.svg"
+import "nanarinostyl"
+import themeIIFE from "@holy-two/data-theme/dist/iife?url"
+import iconifyIIFE from "iconify-icon/dist/iconify-icon.min?url"
+import cssDoodleIIFE from "css-doodle?url"
+import ThemeToggle from "@/components/ThemeToggle"
+
+interface Props {
+    title?: string
+    github?: string
+    frontmatter?: {
+        title?: string
+        github?: string
+    }
+}
+const title = Astro.props.title || Astro.props.frontmatter?.title || "na-glue"
+const github = Astro.props.github || Astro.props.frontmatter?.github
+---
+
+<html lang="zh-TW">
+    <head>
+        <meta charset="UTF-8" />
+        <title>{title}</title>
+        <meta name="generator" content={Astro.generator} />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <link rel="icon" type="image/svg+xml" href={clover.src} />
+        <ClientRouter />
+        <script is:inline fetchpriority="high" src={themeIIFE}></script>
+        <script is:inline src={iconifyIIFE}></script>
+        <script is:inline src={cssDoodleIIFE}></script>
+        <script src="@/utils/client"></script>
+    </head>
+    <body>
+        <ThemeToggle client:only="vue" style="opacity: .8" />
+        <slot />
+        {
+            github && (
+                <footer class="na-layout-footer">
+                    &nbsp; &nbsp; &nbsp; 由
+                    <a
+                        class="na-link"
+                        href="https://astro.build"
+                        target="_blank"
+                    >
+                        {Astro.generator}
+                    </a>
+                    構建 &nbsp;
+                    <a
+                        class="na-link"
+                        title="github"
+                        href={github}
+                        target="_blank"
+                    >
+                        <iconify-icon
+                            icon="line-md:github-twotone"
+                            style="display:inline-flex"
+                        />
+                        <i style="font-size:0">github</i>
+                    </a>
+                </footer>
+            )
+        }
+    </body>
+</html>
+
+<style>
+    body {
+        width: 100%;
+        overflow-x: hidden;
+        padding: 0;
+        margin: 0;
+        min-height: 100vh;
+
+        @supports (min-height: 100dvh) {
+            & {
+                min-height: 100dvh;
+            }
+        }
+    }
+
+    footer {
+        display: flex;
+        gap: 0.5em;
+        justify-content: center;
+        align-items: center;
+        line-height: var(--line-height-2);
+        font-size: var(--font-size-2);
+        color: rgb(var(--gray-3));
+        --color-link: var(--primary-2);
+        --color-link-hover: var(--primary-3);
+    }
+</style>
