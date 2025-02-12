@@ -30,7 +30,7 @@ const github = Astro.props.github || Astro.props.frontmatter?.github
         <script is:inline fetchpriority="high" src={themeIIFE}></script>
         <script is:inline src={iconifyIIFE}></script>
         <script is:inline src={cssDoodleIIFE}></script>
-        <script src="@/utils/client"></script>
+        <script src="@/utils/client/init"></script>
     </head>
     <body>
         <ThemeToggle client:only="vue" style="opacity: .8" />

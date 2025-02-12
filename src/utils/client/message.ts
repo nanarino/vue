@@ -1,8 +1,12 @@
-import { sleep } from "@/utils"
+import { sleep } from "@/utils/common"
 
 export class Launcher {
-    private queue: HTMLDivElement
+    private queue!: HTMLDivElement
     constructor(parentElement: HTMLElement = document.body) {
+        this.reset(parentElement)
+    }
+    reset(parentElement: HTMLElement = document.body) {
+        this.queue?.remove()
         this.queue = document.createElement("div")
         this.queue.className = `na-message-queue`
         parentElement.append(this.queue)
@@ -41,10 +45,10 @@ export class Launcher {
             content = `${content.content ?? "☘"}`
         }
         msg.innerHTML = `
-      <div class="na-message">
-        <p class="na-paragraph">${content}</p>
-      </div>
-    `
+            <div class="na-message">
+                <p class="na-paragraph">${content}</p>
+            </div>
+        `
         if (primary) {
             const p = msg.firstElementChild as HTMLDivElement
             p.dataset.primary = primary
@@ -61,6 +65,8 @@ export class Launcher {
     }
 }
 
-const body = new Launcher()
+const _ = new Launcher()
 
-export default (...args: Parameters<typeof body.emit>) => body.emit(...args)
+export default _
+
+export const message = (...args: Parameters<typeof _.emit>) => _.emit(...args)

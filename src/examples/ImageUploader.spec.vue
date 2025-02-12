@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref, nextTick } from "vue"
 import { ImageUploader, type Image } from "@/components/ImageUploader"
-import message from "@/components/Message"
+import { message } from "@/utils/client/message"
 
 /**
  * 如果使用 `reactive` 会有报错：
