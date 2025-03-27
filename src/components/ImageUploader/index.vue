@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed } from "vue"
+import { computed, nextTick } from "vue"
 import type { Image } from "./interface"
 
 const images = defineModel<Image[]>("modelValue", { default: () => [] })
@@ -50,14 +50,16 @@ const append = async (files: FileList | (File | Image)[]) => {
                         Reflect.set(i, "url", reader.result)
                         resolve(i)
                     }
+                    reader.onerror = reject
                 })
             })
     )
+    images.value = [...images.value, ...imgs]
+    await nextTick()
     emit("change", {
         images: imgs,
         action: "append",
     })
-    images.value = [...images.value, ...imgs]
 }
 
 const handleInput = async (e: Event) => {
@@ -70,12 +72,13 @@ const handleInput = async (e: Event) => {
     ;(<HTMLInputElement>e.target).value = ""
 }
 
-const remove = (index: number) => {
+const remove = async (index: number) => {
+    images.value = [...images.value] // 相当于emit('update:modelValue')
+    await nextTick()
     emit("change", {
         images: images.value.splice(index, 1),
         action: "remove",
     })
-    images.value = [...images.value] // 相当于emit('update:modelValue')
 }
 
 const size = computed(() =>

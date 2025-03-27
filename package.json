@@ -11,12 +11,12 @@
     "dependencies": {
         "@holy-two/data-theme": "^0.0.6",
         "iconify-icon": "^2.3.0",
-        "nanarinostyl": "^0.7.1",
+        "nanarinostyl": "^0.7.3",
         "vue": "^3.5.13"
     },
     "devDependencies": {
-        "@astrojs/vue": "^5.0.6",
-        "astro": "^5.2.5",
+        "@astrojs/vue": "^5.0.8",
+        "astro": "^5.5.5",
         "css-doodle": "^0.41.0"
     }
 }

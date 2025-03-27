@@ -1,23 +1,16 @@
 <script setup lang="ts">
-import { ref, nextTick } from "vue"
+import { ref, useTemplateRef } from "vue"
 import { ImageUploader, type Image } from "@/components/ImageUploader"
 import { message } from "@/utils/client/message"
 
-/**
- * 如果使用 `reactive` 会有报错：
- *  `This assignment will throw because "imgs" is a constant`
- * 但是不影响使用 也可以不使用 `v-model`
- */
 const imgs = ref<Image[]>([])
-const ImageUploaderRef = ref<InstanceType<typeof ImageUploader>>()
+const ImageUploaderRef = useTemplateRef("ImageUploaderRef")
 
 const change = async (item: {
     images: Image[]
     action: "append" | "remove"
 }) => {
     console.log(item)
-    // 变化后 size稍后才响应
-    await nextTick()
     console.log(ImageUploaderRef.value?.size)
 }
 
@@ -31,15 +24,17 @@ void (async function init() {
 </script>
 
 <template>
-    <ImageUploader
-        v-model="imgs"
-        :max-count="9"
-        :accept="[`image/gif`, `image/jpeg`, `image/png`]"
-        ref="ImageUploaderRef"
-        @change="change"
-        @overflow="message({ content: `超出数量限制`, primary: `danger` })"
-    />
-    <p class="na-font-mono">
-        {{ imgs.map((x: Image) => x.name) }}
-    </p>
+    <view style="display: contents">
+        <ImageUploader
+            v-model="imgs"
+            :max-count="9"
+            :accept="[`image/gif`, `image/jpeg`, `image/png`]"
+            ref="ImageUploaderRef"
+            @change="change"
+            @overflow="message({ content: `超出数量限制`, primary: `danger` })"
+        />
+        <p class="na-font-mono">
+            {{ imgs.map((x: Image) => x.name) }}
+        </p>
+    </view>
 </template>
