@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { ref, useTemplateRef } from "vue"
+import { shallowRef, useTemplateRef } from "vue"
 import { ImageUploader, type Image } from "@/components/ImageUploader"
 import { message } from "@/utils/client/message"
 
-const imgs = ref<Image[]>([])
+const imgs = shallowRef<Image[]>([])
 const ImageUploaderRef = useTemplateRef("ImageUploaderRef")
 
 const change = async (item: {
@@ -19,7 +19,7 @@ void (async function init() {
     const Kirby = (await res.json()) as Image
     if (Kirby.url)
         Kirby.url = Kirby.url.replace(/^\//, import.meta.env.BASE_URL)
-    imgs.value.push(Kirby)
+    imgs.value = [Kirby]
 })()
 </script>
 

@@ -73,10 +73,11 @@ const handleInput = async (e: Event) => {
 }
 
 const remove = async (index: number) => {
+    const removed_image = images.value.splice(index, 1)
     images.value = [...images.value] // 相当于emit('update:modelValue')
     await nextTick()
     emit("change", {
-        images: images.value.splice(index, 1),
+        images: removed_image,
         action: "remove",
     })
 }
