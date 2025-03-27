@@ -6,17 +6,17 @@ const images = defineModel<Image[]>("modelValue", { default: () => [] })
 const props = withDefaults(
     defineProps<{
         accept?: string[]
-        maxCount?: number
+        limit?: number
     }>(),
     {
         accept: () => ["image/*"],
-        maxCount: Infinity,
+        limit: Infinity,
     }
 )
 
 const emit = defineEmits<{
     change: [item: { images: Image[]; action: "append" | "remove" }]
-    overflow: []
+    overLimit: []
 }>()
 
 const stopDrag = (e: DragEvent) => {
@@ -28,9 +28,9 @@ const handleDrop = async (e: DragEvent) => {
     e.preventDefault()
     if (
         images.value.length + (e.dataTransfer?.files?.length || 0) >
-        props.maxCount
+        props.limit
     ) {
-        return emit("overflow")
+        return emit("overLimit")
     }
     await append(e.dataTransfer?.files || [])
 }
@@ -64,10 +64,10 @@ const append = async (files: FileList | (File | Image)[]) => {
 
 const handleInput = async (e: Event) => {
     const files = (<HTMLInputElement>e.target)?.files || <File[]>[]
-    if (images.value.length + files.length <= props.maxCount) {
+    if (images.value.length + files.length <= props.limit) {
         await append(files)
     } else {
-        emit("overflow")
+        emit("overLimit")
     }
     ;(<HTMLInputElement>e.target).value = ""
 }
@@ -116,9 +116,9 @@ defineExpose({ append, remove, size })
         </div>
         <div
             class="na-image na-input-wrapper"
-            v-show="images.length < props.maxCount"
+            v-show="images.length < props.limit"
             @drop="
-                images.length < props.maxCount
+                images.length < props.limit
                     ? handleDrop($event)
                     : stopDrag($event)
             "

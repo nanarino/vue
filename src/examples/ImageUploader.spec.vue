@@ -27,11 +27,11 @@ void (async function init() {
     <view style="display: contents">
         <ImageUploader
             v-model="imgs"
-            :max-count="9"
+            :limit="9"
             :accept="[`image/gif`, `image/jpeg`, `image/png`]"
             ref="ImageUploaderRef"
             @change="change"
-            @overflow="message({ content: `超出数量限制`, primary: `danger` })"
+            @over-limit="message({ content: `超出数量限制`, primary: `danger` })"
         />
         <p class="na-font-mono">
             {{ imgs.map((x: Image) => x.name) }}
