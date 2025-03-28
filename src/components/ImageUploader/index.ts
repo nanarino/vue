@@ -1,2 +1,3 @@
 export { default, default as ImageUploader } from "./index.vue"
-export * from "./interface"
+
+export * from './types'

@@ -1,29 +1,51 @@
 <script setup lang="ts">
-import { computed, nextTick } from "vue"
-import type { Image } from "./interface"
+import { computed, nextTick, onBeforeUnmount } from "vue"
+import {
+    defaultCreateUrl,
+    defaultRevokeUrl,
+    REVOKED,
+    type Image,
+    type LocalInputFileImage,
+} from "./types"
 
-const images = defineModel<Image[]>("modelValue", { default: () => [] })
+const images = defineModel<(Image | LocalInputFileImage)[]>("modelValue", {
+    default: () => [],
+})
 const props = withDefaults(
     defineProps<{
+        /**相片格式 */
         accept?: string[]
+        /**數量限制 */
         limit?: number
+        /**自訂生成URL 并挂到File上 */
+        customCreateUrl?: (
+            raw: File | LocalInputFileImage
+        ) => Promise<Image> | Image
+        /**自訂銷毀 銷毀先前挂到File上URL */
+        customRevokeUrl?: (
+            img: Image | LocalInputFileImage
+        ) => Promise<void> | void
     }>(),
     {
         accept: () => ["image/*"],
         limit: Infinity,
+        customCreateUrl: defaultCreateUrl,
+        customRevokeUrl: defaultRevokeUrl,
     }
 )
 
 const emit = defineEmits<{
     change: [item: { images: Image[]; action: "append" | "remove" }]
+    loadError: [event: Event, image: Image, index: number]
     overLimit: []
 }>()
 
-const stopDrag = (e: DragEvent) => {
+function handleDrag(e: DragEvent) {
     e.stopPropagation()
     e.preventDefault()
 }
-const handleDrop = async (e: DragEvent) => {
+
+async function handleDrop(e: DragEvent) {
     e.stopPropagation()
     e.preventDefault()
     if (
@@ -35,34 +57,41 @@ const handleDrop = async (e: DragEvent) => {
     await append(e.dataTransfer?.files || [])
 }
 
-const append = async (files: FileList | (File | Image)[]) => {
-    const imgs = await Promise.all(
+const files_setup_effect = async (
+    files: FileList | (LocalInputFileImage | File | Image)[]
+) =>
+    Promise.all(
         Array.from(files)
             .filter(
+                // 過濾格式不正確的檔案
                 v => props.accept.filter(t => new RegExp(t).test(v.type)).length
             )
-            .map(async i => {
-                if ("url" in i) return i
-                return new Promise<Image>((resolve, reject) => {
-                    const reader = new FileReader()
-                    reader.readAsDataURL(i as File)
-                    reader.onload = () => {
-                        Reflect.set(i, "url", reader.result)
-                        resolve(i)
+            .map(async file => {
+                if ("url" in file) {
+                    if (REVOKED in file && file[REVOKED]) {
+                        // 有URL但是已經被銷毀了
+                        return props.customCreateUrl(file)
+                    } else {
+                        // 非輸入的相片 或是已遠端持久化過的URL
+                        return file
                     }
-                    reader.onerror = reject
-                })
+                }
+                // 沒有URL 是新輸入的相片
+                return props.customCreateUrl(file)
             })
     )
-    images.value = [...images.value, ...imgs]
+
+const append = async (files: FileList | (File | Image)[]) => {
+    const created_images = await files_setup_effect(files)
+    images.value = [...images.value, ...created_images]
     await nextTick()
     emit("change", {
-        images: imgs,
+        images: created_images,
         action: "append",
     })
 }
 
-const handleInput = async (e: Event) => {
+async function handleInput(e: Event) {
     const files = (<HTMLInputElement>e.target)?.files || <File[]>[]
     if (images.value.length + files.length <= props.limit) {
         await append(files)
@@ -72,9 +101,14 @@ const handleInput = async (e: Event) => {
     ;(<HTMLInputElement>e.target).value = ""
 }
 
+async function handleLoadError(e: Event, img: Image, i: number) {
+    emit("loadError", e, img, i)
+}
+
 const remove = async (index: number) => {
     const removed_image = images.value.splice(index, 1)
     images.value = [...images.value] // 相当于emit('update:modelValue')
+    await props.customRevokeUrl(removed_image[0])
     await nextTick()
     emit("change", {
         images: removed_image,
@@ -86,7 +120,18 @@ const size = computed(() =>
     images.value.reduce((size, file) => size + file.size, 0)
 )
 
-defineExpose({ append, remove, size })
+defineExpose({ append, remove, size, files_setup_effect })
+
+void (async function images_setup() {
+    // 重新設定URL
+    // 防止URL已被銷毀 導致檔案預覽失敗
+    const x = await files_setup_effect(images.value)
+})()
+
+onBeforeUnmount(async () => {
+    // 銷毀URL
+    await Promise.all(images.value.map(props.customRevokeUrl))
+})
 </script>
 
 <template>
@@ -94,14 +139,18 @@ defineExpose({ append, remove, size })
         <div
             class="na-image"
             v-show="images.length > 0"
-            v-for="(item, index) of modelValue"
-            :key="index"
+            v-for="(image, index) of modelValue"
+            :key="image.url"
         >
-            <img :src="item.url" @dragstart="stopDrag" />
+            <img
+                :src="image.url"
+                @dragstart="handleDrag"
+                @error="handleLoadError($event, image, index)"
+            />
             <div class="na-image-footer">
                 <div class="na-image-footer-content">
                     <div class="na-paragraph" data-ellipsis="2">
-                        {{ item.name }}
+                        {{ image.name }}
                     </div>
                 </div>
                 <div class="na-image-footer-action">
@@ -120,16 +169,16 @@ defineExpose({ append, remove, size })
             @drop="
                 images.length < props.limit
                     ? handleDrop($event)
-                    : stopDrag($event)
+                    : handleDrag($event)
             "
-            @dragenter="stopDrag"
-            @dragover="stopDrag"
+            @dragenter="handleDrag"
+            @dragover="handleDrag"
             data-primary
         >
             <input
                 type="file"
                 class="na-input"
-                :accept="`${accept || 'image/*'}`"
+                :accept="`${accept || 'image/*'}` || 'image/*'"
                 @change="handleInput"
                 multiple
             />

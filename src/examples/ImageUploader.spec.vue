@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { shallowRef, useTemplateRef } from "vue"
+import { shallowRef, useTemplateRef, ref } from "vue"
 import { ImageUploader, type Image } from "@/components/ImageUploader"
 import { message } from "@/utils/client/message"
 
@@ -21,17 +21,22 @@ void (async function init() {
         Kirby.url = Kirby.url.replace(/^\//, import.meta.env.BASE_URL)
     imgs.value = [Kirby]
 })()
-</script>
 
+const v_if = ref(true)
+</script>
 <template>
     <view style="display: contents">
+        <!--button @click="v_if = !v_if">測試v-if</button-->
         <ImageUploader
+            v-if="v_if"
             v-model="imgs"
             :limit="9"
             :accept="[`image/gif`, `image/jpeg`, `image/png`]"
             ref="ImageUploaderRef"
             @change="change"
-            @over-limit="message({ content: `超出数量限制`, primary: `danger` })"
+            @over-limit="
+                message({ content: `超出数量限制`, primary: `danger` })
+            "
         />
         <p class="na-font-mono">
             {{ imgs.map((x: Image) => x.name) }}
