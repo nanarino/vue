@@ -125,7 +125,7 @@ defineExpose({ append, remove, size, files_setup_effect })
 void (async function images_setup() {
     // 重新設定URL
     // 防止URL已被銷毀 導致檔案預覽失敗
-    const x = await files_setup_effect(images.value)
+    await files_setup_effect(images.value)
 })()
 
 onBeforeUnmount(async () => {
