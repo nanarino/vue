@@ -5,3 +5,9 @@
 
 一个 [nanarinostyl](https://nanarino.github.io/nanarinostyl/) 主題的 [vue3](https://vuejs.org/) 元件合集
 
+## 開發
+
+```bash
+pnpm i
+pnpm vite
+```
