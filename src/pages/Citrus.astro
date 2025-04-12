@@ -1,0 +1,16 @@
+---
+import App from "@/layouts/app.astro"
+import CitrusSpec from "@/examples/Citrus.spec.vue"
+---
+
+<App title="橘子瓣">
+    <section>
+        <CitrusSpec client:only="vue" />
+    </section>
+</App>
+
+<style>
+    section {
+        padding: 16px;
+    }
+</style>

@@ -26,7 +26,7 @@ const v_if = ref(true)
 </script>
 <template>
     <view style="display: contents">
-        <!--button @click="v_if = !v_if">測試v-if</button-->
+        <button class="na-button" @click="v_if = !v_if">測試v-if</button>
         <ImageUploader
             v-if="v_if"
             v-model="imgs"
@@ -43,3 +43,8 @@ const v_if = ref(true)
         </p>
     </view>
 </template>
+<style scoped>
+button {
+    margin-bottom: 16px;
+}
+</style>
