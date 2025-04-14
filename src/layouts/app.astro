@@ -6,6 +6,8 @@ import themeIIFE from "@holy-two/data-theme/dist/iife?url"
 import iconifyIIFE from "iconify-icon/dist/iconify-icon.min?url"
 import cssDoodleIIFE from "css-doodle?url"
 import ThemeToggle from "@/components/ThemeToggle"
+import { readFile } from "node:fs/promises"
+import { Code } from "astro:components"
 
 interface Props {
     title?: string
@@ -17,6 +19,14 @@ interface Props {
 }
 const title = Astro.props.title || Astro.props.frontmatter?.title || "na-vue"
 const github = Astro.props.github || Astro.props.frontmatter?.github
+const base = import.meta.env.BASE_URL
+const components = Astro.url.pathname.replace(RegExp(`^${base}`), "")
+let code: string | undefined = void 0
+if (components) {
+    code = await readFile(`./src/examples/${components}.spec.vue`, {
+        encoding: "utf8",
+    })
+}
 ---
 
 <html lang="zh-TW">
@@ -35,6 +45,15 @@ const github = Astro.props.github || Astro.props.frontmatter?.github
     <body>
         <ThemeToggle client:only="vue" style="opacity: .8" />
         <slot />
+        {
+            code && (
+                <Code
+                    code={code}
+                    lang="vue"
+                    themes={{ dark: "min-dark", light: "min-light" }}
+                />
+            )
+        }
         {
             github && (
                 <footer class="na-layout-footer">
@@ -90,5 +109,22 @@ const github = Astro.props.github || Astro.props.frontmatter?.github
         color: rgb(var(--gray-3));
         --color-link: var(--primary-2);
         --color-link-hover: var(--primary-3);
+    }
+</style>
+<style is:global>
+    :root[data-theme="dark"] {
+        pre.astro-code-themes {
+            padding: 2rem;
+            margin: 1rem;
+            background-color: var(--shiki-dark-bg) !important;
+            color: var(--shiki-dark) !important;
+            .line span {
+                color: var(--shiki-dark) !important;
+                background-color: var(--shiki-dark-bg) !important;
+                font-style: var(--shiki-dark-font-style) !important;
+                font-weight: var(--shiki-dark-font-weight) !important;
+                text-decoration: var(--shiki-dark-text-decoration) !important;
+            }
+        }
     }
 </style>
