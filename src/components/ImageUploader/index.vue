@@ -197,14 +197,30 @@ onBeforeUnmount(async () => {
     grid-template-columns: repeat(5, 1fr);
     gap: 16px;
 
+    @media screen and (max-width: 1650px) and (min-width: 1024px) {
+        & {
+            /** 代碼塊在右側 且熒幕較小時 */
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    @media screen and (min-width: 1024px) {
+        & {
+            /** 代碼塊在右側時 需要減去代碼塊寬度 */
+            max-width: calc(100vw - 568px);
+        }
+    }
+    
     @media screen and (max-width: 876px) {
         & {
+            /** 較小熒幕 ipad mini 竪屏 */
             grid-template-columns: repeat(3, 1fr);
         }
     }
 
     @media screen and (max-width: 540px) {
         & {
+            /** 手機 */
             grid-template-columns: 1fr 1fr;
         }
     }
