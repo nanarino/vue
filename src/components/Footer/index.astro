@@ -1,0 +1,42 @@
+---
+interface Props {
+    github?: string
+}
+---
+
+{
+    Astro.props.github && (
+        <footer class="na-layout-footer">
+            &nbsp; &nbsp; &nbsp; 由
+            <a class="na-link" href="https://astro.build" target="_blank">
+                {Astro.generator}
+            </a>
+            構建 &nbsp;
+            <a
+                class="na-link"
+                title="github"
+                href={Astro.props.github}
+                target="_blank"
+            >
+                <iconify-icon
+                    icon="octicon:mark-github-16"
+                    style="display:inline-flex"
+                />
+                <i style="font-size:0">github</i>
+            </a>
+        </footer>
+    )
+}
+
+<style>
+    footer {
+        display: flex;
+        gap: 0.5em;
+        justify-content: center;
+        align-items: center;
+        line-height: var(--line-height-2);
+        font-size: var(--font-size-2);
+        color: rgb(var(--gray-8));
+        --color-link-hover: var(--primary-8);
+    }
+</style>

@@ -20,6 +20,8 @@
         "@astrojs/vue": "^5.0.9",
         "astro": "^5.6.1",
         "css-doodle": "^0.41.0",
+        "dedent": "^1.5.3",
+        "style-to-object": "^1.0.8",
         "vite": "^6.2.4"
     },
     "pnpm": {
