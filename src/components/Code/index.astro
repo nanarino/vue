@@ -4,7 +4,9 @@ import { Code } from "astro:components"
 import Boxing from "./boxing.astro"
 
 const base = import.meta.env.BASE_URL
-const components = Astro.url.pathname.replace(RegExp(`^${base}`), "")
+const components = Astro.url.pathname
+    .replace(RegExp(`^${base}`), "")
+    .replace(/\/$/, "")
 let code: string | undefined = void 0
 if (components) {
     code = await readFile(`./src/examples/${components}.spec.vue`, {
