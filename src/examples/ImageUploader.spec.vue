@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { shallowRef, useTemplateRef, ref } from "vue"
 import { ImageUploader, type Image } from "@/components/ImageUploader"
-import { message } from "@/utils/client/message"
+import { message } from "@/scripts/client/message"
 
 const imgs = shallowRef<Image[]>([])
 const ImageUploaderRef = useTemplateRef("ImageUploaderRef")

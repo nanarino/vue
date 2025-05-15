@@ -3,7 +3,7 @@ import App from "@/layouts/app.astro"
 import vue from "@/assets/vue.svg?raw"
 import clover from "@/assets/clover.svg?raw"
 import Menu from "@/components/Menu/menu.astro"
-import { getMenu } from "@/utils/server"
+import { getMenu } from "@/scripts/server/menu"
 
 const menu = await getMenu("./src/pages")
 const base = import.meta.env.BASE_URL

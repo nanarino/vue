@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { shallowReactive } from "vue"
 import { Citrus, type Item } from "@/components/Citrus"
-import { message } from "@/utils/client/message"
+import { message } from "@/scripts/client/message"
 
 const items = shallowReactive<Item[]>([])
 
