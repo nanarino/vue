@@ -55,8 +55,14 @@ const base = import.meta.env.BASE_URL
                 <i>vuejs</i>
             </a>
         </nav>
-        <h1 class="na-font-mono">na-vue</h1>
-        <p>一個 nanarinostyl 設計語言試作的 vue 元件合集</p>
+        <h1 class="na-font-mono" style="font-size: 5.5rem;font-weight: 400;">
+            {"<na-vue/>"}
+        </h1>
+        <p class="na-paragraph" data-size="4" style="margin: 0;">
+            一個<span class="na-font-mono">
+                nanarinostyl
+            </span>設計語言試作的<span class="na-font-mono"> vue </span>元件合集
+        </p>
     </header>
     <nav class="page">
         <Menu menu={menu} base={base} />
@@ -79,26 +85,23 @@ const base = import.meta.env.BASE_URL
                 height: 100dvh;
             }
         }
-    }
 
-    css-doodle {
-        position: absolute;
-        inset: 0;
-    }
+        css-doodle {
+            position: absolute;
+            inset: 0;
+        }
 
-    h1,
-    p {
-        text-align: center;
-        margin: 0;
-    }
-
-    h1 {
-        font-size: 5.5rem;
-        font-weight: 400;
-    }
-
-    p {
-        font-size: 1.5rem;
+        h1,
+        p {
+            text-align: center;
+            margin: 0;
+            z-index: 6;
+            mix-blend-mode: difference;
+            color: #0f0;
+            :root[data-theme="dark"] & {
+                color: #f0f;
+            }
+        }
     }
 
     nav.logo {
@@ -107,21 +110,21 @@ const base = import.meta.env.BASE_URL
         grid-template-columns: repeat(2, min-content);
         justify-content: center;
         align-content: center;
-    }
 
-    a.logo {
-        display: inline-flex;
-        position: relative;
-        border-radius: 50%;
+        & a {
+            display: inline-flex;
+            position: relative;
+            border-radius: 50%;
 
-        & i {
-            font-size: 0;
-        }
+            & i {
+                font-size: 0;
+            }
 
-        & :global(svg) {
-            width: 6em;
-            height: 6em;
-            padding: 1.5em;
+            & :global(svg) {
+                width: 6em;
+                height: 6em;
+                padding: 1.5em;
+            }
         }
     }
 
@@ -143,8 +146,13 @@ const base = import.meta.env.BASE_URL
         }
     }
 
-    nav.page {
-        padding: 32px;
+    nav.pages {
+        padding: 2em;
         background-color: rgb(var(--black));
+        color: rgb(var(--gray-1));
+    }
+
+    main.readme {
+        padding: 4em;
     }
 </style>

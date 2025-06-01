@@ -68,8 +68,11 @@ const getName = (path: string) => path?.match?.(/[^/]*$/)?.[0]
                     class="na-menu-item"
                     style={{ order: getName(item.path) ? 1 : 0 }}
                 >
-                    <a class="na-menu-item-link" href={base + item.path}>
-                        {getName(item.path) || "readme"}
+                    <a
+                        class="na-menu-item-link na-font-mono"
+                        href={base + item.path}
+                    >
+                        {`<${getName(item.path)} />` || "readme"}
                     </a>
                 </div>
             )
