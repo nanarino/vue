@@ -9,5 +9,5 @@
 
 ```bash
 pnpm i
-pnpm vite
+pnpm dev
 ```

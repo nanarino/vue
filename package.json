@@ -14,11 +14,12 @@
     "dependencies": {
         "@holy-two/data-theme": "^0.0.6",
         "iconify-icon": "^2.3.0",
-        "vue": "^3.5.13"
+        "vue": "^3.5.16"
     },
     "devDependencies": {
-        "@astrojs/vue": "^5.0.13",
-        "astro": "^5.7.12",
+        "@astrojs/vue": "^5.1.0",
+        "@fontsource/jetbrains-mono": "^5.2.5",
+        "astro": "^5.8.1",
         "css-doodle": "^0.41.0",
         "dedent": "^1.6.0",
         "style-to-object": "^1.0.8",

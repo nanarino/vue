@@ -1,45 +1,120 @@
 ---
 import { readFile } from "node:fs/promises"
 import { Code } from "astro:components"
-import Boxing from "./boxing.astro"
+import parse from "style-to-object"
+import dedent from "dedent"
+import "@fontsource/jetbrains-mono/400.css"
+
+interface Props {
+    code?: string
+    lang?: Parameters<typeof Code>[0]["lang"]
+}
 
 const base = import.meta.env.BASE_URL
 const components = Astro.url.pathname
     .replace(RegExp(`^${base}`), "")
     .replace(/\/$/, "")
-let code: string | undefined = void 0
-if (components) {
+let code: string | undefined = Astro.props.code
+const is_spec = !code && components
+if (is_spec) {
     code = await readFile(`./src/examples/${components}.spec.vue`, {
         encoding: "utf8",
     })
 }
+
+const lang: Parameters<typeof Code>[0]["lang"] = Astro.props.lang ?? "astro"
+
+const themes: Parameters<typeof Code>[0]["themes"] = {
+    dark: "material-theme-darker",
+    light: "material-theme-lighter",
+}
+const transformers: Parameters<typeof Code>[0]["transformers"] = [
+    {
+        pre(node) {
+            if (is_spec) {
+                node.properties.class = "na-pre na-pre-components-spec"
+            } else {
+                node.properties.class = "na-pre"
+            }
+            node.properties.style = null
+            // outline 焦點效果
+            // node.properties.tabindex = null
+        },
+        code(node) {
+            this.addClassToHast(node, ["na-code"])
+        },
+        span(node) {
+            const style = parse((node.properties.style || "") as string)
+            const light = style?.color
+            const dark = style?.["--shiki-dark"]
+            if (light && dark) {
+                node.properties.style = dedent`
+                    --color-code: from ${light} r g b;
+                    --color-code-dark: from ${dark} r g b;
+                `
+            }
+        },
+    },
+]
 ---
 
 {
-    code && (
-        <Boxing class="na-lit-code na-watermark">
-            <Code
-                code={code}
-                lang="astro"
-                themes={{ dark: "min-dark", light: "min-light" }}
-            />
-        </Boxing>
-    )
+    code &&
+        (is_spec ? (
+            <aside>
+                <section class="na-watermark">
+                    <Code
+                        code={code}
+                        lang={lang}
+                        themes={themes}
+                        transformers={transformers}
+                    />
+                </section>
+            </aside>
+        ) : (
+            <section class="na-watermark">
+                <Code
+                    code={code}
+                    lang={lang}
+                    themes={themes}
+                    transformers={transformers}
+                />
+            </section>
+        ))
 }
 
+<style>
+    aside {
+        margin: 2rem;
+        border-radius: var(--border-radius-lg);
+        overflow: hidden;
+
+        & :global(.na-pre-components-spec) {
+            /** 與aside、section一致 在出現outline時表現正常  */
+            border-radius: var(--border-radius-lg);
+            /** 對冲左側縮進 */
+            padding-right: 5em;
+            margin: 0;
+        }
+    }
+
+    section {
+        --border-radius-watermark: var(--border-radius-lg);
+    }
+</style>
+
 <style is:global>
-    body:has(.na-lit-code) {
+    :root {
+        --font-family-mono: "JetBrains Mono";
+    }
+
+    body:has(.na-pre-components-spec) {
         display: flex;
         @media screen and (max-width: 1024px) {
             flex-direction: column;
         }
-    }
-    body > section {
-        flex: auto;
-    }
-    body > .na-lit-code {
-        padding: 2rem;
-        margin: 1rem;
-        border-radius: var(--border-radius-lg);
+        & section {
+            flex: auto;
+        }
     }
 </style>
