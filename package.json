@@ -20,7 +20,6 @@
         "@astrojs/vue": "^5.1.0",
         "@fontsource/jetbrains-mono": "^5.2.5",
         "astro": "^5.8.1",
-        "css-doodle": "^0.41.0",
         "dedent": "^1.6.0",
         "style-to-object": "^1.0.8",
         "vite": "^6.3.5"

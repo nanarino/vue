@@ -1,9 +1,12 @@
 ---
 import App from "@/layouts/app.astro"
 import vue from "@/assets/vue.svg?raw"
-import clover from "@/assets/clover.svg?raw"
+import cloverRaw from "@/assets/clover.svg?raw"
+import cloverUrl from "@/assets/clover.svg?url"
 import Menu from "@/components/Menu/menu.astro"
 import { getMenu } from "@/scripts/server/menu"
+import LiquidLogo from "@/components/LiquidLogo/index.vue"
+import ReadMe from "@/components/ReadMe/index.astro"
 
 const menu = await getMenu("./src/pages")
 const base = import.meta.env.BASE_URL
@@ -11,30 +14,9 @@ const base = import.meta.env.BASE_URL
 
 <App github="https://github.com/nanarino/na-vue">
     <header>
-        <!-- prettier-ignore -->
-        <css-doodle grid="20x10" is:raw>
-            :doodle {
-                perspective: 10px;
-            }
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 2px;
-            height: 2px;
-            border-radius: 50%;
-            top: @r(1%, 100%, 1.5);
-            left: @r(1%, 100%, 1.5);
-            background: hsl(@r(200, 255, 3), @r(70%, 90%), @r(70%, 90%));
-            animation: move 8s infinite @r(-8, 0)s @p(linear, ease-in, ease-in-out) alternate;
-            transform: rotate(@r(360deg)) translate(@r(-50, 50)vmin, @r(-50, 50)vmin);
-            zoom: @rn(.1, 5, 3);
-            box-shadow: 0 0 1px #fff, 0 0 3px #fff;
-            @keyframes move {
-                100% {
-                    transform: rotate(0) translate(0, 0);
-                }
-            }
-        </css-doodle>
+        <section class="logo-bg">
+            <LiquidLogo imageUrl={cloverUrl} client:only="vue" />
+        </section>
         <nav class="logo">
             <a
                 class="logo clover"
@@ -42,7 +24,7 @@ const base = import.meta.env.BASE_URL
                 href="https://nanarino.github.io/stylus/"
                 target="_blank"
             >
-                <Fragment set:html={clover} />
+                <Fragment set:html={cloverRaw} />
                 <i>nanarino stylus design</i>
             </a>
             <a
@@ -64,9 +46,14 @@ const base = import.meta.env.BASE_URL
             </span>設計語言試作的<span class="na-font-mono"> vue </span>元件合集
         </p>
     </header>
-    <nav class="page">
+    <nav class="pages">
+        <h2 class="na-title">元件列表</h2>
         <Menu menu={menu} base={base} />
     </nav>
+    <main class="readme">
+        <h2 class="na-title">食用方式</h2>
+        <ReadMe />
+    </main>
 </App>
 
 <style>
@@ -79,6 +66,7 @@ const base = import.meta.env.BASE_URL
         gap: 16px;
         align-content: center;
         height: 100vh;
+        background-color: rgb(var(--white));
 
         @supports (height: 100dvh) {
             & {
@@ -86,9 +74,9 @@ const base = import.meta.env.BASE_URL
             }
         }
 
-        css-doodle {
+        .logo-bg {
             position: absolute;
-            inset: 0;
+            inset: 99px;
         }
 
         h1,
@@ -148,8 +136,11 @@ const base = import.meta.env.BASE_URL
 
     nav.pages {
         padding: 2em;
-        background-color: rgb(var(--black));
-        color: rgb(var(--gray-1));
+        background: rgb(var(--black));
+        h2 {
+            padding: 0 2rem;
+            color: rgb(var(--white));
+        }
     }
 
     main.readme {

@@ -4,7 +4,6 @@ import clover from "@/assets/clover.svg"
 import "nanarinostyl"
 import themeIIFE from "@holy-two/data-theme/dist/iife?url"
 import iconifyIIFE from "iconify-icon/dist/iconify-icon.min?url"
-import cssDoodleIIFE from "css-doodle?url"
 import ThemeToggle from "@/components/ThemeToggle"
 import Code from "@/components/Code/index.astro"
 import Footer from "@/components/Footer/index.astro"
@@ -31,7 +30,6 @@ const github = Astro.props.github || Astro.props.frontmatter?.github
         <ClientRouter />
         <script is:inline fetchpriority="high" src={themeIIFE}></script>
         <script is:inline src={iconifyIIFE}></script>
-        <script is:inline src={cssDoodleIIFE}></script>
         <script src="@/scripts/client/init"></script>
     </head>
     <body>

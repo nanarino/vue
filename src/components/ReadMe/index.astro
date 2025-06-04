@@ -1,0 +1,57 @@
+---
+import Code from "../Code/index.astro"
+import dedent from "dedent"
+---
+
+<p class="na-paragraph">
+    先要自订構建出 <code class="na-code na-code-no-bg">nanarinostyl</code> (
+    <code class="na-code">nanarinostyl/dist/style.min.css</code>
+    ) 放置在自己專案的 <code class="na-code na-code-no-bg">assets</code> 或 <code
+        class="na-code na-code-no-bg">public</code
+    > 目錄中，用任意方式引入
+</p>
+
+<Code
+    code={dedent`
+        <html lang="en-HK">
+            <head>
+                <link rel="stylesheet" href="/nanarinostyl.min.css" />
+            </head>
+            <body>
+                <slot />
+            </body>
+        </html>
+    `}
+/>
+
+<p class="na-paragraph">
+    若使用 <code class="na-code na-code-no-bg">css in js</code> 方式引入，有些打包器（如<code
+        class="na-code na-code-no-bg">vite</code
+    >）在構建后纔會將其置於
+    <code class="na-code na-code-no-bg">{"<head />"}</code> 中，開發環境出現
+    <a
+        class="na-link"
+        href="https://en.wikipedia.org/wiki/Flash_of_unstyled_content"
+        target="_blank"
+    >
+        FOUC
+    </a>
+    問題是正常的，但是初始化明暗的脚本不應該使用<code
+        class="na-code na-code-no-bg">import</code
+    >引入
+</p>
+
+<Code
+    code={dedent`
+        import "nanarinostyl"
+    `}
+    lang="typescript"
+/>
+
+<p class="na-paragraph">再拷貝本倉庫元件源代碼來進行使用</p>
+
+<style>
+    .na-code-no-bg {
+        --background-color-code: 0 0 0 / 0;
+    }
+</style>
