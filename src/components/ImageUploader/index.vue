@@ -207,10 +207,10 @@ onBeforeUnmount(async () => {
     @media screen and (min-width: 1024px) {
         & {
             /** 代碼塊在右側時 需要減去代碼塊寬度 */
-            max-width: calc(100vw - 568px);
+            max-width: calc(100vw - var(--max-width-code-aside, 540px));
         }
     }
-    
+
     @media screen and (max-width: 876px) {
         & {
             /** 較小熒幕 ipad mini 竪屏 */
