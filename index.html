@@ -1,0 +1,277 @@
+<!DOCTYPE html><html lang="zh-TW" data-astro-cid-kq56sc45> <head><meta charset="UTF-8"><title>na-vue</title><meta name="generator" content="Astro v5.16.6"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" type="image/svg+xml" href="/vue/clover.svg"><script fetchpriority="high" src="data:text/javascript;base64,InVzZSBzdHJpY3QiO3ZhciBlO2U9WyJkYXJrIiwibGlnaHQiXSx3aW5kb3cuaGFzT3duUHJvcGVydHkoInRoZW1lIil8fE9iamVjdC5kZWZpbmVQcm9wZXJ0eSh3aW5kb3csInRoZW1lIix7Z2V0OigpPT5sb2NhbFN0b3JhZ2UuZ2V0SXRlbSgidGhlbWUiKT8/ZVsrIXdpbmRvdy5tYXRjaE1lZGlhPy4oIihwcmVmZXJzLWNvbG9yLXNjaGVtZTogZGFyaykiKT8ubWF0Y2hlc119KSxkb2N1bWVudC5kb2N1bWVudEVsZW1lbnQuZGF0YXNldC50aGVtZT13aW5kb3cudGhlbWU7Ly8jIHNvdXJjZU1hcHBpbmdVUkw9aW5kZXguanMubWFw"></script><meta name="astro-view-transitions-enabled" content="true"><meta name="astro-view-transitions-fallback" content="animate"><script type="module" src="/vue/_astro/ClientRouter.astro_astro_type_script_index_0_lang.QW52Ox2j.js"></script><link rel="stylesheet" href="/vue/_astro/AlibabaSansHK-55.CNYnUiQi.css" data-nanarino-lit-provide onload="document.documentElement.style.setProperty('--font-family-base', 'AlibabaSansHK-55')"><link rel="stylesheet" href="/vue/_astro/400.CLo52SeC.css" data-nanarino-lit-provide onload="document.documentElement.style.setProperty('--font-family-mono', 'JetBrains Mono')"><script type="module">document.addEventListener("astro:after-swap",()=>{const t=document.documentElement;t.style.setProperty("--font-family-base","AlibabaSansHK-55"),t.style.setProperty("--font-family-mono","JetBrains Mono")});</script><script src="/vue/_astro/iconify-icon.min.D2vAPERS.js"></script><script type="module" src="/vue/_astro/app.astro_astro_type_script_index_0_lang.DAQNaNBA.js"></script><link rel="stylesheet" href="/vue/_astro/Button.NZ7TUA06.css">
+<style>.na-menu-item[data-astro-cid-c4rkobsm]{mix-blend-mode:difference;color:#fff}.na-code-no-bg[data-astro-cid-sksvxoln]{--background-color-code: 0 0 0 / 0}header[data-astro-cid-j7pv25f6]{position:relative;width:100%;overflow:hidden;user-select:none;display:grid;gap:16px;align-content:center;height:100vh;background-color:rgb(var(--white));@supports (height: 100dvh){height:100dvh}.logo-bg{position:absolute;inset:99px}h1,p{text-align:center;margin:0;z-index:6;mix-blend-mode:difference;color:#0f0;:root[data-theme=dark] &{color:#f0f}}}nav[data-astro-cid-j7pv25f6].logo{display:grid;grid-template-rows:repeat(2,min-content);grid-template-columns:repeat(2,min-content);justify-content:center;align-content:center;& a[data-astro-cid-j7pv25f6]{display:inline-flex;position:relative;border-radius:50%;& i[data-astro-cid-j7pv25f6]{font-size:0}& svg{width:6em;height:6em;padding:1.5em;mix-blend-mode:difference}}}a[data-astro-cid-j7pv25f6].clover path{transition:.3s;&[data-astro-cid-j7pv25f6]:hover{--pinkpurple-6: var(--lime-6);transform:scale(1.05) translate(-12px,-12px)}}a[data-astro-cid-j7pv25f6].vue svg{transition:.3s;&[data-astro-cid-j7pv25f6]:hover{--magenta-5: var(--green-9);--pinkpurple-5: var(--green-5)}}nav[data-astro-cid-j7pv25f6].pages{padding:2em;background:rgb(var(--black));h2{padding:0 2rem;color:rgb(var(--white))}}main[data-astro-cid-j7pv25f6].readme{padding:4em}
+.line.diff.add{background-color:rgb(var(--success-1))}.line.diff.remove{background-color:rgb(var(--danger-1))}.highlighted-word{border:2pt solid rgb(var(--primary-3));border-radius:var(--border-radius-sm)}:root{--max-width-code-aside: 660px}body:has(.na-pre-components-spec){display:flex;@media screen and (max-width:1024px){flex-direction:column}& section{flex:auto}}aside[data-astro-cid-ijmigw7p]{margin:2rem;border-radius:var(--border-radius-lg);overflow:hidden;max-width:var(--max-width-code-aside);.na-pre-components-spec{border-radius:var(--border-radius-lg);margin:0}}section[data-astro-cid-ijmigw7p]{--border-radius-watermark: var(--border-radius-lg)}
+canvas[data-v-e6e0ea99]{width:100%;height:100%;object-fit:contain}
+button{&[data-v-2014fb77]{position:fixed;z-index:9;bottom:16px;right:16px;display:grid;--padding-horizontal-button: 16px}& iconify-icon[data-v-2014fb77]{grid-area:1/1/2/2;transition:opacity .3s;font-size:24px}}:root[data-theme=light] button iconify-icon[data-v-2014fb77]:first-child{opacity:0}:root[data-theme=dark] button iconify-icon[data-v-2014fb77]:last-child{opacity:0}
+</style></head> <body data-astro-cid-kq56sc45> <style>astro-island,astro-slot,astro-static-slot{display:contents}</style><script>(()=>{var e=async t=>{await(await t())()};(self.Astro||(self.Astro={})).only=e;window.dispatchEvent(new Event("astro:only"));})();</script><script>(()=>{var A=Object.defineProperty;var g=(i,o,a)=>o in i?A(i,o,{enumerable:!0,configurable:!0,writable:!0,value:a}):i[o]=a;var d=(i,o,a)=>g(i,typeof o!="symbol"?o+"":o,a);{let i={0:t=>m(t),1:t=>a(t),2:t=>new RegExp(t),3:t=>new Date(t),4:t=>new Map(a(t)),5:t=>new Set(a(t)),6:t=>BigInt(t),7:t=>new URL(t),8:t=>new Uint8Array(t),9:t=>new Uint16Array(t),10:t=>new Uint32Array(t),11:t=>1/0*t},o=t=>{let[l,e]=t;return l in i?i[l](e):void 0},a=t=>t.map(o),m=t=>typeof t!="object"||t===null?t:Object.fromEntries(Object.entries(t).map(([l,e])=>[l,o(e)]));class y extends HTMLElement{constructor(){super(...arguments);d(this,"Component");d(this,"hydrator");d(this,"hydrate",async()=>{var b;if(!this.hydrator||!this.isConnected)return;let e=(b=this.parentElement)==null?void 0:b.closest("astro-island[ssr]");if(e){e.addEventListener("astro:hydrate",this.hydrate,{once:!0});return}let c=this.querySelectorAll("astro-slot"),n={},h=this.querySelectorAll("template[data-astro-template]");for(let r of h){let s=r.closest(this.tagName);s!=null&&s.isSameNode(this)&&(n[r.getAttribute("data-astro-template")||"default"]=r.innerHTML,r.remove())}for(let r of c){let s=r.closest(this.tagName);s!=null&&s.isSameNode(this)&&(n[r.getAttribute("name")||"default"]=r.innerHTML)}let p;try{p=this.hasAttribute("props")?m(JSON.parse(this.getAttribute("props"))):{}}catch(r){let s=this.getAttribute("component-url")||"<unknown>",v=this.getAttribute("component-export");throw v&&(s+=` (export ${v})`),console.error(`[hydrate] Error parsing props for component ${s}`,this.getAttribute("props"),r),r}let u;await this.hydrator(this)(this.Component,p,n,{client:this.getAttribute("client")}),this.removeAttribute("ssr"),this.dispatchEvent(new CustomEvent("astro:hydrate"))});d(this,"unmount",()=>{this.isConnected||this.dispatchEvent(new CustomEvent("astro:unmount"))})}disconnectedCallback(){document.removeEventListener("astro:after-swap",this.unmount),document.addEventListener("astro:after-swap",this.unmount,{once:!0})}connectedCallback(){if(!this.hasAttribute("await-children")||document.readyState==="interactive"||document.readyState==="complete")this.childrenConnectedCallback();else{let e=()=>{document.removeEventListener("DOMContentLoaded",e),c.disconnect(),this.childrenConnectedCallback()},c=new MutationObserver(()=>{var n;((n=this.lastChild)==null?void 0:n.nodeType)===Node.COMMENT_NODE&&this.lastChild.nodeValue==="astro:end"&&(this.lastChild.remove(),e())});c.observe(this,{childList:!0}),document.addEventListener("DOMContentLoaded",e)}}async childrenConnectedCallback(){let e=this.getAttribute("before-hydration-url");e&&await import(e),this.start()}async start(){let e=JSON.parse(this.getAttribute("opts")),c=this.getAttribute("client");if(Astro[c]===void 0){window.addEventListener(`astro:${c}`,()=>this.start(),{once:!0});return}try{await Astro[c](async()=>{let n=this.getAttribute("renderer-url"),[h,{default:p}]=await Promise.all([import(this.getAttribute("component-url")),n?import(n):()=>()=>{}]),u=this.getAttribute("component-export")||"default";if(!u.includes("."))this.Component=h[u];else{this.Component=h;for(let f of u.split("."))this.Component=this.Component[f]}return this.hydrator=p,this.hydrate},e,this)}catch(n){console.error(`[astro-island] Error hydrating ${this.getAttribute("component-url")}`,n)}}attributeChangedCallback(){this.hydrate()}}d(y,"observedAttributes",["props"]),customElements.get("astro-island")||customElements.define("astro-island",y)}})();</script><astro-island uid="1HDPUj" component-url="/vue/_astro/ThemeToggle.CviEv757.js" component-export="default" renderer-url="/vue/_astro/client.pEEnSeC1.js" props="{&quot;style&quot;:[0,&quot;opacity: .8&quot;],&quot;data-astro-cid-kq56sc45&quot;:[0,true]}" ssr client="only" opts="{&quot;name&quot;:&quot;ThemeToggle&quot;,&quot;value&quot;:&quot;vue&quot;}"></astro-island>  <header data-astro-cid-j7pv25f6> <section class="logo-bg" data-astro-cid-j7pv25f6> <astro-island uid="1pCcR6" component-url="/vue/_astro/index.CwpG7sNF.js" component-export="default" renderer-url="/vue/_astro/client.pEEnSeC1.js" props="{&quot;imageUrl&quot;:[0,&quot;data:image/svg+xml,%3csvg%20height=&#39;512&#39;%20viewBox=&#39;0%200%20512%20512&#39;%20width=&#39;512&#39;%20xmlns=&#39;http://www.w3.org/2000/svg&#39;%3e%3cpath%20fill=&#39;rgb(var(--pinkpurple-6,%20217%2026%20217))&#39;%20d=&#39;m88.667%20248.569h138.69l-82.52-82.52c-5.711-5.711-6.237-15.015-.801-20.989%205.804-6.378%2015.686-6.553%2021.713-.525l82.821%2082.821v-138.689c0-48.717-39.862-89.21-88.576-88.661-43.366.488-79.262%2032.661-85.578%2074.408-41.748%206.317-73.92%2042.212-74.409%2085.578-.551%2048.714%2039.942%2088.577%2088.66%2088.577z&#39;/%3e%3cpath%20fill=&#39;rgb(var(--pinkpurple-6,%20217%2026%20217))&#39;%20d=&#39;m370.496%20195.494-97.497%2056.292c.009.009.018.018.027.027%201.804%201.804%204.052%203.102%206.516%203.762l120.862%2032.379c47.182%2012.64%2096.742-15.461%20108.85-62.782%2010.778-42.126-11.067-85.238-49.861-102.188%204.75-42.396-22.112-83.167-64.545-94.534-46.767-12.529-95.009%2015.326-107.538%2062.093-5.803%2021.661-8.742%2043.989-8.742%2066.413v56.979c33.369-19.269%2076.927-44.421%2076.927-44.421%207.175-4.142%2016.348-1.684%2020.49%205.49%204.143%207.174%201.685%2016.347-5.489%2020.49z&#39;/%3e%3cpath%20fill=&#39;rgb(var(--pinkpurple-6,%20217%2026%20217))&#39;%20d=&#39;m496.508%20369.533c-71.755-.135-134.281-29.859-178.222-72.521l-29.058-7.784%207.741%2028.896c49.21%2047.975%20119.42%2081.409%20200.031%2081.409%208.546%200%2015.422-7.146%2014.98-15.789-.413-8.068-7.392-14.196-15.472-14.211z&#39;/%3e%3cpath%20fill=&#39;rgb(var(--pinkpurple-6,%20217%2026%20217))&#39;%20d=&#39;m251.785%20272.998-56.292%2097.497c-4.142%207.175-13.314%209.634-20.49%205.49-7.174-4.142-9.632-13.316-5.49-20.49l44.415-76.927h-58.065c-21.698%200-43.303%202.844-64.262%208.459-46.562%2012.474-75.298%2059.92-63.457%20106.647%2010.925%2043.111%2052.055%2070.513%2094.84%2065.719%2017.08%2039.093%2060.727%2060.975%20103.16%2049.606%2046.767-12.529%2074.623-60.77%2062.094-107.537l-32.652-121.88c-.667-2.49-1.978-4.761-3.801-6.584z&#39;/%3e%3c/svg%3e&quot;],&quot;data-astro-cid-j7pv25f6&quot;:[0,true]}" ssr client="only" opts="{&quot;name&quot;:&quot;LiquidLogo&quot;,&quot;value&quot;:&quot;vue&quot;}"></astro-island> </section> <nav class="logo" data-astro-cid-j7pv25f6> <a class="logo clover" title="@nanarino/stylus" href="https://nanarino.github.io/stylus/" target="_blank" data-astro-cid-j7pv25f6> <svg height="512" viewBox="0 0 512 512" width="512" xmlns="http://www.w3.org/2000/svg">
+<path fill="rgb(var(--pinkpurple-6, 217 26 217))" d="m88.667 248.569h138.69l-82.52-82.52c-5.711-5.711-6.237-15.015-.801-20.989 5.804-6.378 15.686-6.553 21.713-.525l82.821 82.821v-138.689c0-48.717-39.862-89.21-88.576-88.661-43.366.488-79.262 32.661-85.578 74.408-41.748 6.317-73.92 42.212-74.409 85.578-.551 48.714 39.942 88.577 88.66 88.577z"/>
+<path fill="rgb(var(--pinkpurple-6, 217 26 217))" d="m370.496 195.494-97.497 56.292c.009.009.018.018.027.027 1.804 1.804 4.052 3.102 6.516 3.762l120.862 32.379c47.182 12.64 96.742-15.461 108.85-62.782 10.778-42.126-11.067-85.238-49.861-102.188 4.75-42.396-22.112-83.167-64.545-94.534-46.767-12.529-95.009 15.326-107.538 62.093-5.803 21.661-8.742 43.989-8.742 66.413v56.979c33.369-19.269 76.927-44.421 76.927-44.421 7.175-4.142 16.348-1.684 20.49 5.49 4.143 7.174 1.685 16.347-5.489 20.49z"/>
+<path fill="rgb(var(--pinkpurple-6, 217 26 217))" d="m496.508 369.533c-71.755-.135-134.281-29.859-178.222-72.521l-29.058-7.784 7.741 28.896c49.21 47.975 119.42 81.409 200.031 81.409 8.546 0 15.422-7.146 14.98-15.789-.413-8.068-7.392-14.196-15.472-14.211z"/>
+<path fill="rgb(var(--pinkpurple-6, 217 26 217))" d="m251.785 272.998-56.292 97.497c-4.142 7.175-13.314 9.634-20.49 5.49-7.174-4.142-9.632-13.316-5.49-20.49l44.415-76.927h-58.065c-21.698 0-43.303 2.844-64.262 8.459-46.562 12.474-75.298 59.92-63.457 106.647 10.925 43.111 52.055 70.513 94.84 65.719 17.08 39.093 60.727 60.975 103.16 49.606 46.767-12.529 74.623-60.77 62.094-107.537l-32.652-121.88c-.667-2.49-1.978-4.761-3.801-6.584z"/>
+</svg> <i data-astro-cid-j7pv25f6>nanarino stylus design</i> </a> <a class="logo vue" title="vue" href="https://vuejs.org/" target="_blank" data-astro-cid-j7pv25f6> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="16" height="16">
+  <path d="M24.9,3.9L16,19.4L7.1,3.9H2l14,24.3L30,3.9H24.9z" fill="rgb(var(--pinkpurple-5, 225 62 219))"></path>
+  <path d="M16,9.5l-3.2-5.6H8.1L16,17.5l7.9-13.6h-4.6L16,9.5z" fill="rgb(var(--magenta-5, 247 84 168))"></path>
+</svg>
+ <i data-astro-cid-j7pv25f6>vuejs</i> </a> </nav> <h1 class="na-font-mono" style="font-size: 5.5rem;font-weight: 400;" data-astro-cid-j7pv25f6> &lt;na-vue/&gt; </h1> <p class="na-paragraph" data-size="4" style="margin: 0;" data-astro-cid-j7pv25f6>
+一個<span class="na-font-mono" data-astro-cid-j7pv25f6>
+@nanarino/stylus
+</span>設計語言試作的<span class="na-font-mono" data-astro-cid-j7pv25f6> vue </span>元件合集
+</p> </header> <nav class="pages" data-astro-cid-j7pv25f6> <h2 class="na-title" data-astro-cid-j7pv25f6>元件列表</h2> <nav class="na-menu" data-astro-cid-c4rkobsm> <div class="na-menu-item" style="order:1" data-astro-cid-c4rkobsm> <a class="na-menu-item-link na-font-mono" href="/vue/Button" data-astro-cid-c4rkobsm> &lt;Button /&gt; </a> </div><div class="na-menu-item" style="order:1" data-astro-cid-c4rkobsm> <a class="na-menu-item-link na-font-mono" href="/vue/Citrus" data-astro-cid-c4rkobsm> &lt;Citrus /&gt; </a> </div><div class="na-menu-item" style="order:1" data-astro-cid-c4rkobsm> <a class="na-menu-item-link na-font-mono" href="/vue/Donut" data-astro-cid-c4rkobsm> &lt;Donut /&gt; </a> </div><div class="na-menu-item" style="order:1" data-astro-cid-c4rkobsm> <a class="na-menu-item-link na-font-mono" href="/vue/ImageUploader" data-astro-cid-c4rkobsm> &lt;ImageUploader /&gt; </a> </div><div class="na-menu-item" style="order:1" data-astro-cid-c4rkobsm> <a class="na-menu-item-link na-font-mono" href="/vue/Radar" data-astro-cid-c4rkobsm> &lt;Radar /&gt; </a> </div><div class="na-menu-item" style="order:1" data-astro-cid-c4rkobsm> <a class="na-menu-item-link na-font-mono" href="/vue/Tabs" data-astro-cid-c4rkobsm> &lt;Tabs /&gt; </a> </div> </nav>  </nav> <main class="readme" data-astro-cid-j7pv25f6> <h2 class="na-title" data-astro-cid-j7pv25f6>食用方式</h2> <h3 class="na-title" data-astro-cid-sksvxoln>先決條件</h3> <section class="na-watermark" data-astro-cid-ijmigw7p><pre class="na-pre" tabindex="0" data-astro-cid-ijmigw7p data-language="shell"><code class="na-code"><span class="line"><span style="--color-code: from #E2931D r g b;
+--color-code-dark: from #FFCB6B r g b;">pnpm</span><span style="--color-code: from #91B859 r g b;
+--color-code-dark: from #C3E88D r g b;"> i</span><span style="--color-code: from #91B859 r g b;
+--color-code-dark: from #C3E88D r g b;"> @nanarino/stylus</span></span></code></pre></section> <section class="na-watermark" data-astro-cid-ijmigw7p><pre class="na-pre" tabindex="0" data-astro-cid-ijmigw7p data-language="astro"><code class="na-code"><span class="line"><span style="--color-code: from #90A4AE r g b;
+--color-code-dark: from #545454 r g b;">---</span></span>
+<span class="line diff add"><span style="--color-code: from #39ADB5 r g b;
+--color-code-dark: from #89DDFF r g b;">import</span><span style="--color-code: from #90A4AE r g b;
+--color-code-dark: from #EEFFFF r g b;"> stylus </span><span style="--color-code: from #39ADB5 r g b;
+--color-code-dark: from #89DDFF r g b;">from</span><span style="--color-code: from #39ADB5 r g b;
+--color-code-dark: from #89DDFF r g b;"> "</span><span style="--color-code: from #91B859 r g b;
+--color-code-dark: from #C3E88D r g b;">@nanarino/stylus?url</span><span style="--color-code: from #39ADB5 r g b;
+--color-code-dark: from #89DDFF r g b;">"</span></span>
+<span class="line"><span style="--color-code: from #90A4AE r g b;
+--color-code-dark: from #545454 r g b;">---</span></span>
+<span class="line"><span style="--color-code: from #39ADB5 r g b;
+--color-code-dark: from #89DDFF r g b;">&#x3C;</span><span style="--color-code: from #E53935 r g b;
+--color-code-dark: from #F07178 r g b;">html</span><span style="--color-code: from #9C3EDA r g b;
+--color-code-dark: from #C792EA r g b;"> lang</span><span style="--color-code: from #39ADB5 r g b;
+--color-code-dark: from #89DDFF r g b;">=</span><span style="--color-code: from #39ADB5 r g b;
+--color-code-dark: from #89DDFF r g b;">"</span><span style="--color-code: from #91B859 r g b;
+--color-code-dark: from #C3E88D r g b;">en-HK</span><span style="--color-code: from #39ADB5 r g b;
+--color-code-dark: from #89DDFF r g b;">"</span><span style="--color-code: from #39ADB5 r g b;
+--color-code-dark: from #89DDFF r g b;">></span></span>
+<span class="line"><span style="--color-code: from #39ADB5 r g b;
+--color-code-dark: from #89DDFF r g b;">    &#x3C;</span><span style="--color-code: from #E53935 r g b;
+--color-code-dark: from #F07178 r g b;">head</span><span style="--color-code: from #39ADB5 r g b;
+--color-code-dark: from #89DDFF r g b;">></span></span>
+<span class="line diff add"><span style="--color-code: from #39ADB5 r g b;
+--color-code-dark: from #89DDFF r g b;">        &#x3C;</span><span style="--color-code: from #E53935 r g b;
+--color-code-dark: from #F07178 r g b;">link</span><span style="--color-code: from #9C3EDA r g b;
+--color-code-dark: from #C792EA r g b;"> rel</span><span style="--color-code: from #39ADB5 r g b;
+--color-code-dark: from #89DDFF r g b;">=</span><span style="--color-code: from #39ADB5 r g b;
+--color-code-dark: from #89DDFF r g b;">"</span><span style="--color-code: from #91B859 r g b;
+--color-code-dark: from #C3E88D r g b;">stylesheet</span><span style="--color-code: from #39ADB5 r g b;
+--color-code-dark: from #89DDFF r g b;">"</span><span style="--color-code: from #9C3EDA r g b;
+--color-code-dark: from #C792EA r g b;"> href</span><span style="--color-code: from #39ADB5 r g b;
+--color-code-dark: from #89DDFF r g b;">={</span><span style="--color-code: from #90A4AE r g b;
+--color-code-dark: from #EEFFFF r g b;">stylus</span><span style="--color-code: from #39ADB5 r g b;
+--color-code-dark: from #89DDFF r g b;">} /></span></span>
+<span class="line"><span style="--color-code: from #39ADB5 r g b;
+--color-code-dark: from #89DDFF r g b;">    &#x3C;/</span><span style="--color-code: from #E53935 r g b;
+--color-code-dark: from #F07178 r g b;">head</span><span style="--color-code: from #39ADB5 r g b;
+--color-code-dark: from #89DDFF r g b;">></span></span>
+<span class="line"><span style="--color-code: from #39ADB5 r g b;
+--color-code-dark: from #89DDFF r g b;">    &#x3C;</span><span style="--color-code: from #E53935 r g b;
+--color-code-dark: from #F07178 r g b;">body</span><span style="--color-code: from #39ADB5 r g b;
+--color-code-dark: from #89DDFF r g b;">></span></span>
+<span class="line"><span style="--color-code: from #39ADB5 r g b;
+--color-code-dark: from #89DDFF r g b;">        &#x3C;</span><span style="--color-code: from #E53935 r g b;
+--color-code-dark: from #F07178 r g b;">slot</span><span style="--color-code: from #39ADB5 r g b;
+--color-code-dark: from #89DDFF r g b;"> /></span></span>
+<span class="line"><span style="--color-code: from #39ADB5 r g b;
+--color-code-dark: from #89DDFF r g b;">    &#x3C;/</span><span style="--color-code: from #E53935 r g b;
+--color-code-dark: from #F07178 r g b;">body</span><span style="--color-code: from #39ADB5 r g b;
+--color-code-dark: from #89DDFF r g b;">></span></span>
+<span class="line"><span style="--color-code: from #39ADB5 r g b;
+--color-code-dark: from #89DDFF r g b;">&#x3C;/</span><span style="--color-code: from #E53935 r g b;
+--color-code-dark: from #F07178 r g b;">html</span><span style="--color-code: from #39ADB5 r g b;
+--color-code-dark: from #89DDFF r g b;">></span></span></code></pre></section> <p class="na-paragraph" data-astro-cid-sksvxoln>
+若使用 <code class="na-code na-code-no-bg" data-astro-cid-sksvxoln>css in js</code> 方式引入，有些打包器（如<code class="na-code na-code-no-bg" data-astro-cid-sksvxoln>vite</code>）在構建后纔會將其置於
+<code class="na-code na-code-no-bg" data-astro-cid-sksvxoln>&lt;head /&gt;</code> 中，開發環境出現
+<a class="na-link" href="https://en.wikipedia.org/wiki/Flash_of_unstyled_content" target="_blank" data-astro-cid-sksvxoln>
+FOUC
+</a>
+問題是正常的
+</p> <section class="na-watermark" data-astro-cid-ijmigw7p><pre class="na-pre" tabindex="0" data-astro-cid-ijmigw7p data-language="typescript"><code class="na-code"><span class="line"><span style="--color-code: from #90A4AE r g b;
+--color-code-dark: from #545454 r g b;">// css in js</span></span>
+<span class="line"><span style="--color-code: from #39ADB5 r g b;
+--color-code-dark: from #89DDFF r g b;">import</span><span style="--color-code: from #39ADB5 r g b;
+--color-code-dark: from #89DDFF r g b;"> "</span><span style="--color-code: from #91B859 r g b;
+--color-code-dark: from #C3E88D r g b;">@nanarino/stylus</span><span style="--color-code: from #39ADB5 r g b;
+--color-code-dark: from #89DDFF r g b;">"</span></span></code></pre></section> <p class="na-paragraph" data-astro-cid-sksvxoln>
+但是初始化明暗的脚本不應該使用
+<code class="na-code na-code-no-bg" data-astro-cid-sksvxoln> import </code> 引入
+</p> <section class="na-watermark" data-astro-cid-ijmigw7p><pre class="na-pre" tabindex="0" data-astro-cid-ijmigw7p data-language="astro"><code class="na-code"><span class="line"><span style="--color-code: from #39ADB5 r g b;
+--color-code-dark: from #89DDFF r g b;">&#x3C;</span><span style="--color-code: from #E53935 r g b;
+--color-code-dark: from #F07178 r g b;">html</span><span style="--color-code: from #9C3EDA r g b;
+--color-code-dark: from #C792EA r g b;"> lang</span><span style="--color-code: from #39ADB5 r g b;
+--color-code-dark: from #89DDFF r g b;">=</span><span style="--color-code: from #39ADB5 r g b;
+--color-code-dark: from #89DDFF r g b;">"</span><span style="--color-code: from #91B859 r g b;
+--color-code-dark: from #C3E88D r g b;">en-HK</span><span style="--color-code: from #39ADB5 r g b;
+--color-code-dark: from #89DDFF r g b;">"</span><span style="--color-code: from #39ADB5 r g b;
+--color-code-dark: from #89DDFF r g b;">></span></span>
+<span class="line"><span style="--color-code: from #39ADB5 r g b;
+--color-code-dark: from #89DDFF r g b;">    &#x3C;</span><span style="--color-code: from #E53935 r g b;
+--color-code-dark: from #F07178 r g b;">head</span><span style="--color-code: from #39ADB5 r g b;
+--color-code-dark: from #89DDFF r g b;">></span></span>
+<span class="line"><span style="--color-code: from #39ADB5 r g b;
+--color-code-dark: from #89DDFF r g b;">        &#x3C;</span><span style="--color-code: from #E53935 r g b;
+--color-code-dark: from #F07178 r g b;">script</span><span style="--color-code: from #9C3EDA r g b;
+--color-code-dark: from #C792EA r g b;"> </span><span style="--color-code: from #9C3EDA r g b;
+--color-code-dark: from #C792EA r g b;" class="highlighted-word">is:inline</span><span style="--color-code: from #39ADB5 r g b;
+--color-code-dark: from #89DDFF r g b;">></span></span>
+<span class="line"><span style="--color-code: from #90A4AE r g b;
+--color-code-dark: from #EEFFFF r g b;">            document</span><span style="--color-code: from #39ADB5 r g b;
+--color-code-dark: from #89DDFF r g b;">.</span><span style="--color-code: from #90A4AE r g b;
+--color-code-dark: from #EEFFFF r g b;">documentElement</span><span style="--color-code: from #39ADB5 r g b;
+--color-code-dark: from #89DDFF r g b;">.</span><span style="--color-code: from #90A4AE r g b;
+--color-code-dark: from #EEFFFF r g b;">dataset[</span><span style="--color-code: from #39ADB5 r g b;
+--color-code-dark: from #89DDFF r g b;">"</span><span style="--color-code: from #91B859 r g b;
+--color-code-dark: from #C3E88D r g b;">theme</span><span style="--color-code: from #39ADB5 r g b;
+--color-code-dark: from #89DDFF r g b;">"</span><span style="--color-code: from #90A4AE r g b;
+--color-code-dark: from #EEFFFF r g b;">] </span><span style="--color-code: from #39ADB5 r g b;
+--color-code-dark: from #89DDFF r g b;">=</span></span>
+<span class="line"><span style="--color-code: from #90A4AE r g b;
+--color-code-dark: from #EEFFFF r g b;">                localStorage</span><span style="--color-code: from #39ADB5 r g b;
+--color-code-dark: from #89DDFF r g b;">.</span><span style="--color-code: from #6182B8 r g b;
+--color-code-dark: from #82AAFF r g b;">getItem</span><span style="--color-code: from #90A4AE r g b;
+--color-code-dark: from #EEFFFF r g b;">(</span><span style="--color-code: from #39ADB5 r g b;
+--color-code-dark: from #89DDFF r g b;">"</span><span style="--color-code: from #91B859 r g b;
+--color-code-dark: from #C3E88D r g b;">theme</span><span style="--color-code: from #39ADB5 r g b;
+--color-code-dark: from #89DDFF r g b;">"</span><span style="--color-code: from #90A4AE r g b;
+--color-code-dark: from #EEFFFF r g b;">) </span><span style="--color-code: from #39ADB5 r g b;
+--color-code-dark: from #89DDFF r g b;">??</span></span>
+<span class="line"><span style="--color-code: from #90A4AE r g b;
+--color-code-dark: from #EEFFFF r g b;">                [</span><span style="--color-code: from #39ADB5 r g b;
+--color-code-dark: from #89DDFF r g b;">"</span><span style="--color-code: from #91B859 r g b;
+--color-code-dark: from #C3E88D r g b;">dark</span><span style="--color-code: from #39ADB5 r g b;
+--color-code-dark: from #89DDFF r g b;">"</span><span style="--color-code: from #39ADB5 r g b;
+--color-code-dark: from #89DDFF r g b;">,</span><span style="--color-code: from #39ADB5 r g b;
+--color-code-dark: from #89DDFF r g b;"> "</span><span style="--color-code: from #91B859 r g b;
+--color-code-dark: from #C3E88D r g b;">light</span><span style="--color-code: from #39ADB5 r g b;
+--color-code-dark: from #89DDFF r g b;">"</span><span style="--color-code: from #90A4AE r g b;
+--color-code-dark: from #EEFFFF r g b;">][</span></span>
+<span class="line"><span style="--color-code: from #39ADB5 r g b;
+--color-code-dark: from #89DDFF r g b;">                    +!</span><span style="--color-code: from #90A4AE r g b;
+--color-code-dark: from #EEFFFF r g b;">window</span><span style="--color-code: from #39ADB5 r g b;
+--color-code-dark: from #89DDFF r g b;">.</span><span style="--color-code: from #6182B8 r g b;
+--color-code-dark: from #82AAFF r g b;">matchMedia</span><span style="--color-code: from #39ADB5 r g b;
+--color-code-dark: from #89DDFF r g b;">?.</span><span style="--color-code: from #90A4AE r g b;
+--color-code-dark: from #EEFFFF r g b;">(</span><span style="--color-code: from #39ADB5 r g b;
+--color-code-dark: from #89DDFF r g b;">"</span><span style="--color-code: from #91B859 r g b;
+--color-code-dark: from #C3E88D r g b;">(prefers-color-scheme: dark)</span><span style="--color-code: from #39ADB5 r g b;
+--color-code-dark: from #89DDFF r g b;">"</span><span style="--color-code: from #90A4AE r g b;
+--color-code-dark: from #EEFFFF r g b;">)</span><span style="--color-code: from #39ADB5 r g b;
+--color-code-dark: from #89DDFF r g b;">?.</span><span style="--color-code: from #90A4AE r g b;
+--color-code-dark: from #EEFFFF r g b;">matches</span></span>
+<span class="line"><span style="--color-code: from #90A4AE r g b;
+--color-code-dark: from #EEFFFF r g b;">                ]</span></span>
+<span class="line"><span style="--color-code: from #39ADB5 r g b;
+--color-code-dark: from #89DDFF r g b;">        &#x3C;/</span><span style="--color-code: from #E53935 r g b;
+--color-code-dark: from #F07178 r g b;">script</span><span style="--color-code: from #39ADB5 r g b;
+--color-code-dark: from #89DDFF r g b;">></span></span>
+<span class="line"><span style="--color-code: from #39ADB5 r g b;
+--color-code-dark: from #89DDFF r g b;">    &#x3C;/</span><span style="--color-code: from #E53935 r g b;
+--color-code-dark: from #F07178 r g b;">head</span><span style="--color-code: from #39ADB5 r g b;
+--color-code-dark: from #89DDFF r g b;">></span></span>
+<span class="line"><span style="--color-code: from #39ADB5 r g b;
+--color-code-dark: from #89DDFF r g b;">    &#x3C;</span><span style="--color-code: from #E53935 r g b;
+--color-code-dark: from #F07178 r g b;">body</span><span style="--color-code: from #39ADB5 r g b;
+--color-code-dark: from #89DDFF r g b;">></span></span>
+<span class="line"><span style="--color-code: from #39ADB5 r g b;
+--color-code-dark: from #89DDFF r g b;">        &#x3C;</span><span style="--color-code: from #E53935 r g b;
+--color-code-dark: from #F07178 r g b;">slot</span><span style="--color-code: from #39ADB5 r g b;
+--color-code-dark: from #89DDFF r g b;"> /></span></span>
+<span class="line"><span style="--color-code: from #39ADB5 r g b;
+--color-code-dark: from #89DDFF r g b;">    &#x3C;/</span><span style="--color-code: from #E53935 r g b;
+--color-code-dark: from #F07178 r g b;">body</span><span style="--color-code: from #39ADB5 r g b;
+--color-code-dark: from #89DDFF r g b;">></span></span>
+<span class="line"><span style="--color-code: from #39ADB5 r g b;
+--color-code-dark: from #89DDFF r g b;">&#x3C;/</span><span style="--color-code: from #E53935 r g b;
+--color-code-dark: from #F07178 r g b;">html</span><span style="--color-code: from #39ADB5 r g b;
+--color-code-dark: from #89DDFF r g b;">></span></span></code></pre></section> <h3 class="na-title" data-astro-cid-sksvxoln>套用元件</h3> <p class="na-paragraph" data-astro-cid-sksvxoln>
+元件暫時未計劃發佈到
+<a class="na-code na-link" href="https://www.npmjs.com/" target="_blank" data-astro-cid-sksvxoln>
+npm
+</a> ，可以按以下方式安裝, 或者直接拷貝到自己的專案。
+</p> <section class="na-watermark" data-astro-cid-ijmigw7p><pre class="na-pre" tabindex="0" data-astro-cid-ijmigw7p data-language="jsonc"><code class="na-code"><span class="line"><span style="--color-code: from #90A4AE r g b;
+--color-code-dark: from #545454 r g b;">// package.json</span></span>
+<span class="line"></span>
+<span class="line"><span style="--color-code: from #39ADB5 r g b;
+--color-code-dark: from #89DDFF r g b;">{</span></span>
+<span class="line"><span style="--color-code: from #39ADB5 r g b;
+--color-code-dark: from #89DDFF r g b;">    "</span><span style="--color-code: from #9C3EDA r g b;
+--color-code-dark: from #C792EA r g b;">dependencies</span><span style="--color-code: from #39ADB5 r g b;
+--color-code-dark: from #89DDFF r g b;">"</span><span style="--color-code: from #39ADB5 r g b;
+--color-code-dark: from #89DDFF r g b;">:</span><span style="--color-code: from #39ADB5 r g b;
+--color-code-dark: from #89DDFF r g b;"> {</span></span>
+<span class="line diff add"><span style="--color-code: from #39ADB5 r g b;
+--color-code-dark: from #89DDFF r g b;">        "</span><span style="--color-code: from #E2931D r g b;
+--color-code-dark: from #FFCB6B r g b;">@nanarino/vue</span><span style="--color-code: from #39ADB5 r g b;
+--color-code-dark: from #89DDFF r g b;">"</span><span style="--color-code: from #39ADB5 r g b;
+--color-code-dark: from #89DDFF r g b;">:</span><span style="--color-code: from #39ADB5 r g b;
+--color-code-dark: from #89DDFF r g b;"> "</span><span style="--color-code: from #91B859 r g b;
+--color-code-dark: from #C3E88D r g b;">github:nanarino/vue</span><span style="--color-code: from #39ADB5 r g b;
+--color-code-dark: from #89DDFF r g b;">"</span><span style="--color-code: from #39ADB5 r g b;
+--color-code-dark: from #89DDFF r g b;">,</span></span>
+<span class="line"><span style="--color-code: from #39ADB5 r g b;
+--color-code-dark: from #89DDFF r g b;">    },</span></span>
+<span class="line"><span style="--color-code: from #39ADB5 r g b;
+--color-code-dark: from #89DDFF r g b;">    "</span><span style="--color-code: from #9C3EDA r g b;
+--color-code-dark: from #C792EA r g b;">pnpm</span><span style="--color-code: from #39ADB5 r g b;
+--color-code-dark: from #89DDFF r g b;">"</span><span style="--color-code: from #39ADB5 r g b;
+--color-code-dark: from #89DDFF r g b;">:</span><span style="--color-code: from #39ADB5 r g b;
+--color-code-dark: from #89DDFF r g b;"> {</span></span>
+<span class="line"><span style="--color-code: from #39ADB5 r g b;
+--color-code-dark: from #89DDFF r g b;">        "</span><span style="--color-code: from #E2931D r g b;
+--color-code-dark: from #FFCB6B r g b;">overrides</span><span style="--color-code: from #39ADB5 r g b;
+--color-code-dark: from #89DDFF r g b;">"</span><span style="--color-code: from #39ADB5 r g b;
+--color-code-dark: from #89DDFF r g b;">:</span><span style="--color-code: from #39ADB5 r g b;
+--color-code-dark: from #89DDFF r g b;"> {</span></span>
+<span class="line diff add"><span style="--color-code: from #39ADB5 r g b;
+--color-code-dark: from #89DDFF r g b;">            "</span><span style="--color-code: from #F76D47 r g b;
+--color-code-dark: from #F78C6C r g b;">@nanarino/stylus</span><span style="--color-code: from #39ADB5 r g b;
+--color-code-dark: from #89DDFF r g b;">"</span><span style="--color-code: from #39ADB5 r g b;
+--color-code-dark: from #89DDFF r g b;">:</span><span style="--color-code: from #39ADB5 r g b;
+--color-code-dark: from #89DDFF r g b;"> "</span><span style="--color-code: from #91B859 r g b;
+--color-code-dark: from #C3E88D r g b;">$@nanarino/stylus</span><span style="--color-code: from #39ADB5 r g b;
+--color-code-dark: from #89DDFF r g b;">"</span><span style="--color-code: from #39ADB5 r g b;
+--color-code-dark: from #89DDFF r g b;">,</span></span>
+<span class="line"><span style="--color-code: from #39ADB5 r g b;
+--color-code-dark: from #89DDFF r g b;">        }</span></span>
+<span class="line"><span style="--color-code: from #39ADB5 r g b;
+--color-code-dark: from #89DDFF r g b;">    }</span></span>
+<span class="line"><span style="--color-code: from #39ADB5 r g b;
+--color-code-dark: from #89DDFF r g b;">}</span></span></code></pre></section> <section class="na-watermark" data-astro-cid-ijmigw7p><pre class="na-pre" tabindex="0" data-astro-cid-ijmigw7p data-language="shell"><code class="na-code"><span class="line"><span style="--color-code: from #E2931D r g b;
+--color-code-dark: from #FFCB6B r g b;">pnpm</span><span style="--color-code: from #91B859 r g b;
+--color-code-dark: from #C3E88D r g b;"> update</span><span style="--color-code: from #91B859 r g b;
+--color-code-dark: from #C3E88D r g b;"> @nanarino/vue</span></span></code></pre></section> <p class="na-paragraph" data-astro-cid-sksvxoln>直接從源程式碼引入</p> <section class="na-watermark" data-astro-cid-ijmigw7p><pre class="na-pre" tabindex="0" data-astro-cid-ijmigw7p data-language="vue"><code class="na-code"><span class="line"><span style="--color-code: from #39ADB5 r g b;
+--color-code-dark: from #89DDFF r g b;">&#x3C;</span><span style="--color-code: from #E53935 r g b;
+--color-code-dark: from #F07178 r g b;">script</span><span style="--color-code: from #9C3EDA r g b;
+--color-code-dark: from #C792EA r g b;"> setup</span><span style="--color-code: from #9C3EDA r g b;
+--color-code-dark: from #C792EA r g b;"> lang</span><span style="--color-code: from #39ADB5 r g b;
+--color-code-dark: from #89DDFF r g b;">=</span><span style="--color-code: from #39ADB5 r g b;
+--color-code-dark: from #89DDFF r g b;">"</span><span style="--color-code: from #91B859 r g b;
+--color-code-dark: from #C3E88D r g b;">ts</span><span style="--color-code: from #39ADB5 r g b;
+--color-code-dark: from #89DDFF r g b;">"</span><span style="--color-code: from #39ADB5 r g b;
+--color-code-dark: from #89DDFF r g b;">></span></span>
+<span class="line diff add"><span style="--color-code: from #39ADB5 r g b;
+--color-code-dark: from #89DDFF r g b;">import</span><span style="--color-code: from #90A4AE r g b;
+--color-code-dark: from #EEFFFF r g b;"> Button </span><span style="--color-code: from #39ADB5 r g b;
+--color-code-dark: from #89DDFF r g b;">from</span><span style="--color-code: from #39ADB5 r g b;
+--color-code-dark: from #89DDFF r g b;"> "</span><span style="--color-code: from #91B859 r g b;
+--color-code-dark: from #C3E88D r g b;">@nanarino/vue/src/lib/Button</span><span style="--color-code: from #39ADB5 r g b;
+--color-code-dark: from #89DDFF r g b;">"</span></span>
+<span class="line"><span style="--color-code: from #39ADB5 r g b;
+--color-code-dark: from #89DDFF r g b;">&#x3C;/</span><span style="--color-code: from #E53935 r g b;
+--color-code-dark: from #F07178 r g b;">script</span><span style="--color-code: from #39ADB5 r g b;
+--color-code-dark: from #89DDFF r g b;">></span></span>
+<span class="line"><span style="--color-code: from #39ADB5 r g b;
+--color-code-dark: from #89DDFF r g b;">&#x3C;</span><span style="--color-code: from #E53935 r g b;
+--color-code-dark: from #F07178 r g b;">template</span><span style="--color-code: from #39ADB5 r g b;
+--color-code-dark: from #89DDFF r g b;">></span></span>
+<span class="line diff add"><span style="--color-code: from #39ADB5 r g b;
+--color-code-dark: from #89DDFF r g b;">    &#x3C;</span><span style="--color-code: from #E53935 r g b;
+--color-code-dark: from #F07178 r g b;">Button</span><span style="--color-code: from #39ADB5 r g b;
+--color-code-dark: from #89DDFF r g b;">></span><span style="--color-code: from #90A4AE r g b;
+--color-code-dark: from #EEFFFF r g b;"> HOLA </span><span style="--color-code: from #39ADB5 r g b;
+--color-code-dark: from #89DDFF r g b;">&#x3C;/</span><span style="--color-code: from #E53935 r g b;
+--color-code-dark: from #F07178 r g b;">Button</span><span style="--color-code: from #39ADB5 r g b;
+--color-code-dark: from #89DDFF r g b;">></span></span>
+<span class="line"><span style="--color-code: from #39ADB5 r g b;
+--color-code-dark: from #89DDFF r g b;">&#x3C;/</span><span style="--color-code: from #E53935 r g b;
+--color-code-dark: from #F07178 r g b;">template</span><span style="--color-code: from #39ADB5 r g b;
+--color-code-dark: from #89DDFF r g b;">></span></span></code></pre></section>  </main>   <footer class="na-layout-footer" data-astro-cid-iravouwq>
+&nbsp; &nbsp; &nbsp; 由
+<a class="na-link" href="https://astro.build" target="_blank" data-astro-cid-iravouwq>Astro v5.16.6</a>
+構建 &nbsp;
+<a class="na-link" title="github" href="https://github.com/nanarino/vue" target="_blank" data-astro-cid-iravouwq><iconify-icon icon="octicon:mark-github-16" style="display:inline-flex" data-astro-cid-iravouwq="true"></iconify-icon><i style="font-size:0" data-astro-cid-iravouwq>github</i></a></footer> </body></html> 
