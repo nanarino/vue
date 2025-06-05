@@ -1,0 +1,5 @@
+function e(e){return new Promise(t=>setTimeout(t,e))}var t=new class{queue;constructor(e=document.body){this.reset(e)}reset(e=document.body){this.queue?.remove(),this.queue=document.createElement(`div`),this.queue.className=`na-message-queue`,e.append(this.queue)}async emit(t){let n=document.createElement(`div`),r=2e3,i=``,a={},o=t??`☘`;if(typeof o!=`string`&&(r=o.duration??2e3,i=`${o.primary??``}`,a=o.style??{},o=`${o.content??`☘`}`),n.innerHTML=`
+            <div class="na-message">
+                <p class="na-paragraph">${o}</p>
+            </div>
+        `,i){let e=n.firstElementChild;e.dataset.primary=i,Object.entries(a).map(t=>e.style.setProperty(...t))}this.queue.appendChild(n),n.style.height=`${n.offsetHeight}px`,n.style.transition=`opacity 1s, height 2s`,await e(r),n.style.opacity=`0`,n.style.height=`0`,await e(2e3),this.queue.removeChild(n)}},n=(...e)=>t.emit(...e);export{n,t};

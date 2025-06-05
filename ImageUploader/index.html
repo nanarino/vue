@@ -1,0 +1,499 @@
+<!DOCTYPE html><html lang="zh-TW" data-astro-cid-mhhjvrox><head><meta charset="UTF-8"><title>相片上傳</title><meta name="generator" content="Astro v7.3.8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" type="image/svg+xml" href="/vue/clover.svg"><script fetchpriority="high" src="data:text/javascript;base64,InVzZSBzdHJpY3QiO3ZhciBlO2U9WyJkYXJrIiwibGlnaHQiXSx3aW5kb3cuaGFzT3duUHJvcGVydHkoInRoZW1lIil8fE9iamVjdC5kZWZpbmVQcm9wZXJ0eSh3aW5kb3csInRoZW1lIix7Z2V0OigpPT5sb2NhbFN0b3JhZ2UuZ2V0SXRlbSgidGhlbWUiKT8/ZVsrIXdpbmRvdy5tYXRjaE1lZGlhPy4oIihwcmVmZXJzLWNvbG9yLXNjaGVtZTogZGFyaykiKT8ubWF0Y2hlc119KSxkb2N1bWVudC5kb2N1bWVudEVsZW1lbnQuZGF0YXNldC50aGVtZT13aW5kb3cudGhlbWU7Ly8jIHNvdXJjZU1hcHBpbmdVUkw9aW5kZXguanMubWFw"></script><meta name="astro-view-transitions-enabled" content="true"><meta name="astro-view-transitions-fallback" content="animate"><script type="module" src="/vue/_astro/ClientRouter.astro_astro_type_script_index_0_lang.BDCjmQ8c.js"></script><link rel="stylesheet" href="/vue/_astro/AlibabaSansHK-55.e7QBGz4U.css" data-nanarino-lit-provide onload="document.documentElement.style.setProperty('--font-family-base', 'AlibabaSansHK-55')"><link rel="stylesheet" href="/vue/_astro/400.Bwy7poBu.css" data-nanarino-lit-provide onload="document.documentElement.style.setProperty('--font-family-mono', 'JetBrains Mono')"><script type="module">document.addEventListener(`astro:after-swap`,()=>{let e=document.documentElement;e.style.setProperty(`--font-family-base`,`AlibabaSansHK-55`),e.style.setProperty(`--font-family-mono`,`JetBrains Mono`)});</script><script src="/vue/_astro/iconify-icon.min.D2vAPERS.js"></script><script type="module" src="/vue/_astro/app.astro_astro_type_script_index_0_lang.BdiIpx2T.js"></script><style>section[data-astro-cid-y4fgfm3m]{padding:1rem}
+</style><link rel="stylesheet" href="/vue/_astro/app.WtHikDRE.css"><style>.na-image-uploader{&[data-v-568474fb]{grid-template-columns:repeat(5,1fr);gap:16px;display:grid}@media screen and (width<=1650px) and (width>=1024px){&[data-v-568474fb]{grid-template-columns:repeat(3,1fr)}}@media screen and (width>=1024px){&[data-v-568474fb]{max-width:calc(100vw - var(--max-width-code-aside,540px))}}@media screen and (width<=876px){&[data-v-568474fb]{grid-template-columns:repeat(3,1fr)}}@media screen and (width<=540px){&[data-v-568474fb]{grid-template-columns:1fr 1fr}}@media screen and (width<=360px){&[data-v-568474fb]{grid-template-columns:1fr}}& .na-image[data-v-568474fb]{aspect-ratio:1;border-radius:var(--border-radius-md)}}.icon[data-v-568474fb] svg{width:1em;height:1em}form[data-v-55915d00]{margin:2em}
+button{&[data-v-92ef248d]{--hue-primary:328 / .5;mix-blend-mode:difference;backdrop-filter:blur(8px);z-index:9;--padding-horizontal-button:16px;display:grid;position:fixed;bottom:16px;right:16px}& iconify-icon[data-v-92ef248d]{grid-area:1/1/2/2;font-size:24px;transition:opacity .3s}}:root[data-theme=light] button iconify-icon[data-v-92ef248d]:first-child,:root[data-theme=dark] button iconify-icon[data-v-92ef248d]:last-child{opacity:0}
+</style></head><body data-astro-cid-mhhjvrox><style>astro-island,astro-slot,astro-static-slot{display:contents}</style><script>(function(){let e=async e=>{await(await e())()};(self.Astro||(self.Astro={})).only=e,window.dispatchEvent(new Event(`astro:only`))})();</script><script>(function(){function e(t){"@babel/helpers - typeof";return e=typeof Symbol==`function`&&typeof Symbol.iterator==`symbol`?function(e){return typeof e}:function(e){return e&&typeof Symbol==`function`&&e.constructor===Symbol&&e!==Symbol.prototype?`symbol`:typeof e},e(t)}function t(t,n){if(e(t)!=`object`||!t)return t;var r=t[Symbol.toPrimitive];if(r!==void 0){var i=r.call(t,n||`default`);if(e(i)!=`object`)return i;throw TypeError(`@@toPrimitive must return a primitive value.`)}return(n===`string`?String:Number)(t)}function n(n){var r=t(n,`string`);return e(r)==`symbol`?r:r+``}function r(e,t,r){return(t=n(t))in e?Object.defineProperty(e,t,{value:r,enumerable:!0,configurable:!0,writable:!0}):e[t]=r,e}let i=/* @__PURE__ */ new Set([`__proto__`,`constructor`,`prototype`]);{let e={0:e=>a(e),1:e=>n(e),2:e=>new RegExp(e),3:e=>new Date(e),4:e=>new Map(n(e)),5:e=>new Set(n(e)),6:e=>BigInt(e),7:e=>new URL(e),8:e=>new Uint8Array(e),9:e=>new Uint16Array(e),10:e=>new Uint32Array(e),11:e=>1/0*e},t=t=>{let[n,r]=t;return n in e?e[n](r):void 0},n=e=>e.map(t),a=e=>typeof e!=`object`||!e?e:Object.fromEntries(Object.entries(e).map(([e,n])=>[e,t(n)]));class o extends HTMLElement{constructor(...e){super(...e),r(this,`Component`,void 0),r(this,`hydrator`,void 0),r(this,`hydrate`,async()=>{var e;if(!this.hydrator||!this.isConnected)return;let t=(e=this.parentElement)==null?void 0:e.closest(`astro-island[ssr]`);if(t){t.addEventListener(`astro:hydrate`,this.hydrate,{once:!0});return}let n=this.querySelectorAll(`astro-slot`),r={},i=this.querySelectorAll(`template[data-astro-template]`);for(let e of i){let t=e.closest(this.tagName);t!=null&&t.isSameNode(this)&&(r[e.getAttribute(`data-astro-template`)||`default`]=e.innerHTML,e.remove())}for(let e of n){let t=e.closest(this.tagName);t!=null&&t.isSameNode(this)&&(r[e.getAttribute(`name`)||`default`]=e.innerHTML)}let o;try{o=this.hasAttribute(`props`)?a(JSON.parse(this.getAttribute(`props`))):{}}catch(e){let t=this.getAttribute(`component-url`)||`<unknown>`,n=this.getAttribute(`component-export`);throw n&&(t+=` (export ${n})`),console.error(`[hydrate] Error parsing props for component ${t}`,this.getAttribute(`props`),e),e}await this.hydrator(this)(this.Component,o,r,{client:this.getAttribute(`client`)}),this.removeAttribute(`ssr`),this.dispatchEvent(new CustomEvent(`astro:hydrate`))}),r(this,`unmount`,()=>{this.isConnected||this.dispatchEvent(new CustomEvent(`astro:unmount`))})}disconnectedCallback(){document.removeEventListener(`astro:after-swap`,this.unmount),document.addEventListener(`astro:after-swap`,this.unmount,{once:!0})}connectedCallback(){if(!this.hasAttribute(`await-children`)||document.readyState===`interactive`||document.readyState===`complete`)this.childrenConnectedCallback();else{let e=()=>{document.removeEventListener(`DOMContentLoaded`,e),t.disconnect(),this.childrenConnectedCallback()},t=new MutationObserver(()=>{var t;((t=this.lastChild)==null?void 0:t.nodeType)===Node.COMMENT_NODE&&this.lastChild.nodeValue===`astro:end`&&(this.lastChild.remove(),e())});t.observe(this,{childList:!0}),document.addEventListener(`DOMContentLoaded`,e)}}async childrenConnectedCallback(){let e=this.getAttribute(`before-hydration-url`);e&&await import(e),this.start()}getRetryImportUrl(e){let t=new URL(e,document.baseURI);return t.searchParams.set(`astro-retry`,Date.now().toString()),t.toString()}async importWithRetry(e){try{return await import(e)}catch(t){return await new Promise(e=>setTimeout(e,1e3)),import(this.getRetryImportUrl(e))}}handleHydrationError(e){let t=this.getAttribute(`component-url`),n=new CustomEvent(`astro:hydration-error`,{cancelable:!0,bubbles:!0,composed:!0,detail:{error:e,componentUrl:t}});this.dispatchEvent(n)&&console.error(`[astro-island] Error hydrating ${t}`,e)}async start(){let e=JSON.parse(this.getAttribute(`opts`)),t=this.getAttribute(`client`);if(Astro[t]===void 0){window.addEventListener(`astro:${t}`,()=>this.start(),{once:!0});return}try{await Astro[t](async()=>{let e=this.getAttribute(`renderer-url`);try{let[t,{default:n}]=await Promise.all([this.importWithRetry(this.getAttribute(`component-url`)),e?this.importWithRetry(e):Promise.resolve({default:()=>()=>{}})]),r=this.getAttribute(`component-export`)||`default`;if(r.includes(`.`)){this.Component=t;for(let e of r.split(`.`)){if(i.has(e)||!this.Component||typeof this.Component!=`object`&&typeof this.Component!=`function`||!Object.hasOwn(this.Component,e))throw Error(`Invalid component export path: ${r}`);this.Component=this.Component[e]}}else{if(i.has(r))throw Error(`Invalid component export path: ${r}`);this.Component=t[r]}return this.hydrator=n,this.hydrate}catch(e){return this.handleHydrationError(e),()=>{}}},e,this)}catch(e){this.handleHydrationError(e)}}attributeChangedCallback(){this.hydrate()}}r(o,`observedAttributes`,[`props`]),customElements.get(`astro-island`)||customElements.define(`astro-island`,o)}})();</script><astro-island uid="Z2asyXg" component-url="/vue/_astro/index.DOxsCR8o.js" component-export="default" renderer-url="/vue/_astro/client.6AjYaC3d.js" props="{&quot;data-astro-cid-mhhjvrox&quot;:[0,true]}" ssr client="only" opts="{&quot;name&quot;:&quot;ThemeToggle&quot;,&quot;value&quot;:&quot;vue&quot;}"></astro-island><section data-astro-cid-y4fgfm3m><astro-island uid="ZBLWxl" component-url="/vue/_astro/ImageUploader.spec.Nem6Vg0Z.js" component-export="default" renderer-url="/vue/_astro/client.6AjYaC3d.js" props="{&quot;data-astro-cid-y4fgfm3m&quot;:[0,true]}" ssr client="only" opts="{&quot;name&quot;:&quot;ImageUploaderSpec&quot;,&quot;value&quot;:&quot;vue&quot;}"></astro-island></section><aside data-astro-cid-4p4pvbuj><section class="na-watermark" data-astro-cid-4p4pvbuj><pre class="na-pre na-pre-components-spec" tabindex="0" data-astro-cid-4p4pvbuj data-language="astro"><code class="na-code"><span class="line"><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">&#x3C;</span><span style="--color-code: from #E53935 l c h;
+--color-code-dark: from #F07178 l c h;">script</span><span style="--color-code: from #9C3EDA l c h;
+--color-code-dark: from #C792EA l c h;"> setup</span><span style="--color-code: from #9C3EDA l c h;
+--color-code-dark: from #C792EA l c h;"> lang</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">=</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">"</span><span style="--color-code: from #91B859 l c h;
+--color-code-dark: from #C3E88D l c h;">ts</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">"</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">></span></span>
+<span class="line"><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">import</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;"> {</span><span style="--color-code: from #90A4AE l c h;
+--color-code-dark: from #EEFFFF l c h;"> shallowRef</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">,</span><span style="--color-code: from #90A4AE l c h;
+--color-code-dark: from #EEFFFF l c h;"> useTemplateRef</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">,</span><span style="--color-code: from #90A4AE l c h;
+--color-code-dark: from #EEFFFF l c h;"> ref</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">,</span><span style="--color-code: from #90A4AE l c h;
+--color-code-dark: from #EEFFFF l c h;"> h</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;"> }</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;"> from</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;"> "</span><span style="--color-code: from #91B859 l c h;
+--color-code-dark: from #C3E88D l c h;">vue</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">"</span></span>
+<span class="line"><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">import</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;"> {</span><span style="--color-code: from #90A4AE l c h;
+--color-code-dark: from #EEFFFF l c h;"> ImageUploader</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">,</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;"> type</span><span style="--color-code: from #90A4AE l c h;
+--color-code-dark: from #EEFFFF l c h;"> Image</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;"> }</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;"> from</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;"> "</span><span style="--color-code: from #91B859 l c h;
+--color-code-dark: from #C3E88D l c h;">@/lib/ImageUploader</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">"</span></span>
+<span class="line"><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">import</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;"> {</span><span style="--color-code: from #90A4AE l c h;
+--color-code-dark: from #EEFFFF l c h;"> message</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;"> }</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;"> from</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;"> "</span><span style="--color-code: from #91B859 l c h;
+--color-code-dark: from #C3E88D l c h;">@/scripts/client/message</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">"</span></span>
+<span class="line"></span>
+<span class="line"><span style="--color-code: from #9C3EDA l c h;
+--color-code-dark: from #C792EA l c h;">const</span><span style="--color-code: from #90A4AE l c h;
+--color-code-dark: from #EEFFFF l c h;"> imgs </span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">=</span><span style="--color-code: from #6182B8 l c h;
+--color-code-dark: from #82AAFF l c h;"> shallowRef</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">&#x3C;</span><span style="--color-code: from #E2931D l c h;
+--color-code-dark: from #FFCB6B l c h;">Image</span><span style="--color-code: from #90A4AE l c h;
+--color-code-dark: from #EEFFFF l c h;">[]</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">></span><span style="--color-code: from #90A4AE l c h;
+--color-code-dark: from #EEFFFF l c h;">([])</span></span>
+<span class="line"><span style="--color-code: from #9C3EDA l c h;
+--color-code-dark: from #C792EA l c h;">const</span><span style="--color-code: from #90A4AE l c h;
+--color-code-dark: from #EEFFFF l c h;"> ImageUploaderRef </span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">=</span><span style="--color-code: from #6182B8 l c h;
+--color-code-dark: from #82AAFF l c h;"> useTemplateRef</span><span style="--color-code: from #90A4AE l c h;
+--color-code-dark: from #EEFFFF l c h;">(</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">"</span><span style="--color-code: from #91B859 l c h;
+--color-code-dark: from #C3E88D l c h;">ImageUploaderRef</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">"</span><span style="--color-code: from #90A4AE l c h;
+--color-code-dark: from #EEFFFF l c h;">)</span></span>
+<span class="line"></span>
+<span class="line"><span style="--color-code: from #90A4AE l c h;
+--color-code-dark: from #545454 l c h;">// 自訂圖示</span></span>
+<span class="line"><span style="--color-code: from #9C3EDA l c h;
+--color-code-dark: from #C792EA l c h;">const</span><span style="--color-code: from #90A4AE l c h;
+--color-code-dark: from #EEFFFF l c h;"> renderAppendIcon </span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">=</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;"> ()</span><span style="--color-code: from #9C3EDA l c h;
+--color-code-dark: from #C792EA l c h;"> =></span><span style="--color-code: from #6182B8 l c h;
+--color-code-dark: from #82AAFF l c h;"> h</span><span style="--color-code: from #90A4AE l c h;
+--color-code-dark: from #EEFFFF l c h;">(</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">"</span><span style="--color-code: from #91B859 l c h;
+--color-code-dark: from #C3E88D l c h;">iconify-icon</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">"</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">,</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;"> {</span><span style="--color-code: from #E53935 l c h;
+--color-code-dark: from #F07178 l c h;"> icon</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">:</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;"> "</span><span style="--color-code: from #91B859 l c h;
+--color-code-dark: from #C3E88D l c h;">line-md:plus</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">"</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;"> }</span><span style="--color-code: from #90A4AE l c h;
+--color-code-dark: from #EEFFFF l c h;">)</span></span>
+<span class="line"><span style="--color-code: from #9C3EDA l c h;
+--color-code-dark: from #C792EA l c h;">const</span><span style="--color-code: from #90A4AE l c h;
+--color-code-dark: from #EEFFFF l c h;"> renderRemoveIcon </span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">=</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;"> ()</span><span style="--color-code: from #9C3EDA l c h;
+--color-code-dark: from #C792EA l c h;"> =></span><span style="--color-code: from #6182B8 l c h;
+--color-code-dark: from #82AAFF l c h;"> h</span><span style="--color-code: from #90A4AE l c h;
+--color-code-dark: from #EEFFFF l c h;">(</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">"</span><span style="--color-code: from #91B859 l c h;
+--color-code-dark: from #C3E88D l c h;">iconify-icon</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">"</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">,</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;"> {</span><span style="--color-code: from #E53935 l c h;
+--color-code-dark: from #F07178 l c h;"> icon</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">:</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;"> "</span><span style="--color-code: from #91B859 l c h;
+--color-code-dark: from #C3E88D l c h;">line-md:remove</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">"</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;"> }</span><span style="--color-code: from #90A4AE l c h;
+--color-code-dark: from #EEFFFF l c h;">)</span></span>
+<span class="line"></span>
+<span class="line"><span style="--color-code: from #9C3EDA l c h;
+--color-code-dark: from #C792EA l c h;">const</span><span style="--color-code: from #90A4AE l c h;
+--color-code-dark: from #EEFFFF l c h;"> change </span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">=</span><span style="--color-code: from #9C3EDA l c h;
+--color-code-dark: from #C792EA l c h;"> async</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;"> (</span><span style="--color-code: from #90A4AE l c h;
+--color-code-dark: from #EEFFFF l c h;">item</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">:</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;"> {</span></span>
+<span class="line"><span style="--color-code: from #E53935 l c h;
+--color-code-dark: from #F07178 l c h;">    images</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">:</span><span style="--color-code: from #E2931D l c h;
+--color-code-dark: from #FFCB6B l c h;"> Image</span><span style="--color-code: from #90A4AE l c h;
+--color-code-dark: from #EEFFFF l c h;">[]</span></span>
+<span class="line"><span style="--color-code: from #E53935 l c h;
+--color-code-dark: from #F07178 l c h;">    action</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">:</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;"> "</span><span style="--color-code: from #91B859 l c h;
+--color-code-dark: from #C3E88D l c h;">append</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">"</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;"> |</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;"> "</span><span style="--color-code: from #91B859 l c h;
+--color-code-dark: from #C3E88D l c h;">remove</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">"</span></span>
+<span class="line"><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">})</span><span style="--color-code: from #9C3EDA l c h;
+--color-code-dark: from #C792EA l c h;"> =></span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;"> {</span></span>
+<span class="line"><span style="--color-code: from #90A4AE l c h;
+--color-code-dark: from #EEFFFF l c h;">    console</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">.</span><span style="--color-code: from #6182B8 l c h;
+--color-code-dark: from #82AAFF l c h;">log</span><span style="--color-code: from #E53935 l c h;
+--color-code-dark: from #F07178 l c h;">(</span><span style="--color-code: from #90A4AE l c h;
+--color-code-dark: from #EEFFFF l c h;">item</span><span style="--color-code: from #E53935 l c h;
+--color-code-dark: from #F07178 l c h;">)</span></span>
+<span class="line"><span style="--color-code: from #90A4AE l c h;
+--color-code-dark: from #EEFFFF l c h;">    console</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">.</span><span style="--color-code: from #6182B8 l c h;
+--color-code-dark: from #82AAFF l c h;">log</span><span style="--color-code: from #E53935 l c h;
+--color-code-dark: from #F07178 l c h;">(</span><span style="--color-code: from #90A4AE l c h;
+--color-code-dark: from #EEFFFF l c h;">ImageUploaderRef</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">.</span><span style="--color-code: from #90A4AE l c h;
+--color-code-dark: from #EEFFFF l c h;">value</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">?.</span><span style="--color-code: from #90A4AE l c h;
+--color-code-dark: from #EEFFFF l c h;">size</span><span style="--color-code: from #E53935 l c h;
+--color-code-dark: from #F07178 l c h;">)</span></span>
+<span class="line"><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="--color-code: from #90A4AE l c h;
+--color-code-dark: from #545454 l c h;">// 初始相片</span></span>
+<span class="line"><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">void</span><span style="--color-code: from #90A4AE l c h;
+--color-code-dark: from #EEFFFF l c h;"> (</span><span style="--color-code: from #9C3EDA l c h;
+--color-code-dark: from #C792EA l c h;">async</span><span style="--color-code: from #9C3EDA l c h;
+--color-code-dark: from #C792EA l c h;"> function</span><span style="--color-code: from #6182B8 l c h;
+--color-code-dark: from #82AAFF l c h;"> init</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">()</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;"> {</span></span>
+<span class="line"><span style="--color-code: from #9C3EDA l c h;
+--color-code-dark: from #C792EA l c h;">    const</span><span style="--color-code: from #90A4AE l c h;
+--color-code-dark: from #EEFFFF l c h;"> res</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;"> =</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;"> await</span><span style="--color-code: from #6182B8 l c h;
+--color-code-dark: from #82AAFF l c h;"> fetch</span><span style="--color-code: from #E53935 l c h;
+--color-code-dark: from #F07178 l c h;">(</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">`${</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">import</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">.</span><span style="--color-code: from #90A4AE l c h;
+--color-code-dark: from #EEFFFF l c h;">meta</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">.</span><span style="--color-code: from #90A4AE l c h;
+--color-code-dark: from #EEFFFF l c h;">env</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">.</span><span style="--color-code: from #90A4AE l c h;
+--color-code-dark: from #EEFFFF l c h;">BASE_URL</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">}</span><span style="--color-code: from #91B859 l c h;
+--color-code-dark: from #C3E88D l c h;">images/IMG_2568.json</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">`</span><span style="--color-code: from #E53935 l c h;
+--color-code-dark: from #F07178 l c h;">)</span></span>
+<span class="line"><span style="--color-code: from #9C3EDA l c h;
+--color-code-dark: from #C792EA l c h;">    const</span><span style="--color-code: from #90A4AE l c h;
+--color-code-dark: from #EEFFFF l c h;"> IMG_2568</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;"> =</span><span style="--color-code: from #E53935 l c h;
+--color-code-dark: from #F07178 l c h;"> (</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">await</span><span style="--color-code: from #90A4AE l c h;
+--color-code-dark: from #EEFFFF l c h;"> res</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">.</span><span style="--color-code: from #6182B8 l c h;
+--color-code-dark: from #82AAFF l c h;">json</span><span style="--color-code: from #E53935 l c h;
+--color-code-dark: from #F07178 l c h;">()) </span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">as</span><span style="--color-code: from #E2931D l c h;
+--color-code-dark: from #FFCB6B l c h;"> Image</span></span>
+<span class="line"><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">    if</span><span style="--color-code: from #E53935 l c h;
+--color-code-dark: from #F07178 l c h;"> (</span><span style="--color-code: from #90A4AE l c h;
+--color-code-dark: from #EEFFFF l c h;">IMG_2568</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">.</span><span style="--color-code: from #90A4AE l c h;
+--color-code-dark: from #EEFFFF l c h;">url</span><span style="--color-code: from #E53935 l c h;
+--color-code-dark: from #F07178 l c h;">)</span></span>
+<span class="line"><span style="--color-code: from #90A4AE l c h;
+--color-code-dark: from #EEFFFF l c h;">        IMG_2568</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">.</span><span style="--color-code: from #90A4AE l c h;
+--color-code-dark: from #EEFFFF l c h;">url</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;"> =</span><span style="--color-code: from #90A4AE l c h;
+--color-code-dark: from #EEFFFF l c h;"> IMG_2568</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">.</span><span style="--color-code: from #90A4AE l c h;
+--color-code-dark: from #EEFFFF l c h;">url</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">.</span><span style="--color-code: from #6182B8 l c h;
+--color-code-dark: from #82AAFF l c h;">replace</span><span style="--color-code: from #E53935 l c h;
+--color-code-dark: from #F07178 l c h;">(</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">/</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">^</span><span style="--color-code: from #90A4AE l c h;
+--color-code-dark: from #EEFFFF l c h;">\/</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">/</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">,</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;"> import</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">.</span><span style="--color-code: from #90A4AE l c h;
+--color-code-dark: from #EEFFFF l c h;">meta</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">.</span><span style="--color-code: from #90A4AE l c h;
+--color-code-dark: from #EEFFFF l c h;">env</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">.</span><span style="--color-code: from #90A4AE l c h;
+--color-code-dark: from #EEFFFF l c h;">BASE_URL</span><span style="--color-code: from #E53935 l c h;
+--color-code-dark: from #F07178 l c h;">)</span></span>
+<span class="line"><span style="--color-code: from #90A4AE l c h;
+--color-code-dark: from #EEFFFF l c h;">    imgs</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">.</span><span style="--color-code: from #90A4AE l c h;
+--color-code-dark: from #EEFFFF l c h;">value</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;"> =</span><span style="--color-code: from #E53935 l c h;
+--color-code-dark: from #F07178 l c h;"> [</span><span style="--color-code: from #90A4AE l c h;
+--color-code-dark: from #EEFFFF l c h;">IMG_2568</span><span style="--color-code: from #E53935 l c h;
+--color-code-dark: from #F07178 l c h;">]</span></span>
+<span class="line"><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">}</span><span style="--color-code: from #90A4AE l c h;
+--color-code-dark: from #EEFFFF l c h;">)()</span></span>
+<span class="line"></span>
+<span class="line"><span style="--color-code: from #90A4AE l c h;
+--color-code-dark: from #545454 l c h;">// 測試 `v-if`</span></span>
+<span class="line"><span style="--color-code: from #9C3EDA l c h;
+--color-code-dark: from #C792EA l c h;">const</span><span style="--color-code: from #90A4AE l c h;
+--color-code-dark: from #EEFFFF l c h;"> hidden </span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">=</span><span style="--color-code: from #6182B8 l c h;
+--color-code-dark: from #82AAFF l c h;"> ref</span><span style="--color-code: from #90A4AE l c h;
+--color-code-dark: from #EEFFFF l c h;">(</span><span style="--color-code: from #FF5370 l c h;
+--color-code-dark: from #FF9CAC l c h;">false</span><span style="--color-code: from #90A4AE l c h;
+--color-code-dark: from #EEFFFF l c h;">)</span></span>
+<span class="line"><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">&#x3C;/</span><span style="--color-code: from #E53935 l c h;
+--color-code-dark: from #F07178 l c h;">script</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">></span></span>
+<span class="line"><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">&#x3C;</span><span style="--color-code: from #E53935 l c h;
+--color-code-dark: from #F07178 l c h;">template</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">></span></span>
+<span class="line"><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">    &#x3C;</span><span style="--color-code: from #E53935 l c h;
+--color-code-dark: from #F07178 l c h;">main</span><span style="--color-code: from #9C3EDA l c h;
+--color-code-dark: from #C792EA l c h;"> style</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">=</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">"</span><span style="--color-code: from #91B859 l c h;
+--color-code-dark: from #C3E88D l c h;">display: contents</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">"</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">></span></span>
+<span class="line"><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">        &#x3C;</span><span style="--color-code: from #E2931D l c h;
+--color-code-dark: from #FFCB6B l c h;">ImageUploader</span></span>
+<span class="line"><span style="--color-code: from #9C3EDA l c h;
+--color-code-dark: from #C792EA l c h;">            v-if</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">=</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">"</span><span style="--color-code: from #91B859 l c h;
+--color-code-dark: from #C3E88D l c h;">!hidden</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">"</span></span>
+<span class="line"><span style="--color-code: from #9C3EDA l c h;
+--color-code-dark: from #C792EA l c h;">            v-model</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">=</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">"</span><span style="--color-code: from #91B859 l c h;
+--color-code-dark: from #C3E88D l c h;">imgs</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">"</span></span>
+<span class="line"><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">            :</span><span style="--color-code: from #9C3EDA l c h;
+--color-code-dark: from #C792EA l c h;">limit</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">=</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">"</span><span style="--color-code: from #91B859 l c h;
+--color-code-dark: from #C3E88D l c h;">9</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">"</span></span>
+<span class="line"><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">            :</span><span style="--color-code: from #9C3EDA l c h;
+--color-code-dark: from #C792EA l c h;">accept</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">=</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">"</span><span style="--color-code: from #91B859 l c h;
+--color-code-dark: from #C3E88D l c h;">[`image/gif`, `image/jpeg`, `image/png`]</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">"</span></span>
+<span class="line"><span style="--color-code: from #9C3EDA l c h;
+--color-code-dark: from #C792EA l c h;">            ref</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">=</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">"</span><span style="--color-code: from #91B859 l c h;
+--color-code-dark: from #C3E88D l c h;">ImageUploaderRef</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">"</span></span>
+<span class="line"><span style="--color-code: from #9C3EDA l c h;
+--color-code-dark: from #C792EA l c h;">            @change</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">=</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">"</span><span style="--color-code: from #91B859 l c h;
+--color-code-dark: from #C3E88D l c h;">change</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">"</span></span>
+<span class="line"><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">            :</span><span style="--color-code: from #9C3EDA l c h;
+--color-code-dark: from #C792EA l c h;">render-append-icon</span></span>
+<span class="line"><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">            :</span><span style="--color-code: from #9C3EDA l c h;
+--color-code-dark: from #C792EA l c h;">render-remove-icon</span></span>
+<span class="line"><span style="--color-code: from #9C3EDA l c h;
+--color-code-dark: from #C792EA l c h;">            @over-limit</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">=</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">"</span><span style="--color-code: from #91B859 l c h;
+--color-code-dark: from #C3E88D l c h;">message({ content: `最多9張`, primary: `danger` })</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">"</span></span>
+<span class="line"><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">        /></span></span>
+<span class="line"><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">        &#x3C;</span><span style="--color-code: from #E53935 l c h;
+--color-code-dark: from #F07178 l c h;">p</span><span style="--color-code: from #9C3EDA l c h;
+--color-code-dark: from #C792EA l c h;"> class</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">=</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">"</span><span style="--color-code: from #91B859 l c h;
+--color-code-dark: from #C3E88D l c h;">na-paragraph na-font-mono</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">"</span><span style="--color-code: from #9C3EDA l c h;
+--color-code-dark: from #C792EA l c h;"> data-has-indent</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">></span></span>
+<span class="line"><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">            {{</span><span style="--color-code: from #90A4AE l c h;
+--color-code-dark: from #EEFFFF l c h;"> imgs.map((</span><span style="--color-code: from #E53935 l c h;
+--color-code-dark: from #F07178 l c h;">x</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">:</span><span style="--color-code: from #90A4AE l c h;
+--color-code-dark: from #EEFFFF l c h;"> Image) </span><span style="--color-code: from #9C3EDA l c h;
+--color-code-dark: from #C792EA l c h;">=></span><span style="--color-code: from #90A4AE l c h;
+--color-code-dark: from #EEFFFF l c h;"> x</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">.</span><span style="--color-code: from #90A4AE l c h;
+--color-code-dark: from #EEFFFF l c h;">name) </span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">}}</span></span>
+<span class="line"><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">        &#x3C;/</span><span style="--color-code: from #E53935 l c h;
+--color-code-dark: from #F07178 l c h;">p</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">></span></span>
+<span class="line"><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">        &#x3C;</span><span style="--color-code: from #E53935 l c h;
+--color-code-dark: from #F07178 l c h;">form</span><span style="--color-code: from #9C3EDA l c h;
+--color-code-dark: from #C792EA l c h;"> onsubmit</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">=</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">"</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">return</span><span style="--color-code: from #FF5370 l c h;
+--color-code-dark: from #FF9CAC l c h;"> false</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">"</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">></span></span>
+<span class="line"><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">            &#x3C;</span><span style="--color-code: from #E53935 l c h;
+--color-code-dark: from #F07178 l c h;">label</span><span style="--color-code: from #9C3EDA l c h;
+--color-code-dark: from #C792EA l c h;"> class</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">=</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">"</span><span style="--color-code: from #91B859 l c h;
+--color-code-dark: from #C3E88D l c h;">na-form-item</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">"</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">></span></span>
+<span class="line"><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">                &#x3C;</span><span style="--color-code: from #E53935 l c h;
+--color-code-dark: from #F07178 l c h;">span</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">></span><span style="--color-code: from #90A4AE l c h;
+--color-code-dark: from #EEFFFF l c h;">hidden</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">&#x3C;/</span><span style="--color-code: from #E53935 l c h;
+--color-code-dark: from #F07178 l c h;">span</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">></span></span>
+<span class="line"><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">                &#x3C;</span><span style="--color-code: from #E53935 l c h;
+--color-code-dark: from #F07178 l c h;">div</span><span style="--color-code: from #9C3EDA l c h;
+--color-code-dark: from #C792EA l c h;"> class</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">=</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">"</span><span style="--color-code: from #91B859 l c h;
+--color-code-dark: from #C3E88D l c h;">na-input-wrapper</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">"</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">></span></span>
+<span class="line"><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">                    &#x3C;</span><span style="--color-code: from #E53935 l c h;
+--color-code-dark: from #F07178 l c h;">span</span><span style="--color-code: from #9C3EDA l c h;
+--color-code-dark: from #C792EA l c h;"> class</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">=</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">"</span><span style="--color-code: from #91B859 l c h;
+--color-code-dark: from #C3E88D l c h;">na-switch</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">"</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">></span></span>
+<span class="line"><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">                        &#x3C;</span><span style="--color-code: from #E53935 l c h;
+--color-code-dark: from #F07178 l c h;">input</span></span>
+<span class="line"><span style="--color-code: from #9C3EDA l c h;
+--color-code-dark: from #C792EA l c h;">                            type</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">=</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">"</span><span style="--color-code: from #91B859 l c h;
+--color-code-dark: from #C3E88D l c h;">checkbox</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">"</span></span>
+<span class="line"><span style="--color-code: from #9C3EDA l c h;
+--color-code-dark: from #C792EA l c h;">                            class</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">=</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">"</span><span style="--color-code: from #91B859 l c h;
+--color-code-dark: from #C3E88D l c h;">na-input</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">"</span></span>
+<span class="line"><span style="--color-code: from #9C3EDA l c h;
+--color-code-dark: from #C792EA l c h;">                            v-model</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">=</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">"</span><span style="--color-code: from #91B859 l c h;
+--color-code-dark: from #C3E88D l c h;">hidden</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">"</span></span>
+<span class="line"><span style="--color-code: from #9C3EDA l c h;
+--color-code-dark: from #C792EA l c h;">                            id</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">=</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">"</span><span style="--color-code: from #91B859 l c h;
+--color-code-dark: from #C3E88D l c h;">hidden</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">"</span></span>
+<span class="line"><span style="--color-code: from #9C3EDA l c h;
+--color-code-dark: from #C792EA l c h;">                            name</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">=</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">"</span><span style="--color-code: from #91B859 l c h;
+--color-code-dark: from #C3E88D l c h;">hidden</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">"</span></span>
+<span class="line"><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">                        /></span></span>
+<span class="line"><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">                        &#x3C;</span><span style="--color-code: from #E53935 l c h;
+--color-code-dark: from #F07178 l c h;">i</span><span style="--color-code: from #9C3EDA l c h;
+--color-code-dark: from #C792EA l c h;"> class</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">=</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">"</span><span style="--color-code: from #91B859 l c h;
+--color-code-dark: from #C3E88D l c h;">na-switch-mover</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">"</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">>&#x3C;/</span><span style="--color-code: from #E53935 l c h;
+--color-code-dark: from #F07178 l c h;">i</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">></span></span>
+<span class="line"><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">                        &#x3C;</span><span style="--color-code: from #E53935 l c h;
+--color-code-dark: from #F07178 l c h;">span</span><span style="--color-code: from #9C3EDA l c h;
+--color-code-dark: from #C792EA l c h;"> class</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">=</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">"</span><span style="--color-code: from #91B859 l c h;
+--color-code-dark: from #C3E88D l c h;">na-switch-slot</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">"</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">>&#x3C;/</span><span style="--color-code: from #E53935 l c h;
+--color-code-dark: from #F07178 l c h;">span</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">></span></span>
+<span class="line"><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">                    &#x3C;/</span><span style="--color-code: from #E53935 l c h;
+--color-code-dark: from #F07178 l c h;">span</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">></span></span>
+<span class="line"><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">                &#x3C;/</span><span style="--color-code: from #E53935 l c h;
+--color-code-dark: from #F07178 l c h;">div</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">></span></span>
+<span class="line"><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">            &#x3C;/</span><span style="--color-code: from #E53935 l c h;
+--color-code-dark: from #F07178 l c h;">label</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">></span></span>
+<span class="line"><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">        &#x3C;/</span><span style="--color-code: from #E53935 l c h;
+--color-code-dark: from #F07178 l c h;">form</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">></span></span>
+<span class="line"><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">    &#x3C;/</span><span style="--color-code: from #E53935 l c h;
+--color-code-dark: from #F07178 l c h;">main</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">></span></span>
+<span class="line"><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">&#x3C;/</span><span style="--color-code: from #E53935 l c h;
+--color-code-dark: from #F07178 l c h;">template</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">></span></span>
+<span class="line"><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">&#x3C;</span><span style="--color-code: from #E53935 l c h;
+--color-code-dark: from #F07178 l c h;">style</span><span style="--color-code: from #9C3EDA l c h;
+--color-code-dark: from #C792EA l c h;"> scoped</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">></span></span>
+<span class="line"><span style="--color-code: from #E2931D l c h;
+--color-code-dark: from #FFCB6B l c h;">form</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;"> {</span></span>
+<span class="line"><span style="--color-code: from #8796B0 l c h;
+--color-code-dark: from #B2CCD6 l c h;">    margin</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">:</span><span style="--color-code: from #F76D47 l c h;
+--color-code-dark: from #F78C6C l c h;"> 2em</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">;</span></span>
+<span class="line"><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">}</span></span>
+<span class="line"><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">&#x3C;/</span><span style="--color-code: from #E53935 l c h;
+--color-code-dark: from #F07178 l c h;">style</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">></span></span></code></pre></section></aside></body></html>

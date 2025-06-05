@@ -1,0 +1,407 @@
+<!DOCTYPE html><html lang="zh-TW" data-astro-cid-mhhjvrox><head><meta charset="UTF-8"><title>頁籤</title><meta name="generator" content="Astro v7.3.8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" type="image/svg+xml" href="/vue/clover.svg"><script fetchpriority="high" src="data:text/javascript;base64,InVzZSBzdHJpY3QiO3ZhciBlO2U9WyJkYXJrIiwibGlnaHQiXSx3aW5kb3cuaGFzT3duUHJvcGVydHkoInRoZW1lIil8fE9iamVjdC5kZWZpbmVQcm9wZXJ0eSh3aW5kb3csInRoZW1lIix7Z2V0OigpPT5sb2NhbFN0b3JhZ2UuZ2V0SXRlbSgidGhlbWUiKT8/ZVsrIXdpbmRvdy5tYXRjaE1lZGlhPy4oIihwcmVmZXJzLWNvbG9yLXNjaGVtZTogZGFyaykiKT8ubWF0Y2hlc119KSxkb2N1bWVudC5kb2N1bWVudEVsZW1lbnQuZGF0YXNldC50aGVtZT13aW5kb3cudGhlbWU7Ly8jIHNvdXJjZU1hcHBpbmdVUkw9aW5kZXguanMubWFw"></script><meta name="astro-view-transitions-enabled" content="true"><meta name="astro-view-transitions-fallback" content="animate"><script type="module" src="/vue/_astro/ClientRouter.astro_astro_type_script_index_0_lang.BDCjmQ8c.js"></script><link rel="stylesheet" href="/vue/_astro/AlibabaSansHK-55.e7QBGz4U.css" data-nanarino-lit-provide onload="document.documentElement.style.setProperty('--font-family-base', 'AlibabaSansHK-55')"><link rel="stylesheet" href="/vue/_astro/400.Bwy7poBu.css" data-nanarino-lit-provide onload="document.documentElement.style.setProperty('--font-family-mono', 'JetBrains Mono')"><script type="module">document.addEventListener(`astro:after-swap`,()=>{let e=document.documentElement;e.style.setProperty(`--font-family-base`,`AlibabaSansHK-55`),e.style.setProperty(`--font-family-mono`,`JetBrains Mono`)});</script><script src="/vue/_astro/iconify-icon.min.D2vAPERS.js"></script><script type="module" src="/vue/_astro/app.astro_astro_type_script_index_0_lang.BdiIpx2T.js"></script><style>section[data-astro-cid-t5kcrni5]{padding:1rem}
+</style><link rel="stylesheet" href="/vue/_astro/app.WtHikDRE.css"><style>section[data-v-c1b6ba94]{flex-direction:column;flex:1;gap:2px;width:100%;display:flex}main[data-v-c1b6ba94]{flex:1;overflow-y:hidden}.na-tab-operation[data-v-c1b6ba94] svg{width:1em;height:1em}:where(.na-tab-panel[data-v-da77b4ce]){display:contents}section[data-v-e0c6b9f8]{flex-direction:column;gap:2px;height:calc(100vh - 2rem);display:flex}
+button{&[data-v-92ef248d]{--hue-primary:328 / .5;mix-blend-mode:difference;backdrop-filter:blur(8px);z-index:9;--padding-horizontal-button:16px;display:grid;position:fixed;bottom:16px;right:16px}& iconify-icon[data-v-92ef248d]{grid-area:1/1/2/2;font-size:24px;transition:opacity .3s}}:root[data-theme=light] button iconify-icon[data-v-92ef248d]:first-child,:root[data-theme=dark] button iconify-icon[data-v-92ef248d]:last-child{opacity:0}
+</style></head><body data-astro-cid-mhhjvrox><style>astro-island,astro-slot,astro-static-slot{display:contents}</style><script>(function(){let e=async e=>{await(await e())()};(self.Astro||(self.Astro={})).only=e,window.dispatchEvent(new Event(`astro:only`))})();</script><script>(function(){function e(t){"@babel/helpers - typeof";return e=typeof Symbol==`function`&&typeof Symbol.iterator==`symbol`?function(e){return typeof e}:function(e){return e&&typeof Symbol==`function`&&e.constructor===Symbol&&e!==Symbol.prototype?`symbol`:typeof e},e(t)}function t(t,n){if(e(t)!=`object`||!t)return t;var r=t[Symbol.toPrimitive];if(r!==void 0){var i=r.call(t,n||`default`);if(e(i)!=`object`)return i;throw TypeError(`@@toPrimitive must return a primitive value.`)}return(n===`string`?String:Number)(t)}function n(n){var r=t(n,`string`);return e(r)==`symbol`?r:r+``}function r(e,t,r){return(t=n(t))in e?Object.defineProperty(e,t,{value:r,enumerable:!0,configurable:!0,writable:!0}):e[t]=r,e}let i=/* @__PURE__ */ new Set([`__proto__`,`constructor`,`prototype`]);{let e={0:e=>a(e),1:e=>n(e),2:e=>new RegExp(e),3:e=>new Date(e),4:e=>new Map(n(e)),5:e=>new Set(n(e)),6:e=>BigInt(e),7:e=>new URL(e),8:e=>new Uint8Array(e),9:e=>new Uint16Array(e),10:e=>new Uint32Array(e),11:e=>1/0*e},t=t=>{let[n,r]=t;return n in e?e[n](r):void 0},n=e=>e.map(t),a=e=>typeof e!=`object`||!e?e:Object.fromEntries(Object.entries(e).map(([e,n])=>[e,t(n)]));class o extends HTMLElement{constructor(...e){super(...e),r(this,`Component`,void 0),r(this,`hydrator`,void 0),r(this,`hydrate`,async()=>{var e;if(!this.hydrator||!this.isConnected)return;let t=(e=this.parentElement)==null?void 0:e.closest(`astro-island[ssr]`);if(t){t.addEventListener(`astro:hydrate`,this.hydrate,{once:!0});return}let n=this.querySelectorAll(`astro-slot`),r={},i=this.querySelectorAll(`template[data-astro-template]`);for(let e of i){let t=e.closest(this.tagName);t!=null&&t.isSameNode(this)&&(r[e.getAttribute(`data-astro-template`)||`default`]=e.innerHTML,e.remove())}for(let e of n){let t=e.closest(this.tagName);t!=null&&t.isSameNode(this)&&(r[e.getAttribute(`name`)||`default`]=e.innerHTML)}let o;try{o=this.hasAttribute(`props`)?a(JSON.parse(this.getAttribute(`props`))):{}}catch(e){let t=this.getAttribute(`component-url`)||`<unknown>`,n=this.getAttribute(`component-export`);throw n&&(t+=` (export ${n})`),console.error(`[hydrate] Error parsing props for component ${t}`,this.getAttribute(`props`),e),e}await this.hydrator(this)(this.Component,o,r,{client:this.getAttribute(`client`)}),this.removeAttribute(`ssr`),this.dispatchEvent(new CustomEvent(`astro:hydrate`))}),r(this,`unmount`,()=>{this.isConnected||this.dispatchEvent(new CustomEvent(`astro:unmount`))})}disconnectedCallback(){document.removeEventListener(`astro:after-swap`,this.unmount),document.addEventListener(`astro:after-swap`,this.unmount,{once:!0})}connectedCallback(){if(!this.hasAttribute(`await-children`)||document.readyState===`interactive`||document.readyState===`complete`)this.childrenConnectedCallback();else{let e=()=>{document.removeEventListener(`DOMContentLoaded`,e),t.disconnect(),this.childrenConnectedCallback()},t=new MutationObserver(()=>{var t;((t=this.lastChild)==null?void 0:t.nodeType)===Node.COMMENT_NODE&&this.lastChild.nodeValue===`astro:end`&&(this.lastChild.remove(),e())});t.observe(this,{childList:!0}),document.addEventListener(`DOMContentLoaded`,e)}}async childrenConnectedCallback(){let e=this.getAttribute(`before-hydration-url`);e&&await import(e),this.start()}getRetryImportUrl(e){let t=new URL(e,document.baseURI);return t.searchParams.set(`astro-retry`,Date.now().toString()),t.toString()}async importWithRetry(e){try{return await import(e)}catch(t){return await new Promise(e=>setTimeout(e,1e3)),import(this.getRetryImportUrl(e))}}handleHydrationError(e){let t=this.getAttribute(`component-url`),n=new CustomEvent(`astro:hydration-error`,{cancelable:!0,bubbles:!0,composed:!0,detail:{error:e,componentUrl:t}});this.dispatchEvent(n)&&console.error(`[astro-island] Error hydrating ${t}`,e)}async start(){let e=JSON.parse(this.getAttribute(`opts`)),t=this.getAttribute(`client`);if(Astro[t]===void 0){window.addEventListener(`astro:${t}`,()=>this.start(),{once:!0});return}try{await Astro[t](async()=>{let e=this.getAttribute(`renderer-url`);try{let[t,{default:n}]=await Promise.all([this.importWithRetry(this.getAttribute(`component-url`)),e?this.importWithRetry(e):Promise.resolve({default:()=>()=>{}})]),r=this.getAttribute(`component-export`)||`default`;if(r.includes(`.`)){this.Component=t;for(let e of r.split(`.`)){if(i.has(e)||!this.Component||typeof this.Component!=`object`&&typeof this.Component!=`function`||!Object.hasOwn(this.Component,e))throw Error(`Invalid component export path: ${r}`);this.Component=this.Component[e]}}else{if(i.has(r))throw Error(`Invalid component export path: ${r}`);this.Component=t[r]}return this.hydrator=n,this.hydrate}catch(e){return this.handleHydrationError(e),()=>{}}},e,this)}catch(e){this.handleHydrationError(e)}}attributeChangedCallback(){this.hydrate()}}r(o,`observedAttributes`,[`props`]),customElements.get(`astro-island`)||customElements.define(`astro-island`,o)}})();</script><astro-island uid="Z2asyXg" component-url="/vue/_astro/index.DOxsCR8o.js" component-export="default" renderer-url="/vue/_astro/client.6AjYaC3d.js" props="{&quot;data-astro-cid-mhhjvrox&quot;:[0,true]}" ssr client="only" opts="{&quot;name&quot;:&quot;ThemeToggle&quot;,&quot;value&quot;:&quot;vue&quot;}"></astro-island><section data-astro-cid-t5kcrni5><astro-island uid="Z8oatm" component-url="/vue/_astro/Tabs.spec.8gZ4-k69.js" component-export="default" renderer-url="/vue/_astro/client.6AjYaC3d.js" props="{&quot;data-astro-cid-t5kcrni5&quot;:[0,true]}" ssr client="only" opts="{&quot;name&quot;:&quot;TabsSpec&quot;,&quot;value&quot;:&quot;vue&quot;}"></astro-island></section><aside data-astro-cid-4p4pvbuj><section class="na-watermark" data-astro-cid-4p4pvbuj><pre class="na-pre na-pre-components-spec" tabindex="0" data-astro-cid-4p4pvbuj data-language="astro"><code class="na-code"><span class="line"><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">&#x3C;</span><span style="--color-code: from #E53935 l c h;
+--color-code-dark: from #F07178 l c h;">script</span><span style="--color-code: from #9C3EDA l c h;
+--color-code-dark: from #C792EA l c h;"> setup</span><span style="--color-code: from #9C3EDA l c h;
+--color-code-dark: from #C792EA l c h;"> lang</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">=</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">"</span><span style="--color-code: from #91B859 l c h;
+--color-code-dark: from #C3E88D l c h;">ts</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">"</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">></span></span>
+<span class="line"><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">import</span><span style="--color-code: from #90A4AE l c h;
+--color-code-dark: from #EEFFFF l c h;"> Tabs </span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">from</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;"> "</span><span style="--color-code: from #91B859 l c h;
+--color-code-dark: from #C3E88D l c h;">@/lib/Tabs</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">"</span></span>
+<span class="line"><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">import</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;"> {</span><span style="--color-code: from #90A4AE l c h;
+--color-code-dark: from #EEFFFF l c h;"> ref</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">,</span><span style="--color-code: from #90A4AE l c h;
+--color-code-dark: from #EEFFFF l c h;"> h</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">,</span><span style="--color-code: from #90A4AE l c h;
+--color-code-dark: from #EEFFFF l c h;"> Fragment</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;"> }</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;"> from</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;"> "</span><span style="--color-code: from #91B859 l c h;
+--color-code-dark: from #C3E88D l c h;">vue</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">"</span></span>
+<span class="line"><span style="--color-code: from #9C3EDA l c h;
+--color-code-dark: from #C792EA l c h;">const</span><span style="--color-code: from #90A4AE l c h;
+--color-code-dark: from #EEFFFF l c h;"> renderRemoveIcon </span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">=</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;"> ()</span><span style="--color-code: from #9C3EDA l c h;
+--color-code-dark: from #C792EA l c h;"> =></span><span style="--color-code: from #6182B8 l c h;
+--color-code-dark: from #82AAFF l c h;"> h</span><span style="--color-code: from #90A4AE l c h;
+--color-code-dark: from #EEFFFF l c h;">(</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">"</span><span style="--color-code: from #91B859 l c h;
+--color-code-dark: from #C3E88D l c h;">iconify-icon</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">"</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">,</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;"> {</span><span style="--color-code: from #E53935 l c h;
+--color-code-dark: from #F07178 l c h;"> icon</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">:</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;"> "</span><span style="--color-code: from #91B859 l c h;
+--color-code-dark: from #C3E88D l c h;">line-md:remove</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">"</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;"> }</span><span style="--color-code: from #90A4AE l c h;
+--color-code-dark: from #EEFFFF l c h;">)</span></span>
+<span class="line"><span style="--color-code: from #9C3EDA l c h;
+--color-code-dark: from #C792EA l c h;">const</span><span style="--color-code: from #90A4AE l c h;
+--color-code-dark: from #EEFFFF l c h;"> active </span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">=</span><span style="--color-code: from #6182B8 l c h;
+--color-code-dark: from #82AAFF l c h;"> ref</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">&#x3C;</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">"</span><span style="--color-code: from #91B859 l c h;
+--color-code-dark: from #C3E88D l c h;">夜景</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">"</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;"> |</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;"> "</span><span style="--color-code: from #91B859 l c h;
+--color-code-dark: from #C3E88D l c h;">動物</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">"</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;"> |</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;"> "</span><span style="--color-code: from #91B859 l c h;
+--color-code-dark: from #C3E88D l c h;">人像</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">"</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">></span><span style="--color-code: from #90A4AE l c h;
+--color-code-dark: from #EEFFFF l c h;">(</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">"</span><span style="--color-code: from #91B859 l c h;
+--color-code-dark: from #C3E88D l c h;">夜景</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">"</span><span style="--color-code: from #90A4AE l c h;
+--color-code-dark: from #EEFFFF l c h;">)</span></span>
+<span class="line"><span style="--color-code: from #9C3EDA l c h;
+--color-code-dark: from #C792EA l c h;">const</span><span style="--color-code: from #90A4AE l c h;
+--color-code-dark: from #EEFFFF l c h;"> renderLabelsText </span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">=</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;"> (</span><span style="--color-code: from #90A4AE l c h;
+--color-code-dark: from #EEFFFF l c h;">label</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">:</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;"> typeof</span><span style="--color-code: from #90A4AE l c h;
+--color-code-dark: from #EEFFFF l c h;"> active</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">.</span><span style="--color-code: from #90A4AE l c h;
+--color-code-dark: from #EEFFFF l c h;">value</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">)</span><span style="--color-code: from #9C3EDA l c h;
+--color-code-dark: from #C792EA l c h;"> =></span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;"> {</span></span>
+<span class="line"><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">    if</span><span style="--color-code: from #E53935 l c h;
+--color-code-dark: from #F07178 l c h;"> (</span><span style="--color-code: from #90A4AE l c h;
+--color-code-dark: from #EEFFFF l c h;">label</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;"> !==</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;"> "</span><span style="--color-code: from #91B859 l c h;
+--color-code-dark: from #C3E88D l c h;">夜景</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">"</span><span style="--color-code: from #E53935 l c h;
+--color-code-dark: from #F07178 l c h;">) </span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">return</span></span>
+<span class="line"><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">    return</span><span style="--color-code: from #6182B8 l c h;
+--color-code-dark: from #82AAFF l c h;"> h</span><span style="--color-code: from #E53935 l c h;
+--color-code-dark: from #F07178 l c h;">(</span><span style="--color-code: from #90A4AE l c h;
+--color-code-dark: from #EEFFFF l c h;">Fragment</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">,</span><span style="--color-code: from #E53935 l c h;
+--color-code-dark: from #F07178 l c h;"> [</span></span>
+<span class="line"><span style="--color-code: from #6182B8 l c h;
+--color-code-dark: from #82AAFF l c h;">        h</span><span style="--color-code: from #E53935 l c h;
+--color-code-dark: from #F07178 l c h;">(</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">"</span><span style="--color-code: from #91B859 l c h;
+--color-code-dark: from #C3E88D l c h;">iconify-icon</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">"</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">,</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;"> {</span></span>
+<span class="line"><span style="--color-code: from #E53935 l c h;
+--color-code-dark: from #F07178 l c h;">            icon</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">:</span></span>
+<span class="line"><span style="--color-code: from #90A4AE l c h;
+--color-code-dark: from #EEFFFF l c h;">                active</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">.</span><span style="--color-code: from #90A4AE l c h;
+--color-code-dark: from #EEFFFF l c h;">value</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;"> ===</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;"> "</span><span style="--color-code: from #91B859 l c h;
+--color-code-dark: from #C3E88D l c h;">夜景</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">"</span></span>
+<span class="line"><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">                    ?</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;"> "</span><span style="--color-code: from #91B859 l c h;
+--color-code-dark: from #C3E88D l c h;">line-md:moon-rising-filled-loop</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">"</span></span>
+<span class="line"><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">                    :</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;"> "</span><span style="--color-code: from #91B859 l c h;
+--color-code-dark: from #C3E88D l c h;">line-md:moon-simple</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">"</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">,</span></span>
+<span class="line"><span style="--color-code: from #E53935 l c h;
+--color-code-dark: from #F07178 l c h;">            style</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">:</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;"> "</span><span style="--color-code: from #91B859 l c h;
+--color-code-dark: from #C3E88D l c h;">vertical-align: middle;</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">"</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">,</span></span>
+<span class="line"><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">        }</span><span style="--color-code: from #E53935 l c h;
+--color-code-dark: from #F07178 l c h;">)</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">,</span></span>
+<span class="line"><span style="--color-code: from #6182B8 l c h;
+--color-code-dark: from #82AAFF l c h;">        h</span><span style="--color-code: from #E53935 l c h;
+--color-code-dark: from #F07178 l c h;">(</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">"</span><span style="--color-code: from #91B859 l c h;
+--color-code-dark: from #C3E88D l c h;">span</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">"</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">,</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;"> {</span><span style="--color-code: from #E53935 l c h;
+--color-code-dark: from #F07178 l c h;"> innerHTML</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">:</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;"> `</span><span style="--color-code: from #91B859 l c h;
+--color-code-dark: from #C3E88D l c h;">&#x26;nbsp;</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">${</span><span style="--color-code: from #90A4AE l c h;
+--color-code-dark: from #EEFFFF l c h;">label</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">}`</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;"> }</span><span style="--color-code: from #E53935 l c h;
+--color-code-dark: from #F07178 l c h;">)</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">,</span></span>
+<span class="line"><span style="--color-code: from #E53935 l c h;
+--color-code-dark: from #F07178 l c h;">    ])</span></span>
+<span class="line"><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">}</span></span>
+<span class="line"><span style="--color-code: from #9C3EDA l c h;
+--color-code-dark: from #C792EA l c h;">const</span><span style="--color-code: from #90A4AE l c h;
+--color-code-dark: from #EEFFFF l c h;"> BASE </span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">=</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;"> import</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">.</span><span style="--color-code: from #90A4AE l c h;
+--color-code-dark: from #EEFFFF l c h;">meta</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">.</span><span style="--color-code: from #90A4AE l c h;
+--color-code-dark: from #EEFFFF l c h;">env</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">.</span><span style="--color-code: from #90A4AE l c h;
+--color-code-dark: from #EEFFFF l c h;">BASE_URL</span></span>
+<span class="line"><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">&#x3C;/</span><span style="--color-code: from #E53935 l c h;
+--color-code-dark: from #F07178 l c h;">script</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">></span></span>
+<span class="line"><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">&#x3C;</span><span style="--color-code: from #E53935 l c h;
+--color-code-dark: from #F07178 l c h;">template</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">></span></span>
+<span class="line"><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">    &#x3C;</span><span style="--color-code: from #E53935 l c h;
+--color-code-dark: from #F07178 l c h;">main</span><span style="--color-code: from #9C3EDA l c h;
+--color-code-dark: from #C792EA l c h;"> style</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">=</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">"</span><span style="--color-code: from #91B859 l c h;
+--color-code-dark: from #C3E88D l c h;">display: contents</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">"</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">></span></span>
+<span class="line"><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">        &#x3C;</span><span style="--color-code: from #E53935 l c h;
+--color-code-dark: from #F07178 l c h;">section</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">></span></span>
+<span class="line"><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">            &#x3C;</span><span style="--color-code: from #E2931D l c h;
+--color-code-dark: from #FFCB6B l c h;">Tabs</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">.</span><span style="--color-code: from #E53935 l c h;
+--color-code-dark: from #F07178 l c h;">group</span></span>
+<span class="line"><span style="--color-code: from #9C3EDA l c h;
+--color-code-dark: from #C792EA l c h;">                v-model</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">=</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">"</span><span style="--color-code: from #91B859 l c h;
+--color-code-dark: from #C3E88D l c h;">active</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">"</span></span>
+<span class="line"><span style="--color-code: from #9C3EDA l c h;
+--color-code-dark: from #C792EA l c h;">                size</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">=</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">"</span><span style="--color-code: from #91B859 l c h;
+--color-code-dark: from #C3E88D l c h;">lg</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">"</span></span>
+<span class="line"><span style="--color-code: from #9C3EDA l c h;
+--color-code-dark: from #C792EA l c h;">                @change</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">=</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">"</span><span style="--color-code: from #91B859 l c h;
+--color-code-dark: from #C3E88D l c h;">console.log</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">"</span></span>
+<span class="line"><span style="--color-code: from #9C3EDA l c h;
+--color-code-dark: from #C792EA l c h;">                @close</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">=</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">"</span><span style="--color-code: from #91B859 l c h;
+--color-code-dark: from #C3E88D l c h;">console.log</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">"</span></span>
+<span class="line"><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">                :</span><span style="--color-code: from #9C3EDA l c h;
+--color-code-dark: from #C792EA l c h;">renderRemoveIcon</span></span>
+<span class="line"><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">                :</span><span style="--color-code: from #9C3EDA l c h;
+--color-code-dark: from #C792EA l c h;">renderLabelsText</span></span>
+<span class="line"><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">            ></span></span>
+<span class="line"><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">                &#x3C;</span><span style="--color-code: from #E2931D l c h;
+--color-code-dark: from #FFCB6B l c h;">Tabs</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">.</span><span style="--color-code: from #E53935 l c h;
+--color-code-dark: from #F07178 l c h;">panel</span><span style="--color-code: from #9C3EDA l c h;
+--color-code-dark: from #C792EA l c h;"> label</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">=</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">"</span><span style="--color-code: from #91B859 l c h;
+--color-code-dark: from #C3E88D l c h;">夜景</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">"</span><span style="--color-code: from #9C3EDA l c h;
+--color-code-dark: from #C792EA l c h;"> class</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">=</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">"</span><span style="--color-code: from #91B859 l c h;
+--color-code-dark: from #C3E88D l c h;">na-image</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">"</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">></span></span>
+<span class="line"><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">                    &#x3C;</span><span style="--color-code: from #E53935 l c h;
+--color-code-dark: from #F07178 l c h;">img</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;"> :</span><span style="--color-code: from #9C3EDA l c h;
+--color-code-dark: from #C792EA l c h;">src</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">=</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">"</span><span style="--color-code: from #91B859 l c h;
+--color-code-dark: from #C3E88D l c h;">`${BASE}images/IMG_2568.JPG`</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">"</span><span style="--color-code: from #9C3EDA l c h;
+--color-code-dark: from #C792EA l c h;"> alt</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">=</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">"</span><span style="--color-code: from #91B859 l c h;
+--color-code-dark: from #C3E88D l c h;">夜景</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">"</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;"> /></span></span>
+<span class="line"><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">                &#x3C;/</span><span style="--color-code: from #E2931D l c h;
+--color-code-dark: from #FFCB6B l c h;">Tabs</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">.</span><span style="--color-code: from #E53935 l c h;
+--color-code-dark: from #F07178 l c h;">panel</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">></span></span>
+<span class="line"><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">                &#x3C;</span><span style="--color-code: from #E2931D l c h;
+--color-code-dark: from #FFCB6B l c h;">Tabs</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">.</span><span style="--color-code: from #E53935 l c h;
+--color-code-dark: from #F07178 l c h;">panel</span><span style="--color-code: from #9C3EDA l c h;
+--color-code-dark: from #C792EA l c h;"> label</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">=</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">"</span><span style="--color-code: from #91B859 l c h;
+--color-code-dark: from #C3E88D l c h;">動物</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">"</span><span style="--color-code: from #9C3EDA l c h;
+--color-code-dark: from #C792EA l c h;"> class</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">=</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">"</span><span style="--color-code: from #91B859 l c h;
+--color-code-dark: from #C3E88D l c h;">na-image</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">"</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">></span></span>
+<span class="line"><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">                    &#x3C;</span><span style="--color-code: from #E53935 l c h;
+--color-code-dark: from #F07178 l c h;">img</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;"> :</span><span style="--color-code: from #9C3EDA l c h;
+--color-code-dark: from #C792EA l c h;">src</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">=</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">"</span><span style="--color-code: from #91B859 l c h;
+--color-code-dark: from #C3E88D l c h;">`${BASE}images/IMG_2674.JPG`</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">"</span><span style="--color-code: from #9C3EDA l c h;
+--color-code-dark: from #C792EA l c h;"> alt</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">=</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">"</span><span style="--color-code: from #91B859 l c h;
+--color-code-dark: from #C3E88D l c h;">動物</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">"</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;"> /></span></span>
+<span class="line"><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">                &#x3C;/</span><span style="--color-code: from #E2931D l c h;
+--color-code-dark: from #FFCB6B l c h;">Tabs</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">.</span><span style="--color-code: from #E53935 l c h;
+--color-code-dark: from #F07178 l c h;">panel</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">></span></span>
+<span class="line"><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">                &#x3C;</span><span style="--color-code: from #E2931D l c h;
+--color-code-dark: from #FFCB6B l c h;">Tabs</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">.</span><span style="--color-code: from #E53935 l c h;
+--color-code-dark: from #F07178 l c h;">panel</span><span style="--color-code: from #9C3EDA l c h;
+--color-code-dark: from #C792EA l c h;"> label</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">=</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">"</span><span style="--color-code: from #91B859 l c h;
+--color-code-dark: from #C3E88D l c h;">人像</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">"</span><span style="--color-code: from #9C3EDA l c h;
+--color-code-dark: from #C792EA l c h;"> class</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">=</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">"</span><span style="--color-code: from #91B859 l c h;
+--color-code-dark: from #C3E88D l c h;">na-image</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">"</span><span style="--color-code: from #9C3EDA l c h;
+--color-code-dark: from #C792EA l c h;"> closeable</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">></span></span>
+<span class="line"><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">                    &#x3C;</span><span style="--color-code: from #E53935 l c h;
+--color-code-dark: from #F07178 l c h;">img</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;"> :</span><span style="--color-code: from #9C3EDA l c h;
+--color-code-dark: from #C792EA l c h;">src</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">=</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">"</span><span style="--color-code: from #91B859 l c h;
+--color-code-dark: from #C3E88D l c h;">`${BASE}images/IMG_2532.JPG`</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">"</span><span style="--color-code: from #9C3EDA l c h;
+--color-code-dark: from #C792EA l c h;"> alt</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">=</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">"</span><span style="--color-code: from #91B859 l c h;
+--color-code-dark: from #C3E88D l c h;">人像</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">"</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;"> /></span></span>
+<span class="line"><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">                &#x3C;/</span><span style="--color-code: from #E2931D l c h;
+--color-code-dark: from #FFCB6B l c h;">Tabs</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">.</span><span style="--color-code: from #E53935 l c h;
+--color-code-dark: from #F07178 l c h;">panel</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">></span></span>
+<span class="line"><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">            &#x3C;/</span><span style="--color-code: from #E2931D l c h;
+--color-code-dark: from #FFCB6B l c h;">Tabs</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">.</span><span style="--color-code: from #E53935 l c h;
+--color-code-dark: from #F07178 l c h;">group</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">></span></span>
+<span class="line"><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">        &#x3C;/</span><span style="--color-code: from #E53935 l c h;
+--color-code-dark: from #F07178 l c h;">section</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">></span></span>
+<span class="line"><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">    &#x3C;/</span><span style="--color-code: from #E53935 l c h;
+--color-code-dark: from #F07178 l c h;">main</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">></span></span>
+<span class="line"><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">&#x3C;/</span><span style="--color-code: from #E53935 l c h;
+--color-code-dark: from #F07178 l c h;">template</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">></span></span>
+<span class="line"><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">&#x3C;</span><span style="--color-code: from #E53935 l c h;
+--color-code-dark: from #F07178 l c h;">style</span><span style="--color-code: from #9C3EDA l c h;
+--color-code-dark: from #C792EA l c h;"> scoped</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">></span></span>
+<span class="line"><span style="--color-code: from #E2931D l c h;
+--color-code-dark: from #FFCB6B l c h;">section</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;"> {</span></span>
+<span class="line"><span style="--color-code: from #8796B0 l c h;
+--color-code-dark: from #B2CCD6 l c h;">    display</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">:</span><span style="--color-code: from #90A4AE l c h;
+--color-code-dark: from #EEFFFF l c h;"> flex</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">;</span></span>
+<span class="line"><span style="--color-code: from #8796B0 l c h;
+--color-code-dark: from #B2CCD6 l c h;">    flex-direction</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">:</span><span style="--color-code: from #90A4AE l c h;
+--color-code-dark: from #EEFFFF l c h;"> column</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">;</span></span>
+<span class="line"><span style="--color-code: from #8796B0 l c h;
+--color-code-dark: from #B2CCD6 l c h;">    height</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">:</span><span style="--color-code: from #6182B8 l c h;
+--color-code-dark: from #82AAFF l c h;"> calc</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">(</span><span style="--color-code: from #F76D47 l c h;
+--color-code-dark: from #F78C6C l c h;">100vh</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;"> -</span><span style="--color-code: from #F76D47 l c h;
+--color-code-dark: from #F78C6C l c h;"> 2rem</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">);</span></span>
+<span class="line"><span style="--color-code: from #8796B0 l c h;
+--color-code-dark: from #B2CCD6 l c h;">    gap</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">:</span><span style="--color-code: from #F76D47 l c h;
+--color-code-dark: from #F78C6C l c h;"> 2px</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">;</span></span>
+<span class="line"><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">}</span></span>
+<span class="line"><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">&#x3C;/</span><span style="--color-code: from #E53935 l c h;
+--color-code-dark: from #F07178 l c h;">style</span><span style="--color-code: from #39ADB5 l c h;
+--color-code-dark: from #89DDFF l c h;">></span></span></code></pre></section></aside></body></html>
