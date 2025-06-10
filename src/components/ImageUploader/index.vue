@@ -67,17 +67,13 @@ const files_setup_effect = async (
                 v => props.accept.filter(t => new RegExp(t).test(v.type)).length
             )
             .map(async file => {
-                if ("url" in file) {
-                    if (REVOKED in file && file[REVOKED]) {
-                        // 有URL但是已經被銷毀了
-                        return props.customCreateUrl(file)
-                    } else {
-                        // 非輸入的相片 或是已遠端持久化過的URL
-                        return file
-                    }
-                }
                 // 沒有URL 是新輸入的相片
-                return props.customCreateUrl(file)
+                if (!("url" in file)) return props.customCreateUrl(file)
+                // 有URL但是已經被銷毀了
+                if (REVOKED in file && file[REVOKED])
+                    return props.customCreateUrl(file)
+                // 非輸入的相片 或是已遠端持久化過的URL
+                return file
             })
     )
 
