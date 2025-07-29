@@ -13,15 +13,16 @@
     },
     "dependencies": {
         "@holy-two/data-theme": "^0.0.6",
+        "d3-shape": "^3.2.0",
         "iconify-icon": "^2.3.0",
-        "vue": "^3.5.16"
+        "vue": "^3.5.18"
     },
     "devDependencies": {
         "@astrojs/vue": "^5.1.0",
-        "@fontsource/jetbrains-mono": "^5.2.5",
-        "astro": "^5.8.1",
+        "@fontsource/jetbrains-mono": "^5.2.6",
+        "astro": "^5.12.4",
         "dedent": "^1.6.0",
-        "style-to-object": "^1.0.8",
+        "style-to-object": "^1.0.9",
         "vite": "^6.3.5"
     },
     "pnpm": {

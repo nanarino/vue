@@ -1,0 +1,16 @@
+---
+import App from "@/layouts/app.astro"
+import RadarSpec from "@/examples/Radar.spec.vue"
+---
+
+<App title="車雷達">
+    <section>
+        <RadarSpec client:only="vue" />
+    </section>
+</App>
+
+<style>
+    section {
+        padding: 1rem;
+    }
+</style>
