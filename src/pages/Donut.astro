@@ -1,0 +1,16 @@
+---
+import App from "@/layouts/app.astro"
+import DonutSpec from "@/examples/Donut.spec.vue"
+---
+
+<App title="甜甜圈">
+    <section>
+        <DonutSpec client:only="vue" />
+    </section>
+</App>
+
+<style>
+    section {
+        padding: 1rem;
+    }
+</style>

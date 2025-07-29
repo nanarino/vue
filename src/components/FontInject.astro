@@ -1,0 +1,24 @@
+---
+import AlibabaSansHK55 from "@/assets/fonts/AlibabaSansHK-55.css?url"
+import jetbrainsMono from "@fontsource/jetbrains-mono/400.css?url"
+---
+
+<link
+    rel="stylesheet"
+    href={AlibabaSansHK55}
+    data-nanarino-lit-provide
+    onload="document.documentElement.style.setProperty('--font-family-base', 'AlibabaSansHK-55')"
+/>
+<link
+    rel="stylesheet"
+    href={jetbrainsMono}
+    data-nanarino-lit-provide
+    onload="document.documentElement.style.setProperty('--font-family-mono', 'JetBrains Mono')"
+/>
+<script>
+    document.addEventListener("astro:after-swap", () => {
+        const root = document.documentElement
+        root.style.setProperty("--font-family-base", "AlibabaSansHK-55")
+        root.style.setProperty("--font-family-mono", "JetBrains Mono")
+    })
+</script>

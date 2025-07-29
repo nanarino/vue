@@ -15,7 +15,7 @@ button {
     right: 16px;
 
     display: grid;
-    --padding-horizonal-button: 16px;
+    --padding-horizontal-button: 16px;
 
     & iconify-icon {
         grid-area: 1/1/2/2;

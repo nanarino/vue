@@ -1,17 +1,4 @@
-/**URL是否已銷毀 */
-export const REVOKED: unique symbol = Symbol("revoked")
-
-export interface Image {
-    [k: string]: any
-    url: string
-    name: string
-    size: number
-    type: string
-}
-
-export interface LocalInputFileImage extends Image {
-    [REVOKED]: boolean
-}
+import { REVOKED, type Image, type LocalInputFileImage } from "."
 
 export async function defaultCreateUrl(raw: File | LocalInputFileImage) {
     if (raw instanceof Blob) {

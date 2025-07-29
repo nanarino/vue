@@ -1,12 +1,8 @@
 <script setup lang="ts">
-import type { Item } from "./types"
+import type { CitrusProps } from "."
 import { computed } from "vue"
 
-const props = defineProps<{
-    items: Item[]
-    strokeWidth?: number
-    onItemClick?: (item: Item) => void
-}>()
+const props = defineProps<CitrusProps>()
 
 const Y = (n: number, a: number, o = 0, r = 100) =>
     -Math.cos((n * (2 * Math.PI) + o) / a) * r
@@ -29,24 +25,32 @@ const N = (n: number) => [
         viewBox="-180 -180 360 360"
         xmlns="http://www.w3.org/2000/svg"
     >
-        <circle
+        <slot></slot>
+        <g
             v-if="A < 2"
-            cx="0"
-            cy="0"
-            r="100"
-            data-citrus-item
-            :fill="props.items[0]?.color ?? `rgb(var(--gray-2))`"
-            :data-key="props.items[0]?.key ?? NaN"
-            @click="() => props.items[0] && props.onItemClick?.(props.items[0])"
+            :data-citrus-item="A ? '' : null"
+            :fill="props.items.at(0)?.color || `rgb(var(--gray-2))`"
+            :data-key="props.items.at(0)?.key ?? null"
+            @click="() => A && props.onItemClick?.(props.items.at(0)!)"
             :style="{
-                cursor:
-                    props.items[0] && props.onItemClick ? 'pointer' : 'auto',
+                cursor: A && props.onItemClick ? 'pointer' : 'auto',
             }"
-            stroke-linejoin="round"
-            stroke-linecap="round"
-            :stroke="props.items[0]?.color ?? `rgb(var(--gray-2))`"
-            :stroke-width
-        />
+        >
+            <circle
+                cx="0"
+                cy="0"
+                r="100"
+                stroke-linejoin="round"
+                stroke-linecap="round"
+                :stroke="props.items.at(0)?.color || `rgb(var(--gray-2))`"
+                :stroke-width
+            >
+                <title
+                    v-if="props.items.at(0)?.title"
+                    v-text="props.items.at(0)?.title"
+                ></title>
+            </circle>
+        </g>
         <g
             v-else
             v-for="(item, n) of props.items"
@@ -66,16 +70,17 @@ const N = (n: number) => [
                     Z`"
                 stroke-linejoin="round"
                 stroke-linecap="round"
-                :stroke="item.color"
+                :stroke="item.color || `rgb(var(--primary-4))`"
                 :stroke-width
                 :transform="`translate(${N(n)})`"
-            ></path>
+            >
+                <title v-if="item.title" v-text="item.title"></title>
+            </path>
         </g>
     </svg>
 </template>
 <style scoped>
-circle:hover,
-g:hover {
+[data-citrus-item]:hover {
     transition: transform 0.3s;
     transform: scale(1.08);
 }

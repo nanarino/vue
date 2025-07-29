@@ -1,38 +1,29 @@
 <script setup lang="ts">
-import { computed, nextTick, onBeforeUnmount } from "vue"
+import { h, computed, nextTick, onBeforeUnmount } from "vue"
 import {
-    defaultCreateUrl,
-    defaultRevokeUrl,
     REVOKED,
     type Image,
+    type ImageUploaderProps,
     type LocalInputFileImage,
-} from "./types"
+} from "."
+import { defaultCreateUrl, defaultRevokeUrl } from "./default"
+import close from "../../assets/close.svg?raw"
+import plus from "../../assets/plus.svg?raw"
 
 const images = defineModel<(Image | LocalInputFileImage)[]>("modelValue", {
     default: () => [],
 })
-const props = withDefaults(
-    defineProps<{
-        /**相片格式 */
-        accept?: string[]
-        /**數量限制 */
-        limit?: number
-        /**自訂生成URL 并挂到File上 */
-        customCreateUrl?: (
-            raw: File | LocalInputFileImage
-        ) => Promise<Image> | Image
-        /**自訂銷毀 銷毀先前挂到File上URL */
-        customRevokeUrl?: (
-            img: Image | LocalInputFileImage
-        ) => Promise<void> | void
-    }>(),
-    {
-        accept: () => ["image/*"],
-        limit: Infinity,
-        customCreateUrl: defaultCreateUrl,
-        customRevokeUrl: defaultRevokeUrl,
-    }
-)
+
+const props = withDefaults(defineProps<ImageUploaderProps>(), {
+    accept: () => ["image/*"],
+    limit: Infinity,
+    customCreateUrl: defaultCreateUrl,
+    customRevokeUrl: defaultRevokeUrl,
+    renderAppendIcon: () =>
+        h("i", { innerHTML: plus, style: "display: inline-flex" }),
+    renderRemoveIcon: () =>
+        h("i", { innerHTML: close, style: "display: inline-flex" }),
+})
 
 const emit = defineEmits<{
     change: [item: { images: Image[]; action: "append" | "remove" }]
@@ -150,12 +141,13 @@ onBeforeUnmount(async () => {
                     </div>
                 </div>
                 <div class="na-image-footer-action">
-                    <iconify-icon
-                        icon="line-md:remove"
-                        name="delete"
-                        class="na-link"
+                    <span
+                        class="icon na-link"
                         @click="remove(index)"
-                    />
+                        style="font-size: 22px"
+                    >
+                        <component :is="renderRemoveIcon" />
+                    </span>
                 </div>
             </div>
         </div>
@@ -178,10 +170,9 @@ onBeforeUnmount(async () => {
                 @change="handleInput"
                 multiple
             />
-            <iconify-icon
-                icon="line-md:plus"
-                style="font-size: 48px; pointer-events: none"
-            />
+            <span class="icon" style="font-size: 48px; pointer-events: none">
+                <component :is="renderAppendIcon" />
+            </span>
             <span> 點擊添加或拖拽相片 </span>
         </div>
     </div>
@@ -230,10 +221,11 @@ onBeforeUnmount(async () => {
     .na-image {
         aspect-ratio: 1 / 1;
         border-radius: var(--border-radius-md);
-
-        .na-link {
-            font-size: 22px;
-        }
     }
+}
+
+.icon :deep(svg) {
+    width: 1em;
+    height: 1em;
 }
 </style>

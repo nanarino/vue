@@ -3,7 +3,10 @@ import { readFile } from "node:fs/promises"
 import { Code } from "astro:components"
 import parse from "style-to-object"
 import dedent from "dedent"
-import "@fontsource/jetbrains-mono/400.css"
+import {
+    transformerNotationDiff,
+    transformerNotationWordHighlight,
+} from "@shikijs/transformers"
 
 interface Props {
     code?: string
@@ -55,6 +58,8 @@ const transformers: Parameters<typeof Code>[0]["transformers"] = [
             }
         },
     },
+    transformerNotationDiff(),
+    transformerNotationWordHighlight(),
 ]
 ---
 
@@ -103,8 +108,18 @@ const transformers: Parameters<typeof Code>[0]["transformers"] = [
 </style>
 
 <style is:global>
+    .line.diff.add {
+        background-color: rgb(var(--success-1));
+    }
+    .line.diff.remove {
+        background-color: rgb(var(--danger-1));
+    }
+    .highlighted-word {
+        border: 2pt solid rgb(var(--primary-3));
+        border-radius: var(--border-radius-sm);
+    }
+
     :root {
-        --font-family-mono: "JetBrains Mono";
         --max-width-code-aside: 660px;
     }
 

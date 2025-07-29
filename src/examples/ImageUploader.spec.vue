@@ -1,10 +1,14 @@
 <script setup lang="ts">
-import { shallowRef, useTemplateRef, ref } from "vue"
-import { ImageUploader, type Image } from "@/components/ImageUploader"
+import { shallowRef, useTemplateRef, ref, h } from "vue"
+import { ImageUploader, type Image } from "@/lib/ImageUploader"
 import { message } from "@/scripts/client/message"
 
 const imgs = shallowRef<Image[]>([])
 const ImageUploaderRef = useTemplateRef("ImageUploaderRef")
+
+// 自訂圖示
+const renderAppendIcon = () => h("iconify-icon", { icon: "line-md:plus" })
+const renderRemoveIcon = () => h("iconify-icon", { icon: "line-md:remove" })
 
 const change = async (item: {
     images: Image[]
@@ -14,6 +18,7 @@ const change = async (item: {
     console.log(ImageUploaderRef.value?.size)
 }
 
+// 初始相片
 void (async function init() {
     const res = await fetch(`${import.meta.env.BASE_URL}data/Kirby.json`)
     const Kirby = (await res.json()) as Image
@@ -22,29 +27,47 @@ void (async function init() {
     imgs.value = [Kirby]
 })()
 
-const v_if = ref(true)
+// 測試 `v-if`
+const hidden = ref(false)
 </script>
 <template>
-    <view style="display: contents">
-        <button class="na-button" @click="v_if = !v_if">測試v-if</button>
+    <main style="display: contents">
         <ImageUploader
-            v-if="v_if"
+            v-if="!hidden"
             v-model="imgs"
             :limit="9"
             :accept="[`image/gif`, `image/jpeg`, `image/png`]"
             ref="ImageUploaderRef"
             @change="change"
-            @over-limit="
-                message({ content: `超出数量限制`, primary: `danger` })
-            "
+            :render-append-icon
+            :render-remove-icon
+            @over-limit="message({ content: `最多9張`, primary: `danger` })"
         />
-        <p class="na-font-mono">
+        <p class="na-paragraph na-font-mono" data-has-indent>
             {{ imgs.map((x: Image) => x.name) }}
         </p>
-    </view>
+        <form onsubmit="return false">
+            <label class="na-form-item">
+                <span>hidden</span>
+                <div class="na-input-wrapper">
+                    <span class="na-switch">
+                        <input
+                            type="checkbox"
+                            class="na-input"
+                            v-model="hidden"
+                            id="hidden"
+                            name="hidden"
+                        />
+                        <i class="na-switch-mover"></i>
+                        <span class="na-switch-slot"></span>
+                    </span>
+                </div>
+            </label>
+        </form>
+    </main>
 </template>
 <style scoped>
-button {
-    margin-bottom: 16px;
+form {
+    margin: 2em;
 }
 </style>

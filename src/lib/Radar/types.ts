@@ -22,12 +22,16 @@ export interface Options<T extends Exclude<string, "class">> {
     axisProps: (col: Column<T>) => { class: string } & Record<string, any>
     scaleProps: (scale: number) => { class: string } & Record<string, any>
     shapeProps: (col: Data<T>) => { class: string } & Record<string, any>
-    captionProps: (
-        col: Column<T>
-    ) => { class: string } & Record<string, any>
+    captionProps: (col: Column<T>) => { class: string } & Record<string, any>
 }
 
 export interface ExtendedOptions<T extends Exclude<string, "class">>
     extends Options<T> {
     chartSize: number
+}
+
+export interface RadarProps<T extends string> {
+    columnsData: Record<Exclude<T, "class">, string>
+    data: Data<T>[]
+    options?: Partial<Options<T>>
 }

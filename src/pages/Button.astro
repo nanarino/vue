@@ -1,0 +1,16 @@
+---
+import App from "@/layouts/app.astro"
+import ButtonSpec from "@/examples/Button.spec.vue"
+---
+
+<App title="按鈕">
+    <section>
+        <ButtonSpec client:only="vue" />
+    </section>
+</App>
+
+<style>
+    section {
+        padding: 1rem;
+    }
+</style>

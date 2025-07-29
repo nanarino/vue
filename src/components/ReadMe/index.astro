@@ -1,21 +1,26 @@
 ---
 import Code from "../Code/index.astro"
 import dedent from "dedent"
+// 就一個 readme 不想引入 mdx
 ---
 
-<p class="na-paragraph">
-    先要自订構建出 <code class="na-code na-code-no-bg">nanarinostyl</code> (
-    <code class="na-code">nanarinostyl/dist/style.min.css</code>
-    ) 放置在自己專案的 <code class="na-code na-code-no-bg">assets</code> 或 <code
-        class="na-code na-code-no-bg">public</code
-    > 目錄中，用任意方式引入
-</p>
+<h3 class="na-title">先決條件</h3>
 
 <Code
     code={dedent`
+        pnpm i nanarinostyl
+    `}
+    lang="shell"
+/>
+
+<Code
+    code={dedent`
+        ---
+        import nanarinostyl from "nanarinostyl?url" // [!code ++]
+        ---
         <html lang="en-HK">
             <head>
-                <link rel="stylesheet" href="/nanarinostyl.min.css" />
+                <link rel="stylesheet" href={nanarinostyl} /> // [!code ++]
             </head>
             <body>
                 <slot />
@@ -36,19 +41,90 @@ import dedent from "dedent"
     >
         FOUC
     </a>
-    問題是正常的，但是初始化明暗的脚本不應該使用<code
-        class="na-code na-code-no-bg">import</code
-    >引入
+    問題是正常的
 </p>
 
 <Code
     code={dedent`
+        // css in js
         import "nanarinostyl"
     `}
     lang="typescript"
 />
 
-<p class="na-paragraph">再拷貝本倉庫元件源代碼來進行使用</p>
+<p class="na-paragraph">
+    但是初始化明暗的脚本不應該使用
+    <code class="na-code na-code-no-bg"> import </code> 引入
+</p>
+
+<Code
+    code={dedent`
+        // [!code word:is\:inline]
+        <html lang="en-HK">
+            <head>
+                <script is:inline>
+                    document.documentElement.dataset["theme"] =
+                        localStorage.getItem("theme") ??
+                        ["dark", "light"][
+                            +!window.matchMedia?.("(prefers-color-scheme: dark)")?.matches
+                        ]
+                </script>
+            </head>
+            <body>
+                <slot />
+            </body>
+        </html>
+    `}
+    lang="astro"
+/>
+
+<h3 class="na-title">套用元件</h3>
+
+<p class="na-paragraph">
+    元件暫時未計劃發佈到
+    <a class="na-code na-link" href="https://www.npmjs.com/" target="_blank">
+        npm
+    </a> ，可以按以下方式安裝, 或者直接拷貝到自己的專案。
+</p>
+
+<Code
+    code={dedent`
+        // package.json
+
+        {
+            "dependencies": {
+                "@nanarinostyl/vue": "github:nanarino/na-vue", // [!code ++]
+            },
+            "pnpm": {
+                "overrides": {
+                    "nanarinostyl": "$nanarinostyl", // [!code ++]
+                }
+            }
+        }
+    `}
+    lang="jsonc"
+/>
+
+<Code
+    code={dedent`
+        pnpm update @nanarinostyl/vue
+    `}
+    lang="shell"
+/>
+
+<p class="na-paragraph">直接從源程式碼引入</p>
+
+<Code
+    code={dedent`
+        <script setup lang="ts">
+        import Button from "@nanarinostyl/vue/src/lib/Button" // [!code ++]
+        </script>
+        <template>
+            <Button> HOLA </Button> // [!code ++]
+        </template>
+    `}
+    lang="vue"
+/>
 
 <style>
     .na-code-no-bg {

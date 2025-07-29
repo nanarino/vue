@@ -1,12 +1,12 @@
 ---
 import { ClientRouter } from "astro:transitions"
-import clover from "@/assets/clover.svg"
 import "nanarinostyl"
 import themeIIFE from "@holy-two/data-theme/dist/iife?url"
 import iconifyIIFE from "iconify-icon/dist/iconify-icon.min?url"
 import ThemeToggle from "@/components/ThemeToggle"
 import Code from "@/components/Code/index.astro"
 import Footer from "@/components/Footer/index.astro"
+import FontInject from "@/components/FontInject.astro"
 
 interface Props {
     title?: string
@@ -26,9 +26,14 @@ const github = Astro.props.github || Astro.props.frontmatter?.github
         <title>{title}</title>
         <meta name="generator" content={Astro.generator} />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
-        <link rel="icon" type="image/svg+xml" href={clover.src} />
-        <ClientRouter />
+        <link
+            rel="icon"
+            type="image/svg+xml"
+            href={import.meta.env.BASE_URL + "clover.svg"}
+        />
         <script is:inline fetchpriority="high" src={themeIIFE}></script>
+        <ClientRouter />
+        <FontInject />
         <script is:inline src={iconifyIIFE}></script>
         <script src="@/scripts/client/init"></script>
     </head>

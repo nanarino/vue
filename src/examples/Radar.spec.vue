@@ -1,5 +1,7 @@
 <script setup lang="ts">
-import { Radar } from "@/components/Radar"
+import { ref } from "vue"
+import { Radar, type Points } from "@/lib/Radar"
+import { line, curveCardinalClosed } from "d3-shape"
 
 const columnsData = {
     price: "Price",
@@ -10,7 +12,6 @@ const columnsData = {
 }
 
 const data = [
-    // data
     {
         class: "iphone",
         price: 1,
@@ -37,29 +38,90 @@ const data = [
     },
 ]
 
+const axes = ref(true)
+const tension = ref(0.3)
+const smoothing = (points: Points) => {
+    return line().curve(curveCardinalClosed.tension(tension.value ?? 0))(
+        points
+    ) as string
+}
+const scales = ref(5)
 </script>
 <template>
-    <view style="display: contents">
-        <Radar class="my-phone" :columns-data="columnsData" :data="data" :options="{
-            shapeProps(data) {
-                // 测试案例，覆盖内部的class
-                return {
-                    class: 'shape ' + data.class
-                }
-            },
-        }" />
-    </view>
+    <main style="display: contents">
+        <Radar
+            class="my-phone"
+            :columns-data
+            :data
+            :options="{
+                scales,
+                smoothing,
+                axes,
+                shapeProps(data) {
+                    return {
+                        title: data.class,
+                        class: 'shape ' + data.class,
+                    }
+                },
+            }"
+        />
+        <form onsubmit="return false">
+            <label class="na-form-item">
+                <span>axes</span>
+                <div class="na-input-wrapper">
+                    <span class="na-switch">
+                        <input
+                            type="checkbox"
+                            class="na-input"
+                            v-model="axes"
+                            name="axes"
+                        />
+                        <i class="na-switch-mover"></i>
+                        <span class="na-switch-slot"></span>
+                    </span>
+                </div>
+            </label>
+            <label class="na-form-item">
+                <span>count</span>
+                <div class="na-input-wrapper" data-validate>
+                    <input
+                        type="number"
+                        class="na-input"
+                        v-model="tension"
+                        name="tension"
+                        :max="1"
+                        :min="0"
+                        :step="0.1"
+                        required
+                    />
+                </div>
+            </label>
+            <label class="na-form-item">
+                <span>scales</span>
+                <div class="na-input-wrapper" data-validate>
+                    <input
+                        type="number"
+                        class="na-input"
+                        v-model="scales"
+                        name="scales"
+                        :max="15"
+                        :min="0"
+                        required
+                    />
+                </div>
+            </label>
+        </form>
+    </main>
 </template>
 <style scoped>
 :deep(.my-phone) {
     .axis {
-        stroke: #555;
+        stroke: rgb(var(--gray-6));
         stroke-width: 0.2;
     }
 
     .scale {
-        fill: #f0f0f0;
-        stroke: #999;
+        stroke: rgb(var(--gray-4));
         stroke-width: 0.2;
     }
 
@@ -73,18 +135,22 @@ const data = [
     }
 
     .shape.iphone {
-        fill: #edc951;
-        stroke: #edc951;
+        fill: rgb(var(--cyan-4));
+        stroke: rgb(var(--cyan-6));
     }
 
     .shape.nexus {
-        fill: #cc333f;
-        stroke: #cc333f;
+        fill: rgb(var(--yellow-4));
+        stroke: rgb(var(--yellow-6));
     }
 
     .shape.galaxy {
-        fill: #00a0b0;
-        stroke: #00a0b0;
+        fill: rgb(var(--pinkpurple-4));
+        stroke: rgb(var(--pinkpurple-6));
     }
+}
+
+form {
+    margin: 2em;
 }
 </style>
