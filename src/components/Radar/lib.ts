@@ -40,18 +40,18 @@ const noSmoothing = (points: Points): string => {
 // 生成轴线元素
 const axis =
     <T extends Exclude<string, "class">>(opt: ExtendedOptions<T>) =>
-    (col: Column<T>): VNode => {
-        return h("polyline", {
-            ...opt.axisProps(col),
-            points: points([
-                [0, 0],
-                [
-                    polarToX(col.angle, opt.chartSize / 2),
-                    polarToY(col.angle, opt.chartSize / 2),
-                ],
-            ]),
-        })
-    }
+        (col: Column<T>): VNode => {
+            return h("polyline", {
+                ...opt.axisProps(col),
+                points: points([
+                    [0, 0],
+                    [
+                        polarToX(col.angle, opt.chartSize / 2),
+                        polarToY(col.angle, opt.chartSize / 2),
+                    ],
+                ]),
+            })
+        }
 
 // 生成数据形状元素
 const shape =
@@ -59,24 +59,31 @@ const shape =
         columns: Column<T>[],
         opt: ExtendedOptions<T>
     ) =>
-    (data: Data<T>, i: number): VNode => {
-        const shapePoints = columns.map(col => {
-            const val = data[col.key]
-            if (typeof val !== "number") {
-                throw new Error(`Data set ${i} is invalid.`)
-            }
+        (data: Data<T>, i: number): VNode => {
+            const shapePoints = columns.map(col => {
+                if (col.key === 'class') {
+                    return [
+                        0, 0
+                    ] as Point
+                }
 
-            return [
-                polarToX(col.angle, (val * opt.chartSize) / 2),
-                polarToY(col.angle, (val * opt.chartSize) / 2),
-            ] as Point
-        })
+                const val = data[col.key]
 
-        return h("path", {
-            ...opt.shapeProps(data),
-            d: opt.smoothing(shapePoints),
-        })
-    }
+                if (typeof val !== "number") {
+                    throw new Error(`Data set ${i} is invalid.`)
+                }
+
+                return [
+                    polarToX(col.angle, (val * opt.chartSize) / 2),
+                    polarToY(col.angle, (val * opt.chartSize) / 2),
+                ] as Point
+            })
+
+            return h("path", {
+                ...opt.shapeProps(data),
+                d: opt.smoothing(shapePoints),
+            })
+        }
 
 // 生成刻度元素
 const scale = <T extends Exclude<string, "class">>(
@@ -94,19 +101,19 @@ const scale = <T extends Exclude<string, "class">>(
 // 生成标题元素
 const caption =
     <T extends Exclude<string, "class">>(opt: ExtendedOptions<T>) =>
-    (col: Column<T>): VNode => {
-        const props = opt.captionProps(col)
-        return h(
-            "text",
-            {
-                ...props,
-                x: polarToX(col.angle, (opt.size / 2) * 0.95).toFixed(4),
-                y: polarToY(col.angle, (opt.size / 2) * 0.95).toFixed(4),
-                dy: (parseInt(props["font-size"] + "") || 2) / 2,
-            },
-            col.caption
-        )
-    }
+        (col: Column<T>): VNode => {
+            const props = opt.captionProps(col)
+            return h(
+                "text",
+                {
+                    ...props,
+                    x: polarToX(col.angle, (opt.size / 2) * 0.95).toFixed(4),
+                    y: polarToY(col.angle, (opt.size / 2) * 0.95).toFixed(4),
+                    dy: (parseInt(props["font-size"] + "") || 2) / 2,
+                },
+                col.caption
+            )
+        }
 
 // 默认配置
 const defaults: Options<string> = {
@@ -128,8 +135,9 @@ const defaults: Options<string> = {
 }
 
 // 主渲染函数
-export const renderRadarChart = <T extends Exclude<string, "class">>(
-    columnsData: Record<T, string>,
+export const renderRadarChart = <T extends string>(
+    // 从data的key里剔除class
+    columnsData: Record<Exclude<T, 'class'>, string>,
     data: Data<T>[],
     opt: Partial<Options<T>> = {}
 ): VNode => {
@@ -162,7 +170,7 @@ export const renderRadarChart = <T extends Exclude<string, "class">>(
     const columns: Column<T>[] = Object.keys(columnsData).map(
         (key, i, all) => ({
             key: key as T,
-            caption: columnsData[key as T],
+            caption: columnsData[key as Exclude<T, 'class'>],
             angle: (Math.PI * 2 * i) / all.length,
         })
     )
