@@ -1,9 +1,9 @@
-# nanarinostyl/vue
+# @nanarino/vue
 
 [![pnpm v9](https://img.shields.io/badge/maintained%20with-pnpm%209.0-cc00ff.svg?style=for-the-badge&logo=pnpm)](https://pnpm.io/)
 [![nodejs v20](https://img.shields.io/badge/Node.js-v20.17.0-026e00.svg?style=for-the-badge&logo=nodedotjs)](https://nodejs.org/)
 
-一個 [nanarinostyl](https://nanarino.github.io/stylus/) 主題的 [vue3](https://vuejs.org/) 元件合集
+一個 [@nanarino/stylus](https://nanarino.github.io/stylus/) 主題的 [vue3](https://vuejs.org/) 元件合集
 
 ## 開發
 
@@ -20,19 +20,19 @@ pnpm dev
 
 ## 利用
 
-先決條件是引入 `nanarinostyl`，以 `astro` 為例
+先決條件是引入 `@nanarino/stylus`，以 `astro` 為例
 
 ```shell
-pnpm i nanarinostyl
+pnpm i @nanarino/stylus
 ```
 
 ```astro
 ---
-import nanarinostyl from "nanarinostyl?url"
+import stylus from "@nanarino/stylus?url"
 ---
 <html lang="en-HK">
     <head>
-        <link rel="stylesheet" href={nanarinostyl} />
+        <link rel="stylesheet" href={stylus} />
     </head>
     <body>
         <slot />
@@ -44,7 +44,7 @@ import nanarinostyl from "nanarinostyl?url"
 
 ```ts
 // css in js
-import "nanarinostyl"
+import "@nanarino/stylus"
 ```
 
 但是初始化明暗的脚本不應該使用 `import` 引入
@@ -72,25 +72,25 @@ import "nanarinostyl"
 // package.json
 {
     "dependencies": {
-+       "@nanarinostyl/vue": "github:nanarino/na-vue",
++       "@nanarino/vue": "github:nanarino/vue",
     },
     "pnpm": {
         "overrides": {
-+           "nanarinostyl": "$nanarinostyl",
++           "@nanarino/stylus": "$@nanarino/stylus",
         }
     }
 }
 ```
 
 ```shell
-pnpm update @nanarinostyl/vue
+pnpm update @nanarino/vue
 ```
 
 直接從源程式碼引入
 
 ```vue
 <script setup lang="ts">
-import Button from "@nanarinostyl/vue/src/lib/Button"
+import Button from "@nanarino/vue/src/lib/Button"
 </script>
 <template>
     <Button> HOLA </Button>

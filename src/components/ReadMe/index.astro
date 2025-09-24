@@ -8,7 +8,7 @@ import dedent from "dedent"
 
 <Code
     code={dedent`
-        pnpm i nanarinostyl
+        pnpm i @nanarino/stylus
     `}
     lang="shell"
 />
@@ -16,11 +16,11 @@ import dedent from "dedent"
 <Code
     code={dedent`
         ---
-        import nanarinostyl from "nanarinostyl?url" // [!code ++]
+        import stylus from "@nanarino/stylus?url" // [!code ++]
         ---
         <html lang="en-HK">
             <head>
-                <link rel="stylesheet" href={nanarinostyl} /> // [!code ++]
+                <link rel="stylesheet" href={stylus} /> // [!code ++]
             </head>
             <body>
                 <slot />
@@ -47,7 +47,7 @@ import dedent from "dedent"
 <Code
     code={dedent`
         // css in js
-        import "nanarinostyl"
+        import "@nanarino/stylus"
     `}
     lang="typescript"
 />
@@ -93,11 +93,11 @@ import dedent from "dedent"
 
         {
             "dependencies": {
-                "@nanarinostyl/vue": "github:nanarino/na-vue", // [!code ++]
+                "@nanarino/vue": "github:nanarino/vue", // [!code ++]
             },
             "pnpm": {
                 "overrides": {
-                    "nanarinostyl": "$nanarinostyl", // [!code ++]
+                    "@nanarino/stylus": "$@nanarino/stylus", // [!code ++]
                 }
             }
         }
@@ -107,7 +107,7 @@ import dedent from "dedent"
 
 <Code
     code={dedent`
-        pnpm update @nanarinostyl/vue
+        pnpm update @nanarino/vue
     `}
     lang="shell"
 />
@@ -117,7 +117,7 @@ import dedent from "dedent"
 <Code
     code={dedent`
         <script setup lang="ts">
-        import Button from "@nanarinostyl/vue/src/lib/Button" // [!code ++]
+        import Button from "@nanarino/vue/src/lib/Button" // [!code ++]
         </script>
         <template>
             <Button> HOLA </Button> // [!code ++]

@@ -1,18 +1,18 @@
 {
-    "name": "@nanarinostyl/vue",
+    "name": "@nanarino/vue",
     "type": "module",
     "version": "0.0.1",
     "scripts": {
         "dev": "astro dev --host",
         "build:docs": "astro build",
-        "build:gh-pages": "astro build --base /na-vue/",
+        "build:gh-pages": "astro build --base /vue/",
         "preview": "astro preview"
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/nanarino/na-vue.git"
+        "url": "git+https://github.com/nanarino/vue.git"
     },
-    "homepage": "https://nanarino.github.io/na-vue/",
+    "homepage": "https://nanarino.github.io/vue/",
     "keywords": [
         "ui",
         "vue"
@@ -20,21 +20,21 @@
     "author": "kogawananari",
     "license": "MIT",
     "bugs": {
-        "url": "https://github.com/nanarino/na-vue/issues"
+        "url": "https://github.com/nanarino/vue/issues"
     },
     "peerDependencies": {
-        "nanarinostyl": "^0.12.2"
+        "@nanarino/stylus": "^1.0.0"
     },
     "dependencies": {
         "vue": "^3.5.21"
     },
     "devDependencies": {
         "@astrojs/vue": "^5.1.1",
-        "@fontsource/jetbrains-mono": "^5.2.7",
+        "@fontsource/jetbrains-mono": "^5.2.8",
         "@holy-two/data-theme": "^0.0.6",
-        "@shikijs/transformers": "^3.12.2",
+        "@shikijs/transformers": "^3.13.0",
         "@types/d3-shape": "^3.1.7",
-        "astro": "^5.13.7",
+        "astro": "^5.13.10",
         "d3-shape": "^3.2.0",
         "dedent": "^1.7.0",
         "iconify-icon": "^2.3.0",
