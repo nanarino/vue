@@ -5,5 +5,5 @@ export default {
     panel,
 }
 export { group as TabGroup }
-export { panel as Tabpanel }
+export { panel as TabPanel }
 export * from "./types"
