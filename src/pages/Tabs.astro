@@ -1,0 +1,16 @@
+---
+import App from "@/layouts/app.astro"
+import TabsSpec from "@/examples/Tabs.spec.vue"
+---
+
+<App title="頁籤">
+    <section>
+        <TabsSpec client:only="vue" />
+    </section>
+</App>
+
+<style>
+    section {
+        padding: 1rem;
+    }
+</style>

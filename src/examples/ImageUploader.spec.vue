@@ -20,11 +20,11 @@ const change = async (item: {
 
 // 初始相片
 void (async function init() {
-    const res = await fetch(`${import.meta.env.BASE_URL}data/Kirby.json`)
-    const Kirby = (await res.json()) as Image
-    if (Kirby.url)
-        Kirby.url = Kirby.url.replace(/^\//, import.meta.env.BASE_URL)
-    imgs.value = [Kirby]
+    const res = await fetch(`${import.meta.env.BASE_URL}images/IMG_2568.json`)
+    const IMG_2568 = (await res.json()) as Image
+    if (IMG_2568.url)
+        IMG_2568.url = IMG_2568.url.replace(/^\//, import.meta.env.BASE_URL)
+    imgs.value = [IMG_2568]
 })()
 
 // 測試 `v-if`
