@@ -14,7 +14,11 @@ async function handleClick(e: MouseEvent) {
 </script>
 <template>
     <button
-        class="na-button"
+        :class="{
+            'na-button': true,
+            lg: props.size === 'lg',
+            sm: props.size === 'sm',
+        }"
         :data-primary="primary || null"
         :disabled
         @click="handleClick"

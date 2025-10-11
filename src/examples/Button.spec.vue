@@ -21,6 +21,7 @@ import { message } from "@/scripts/client/message"
             <Button
                 @click="() => message({ content: '危險', primary: 'danger' })"
                 primary="danger"
+                size="lg"
             >
                 危險
                 <template #suffix>
@@ -30,13 +31,14 @@ import { message } from "@/scripts/client/message"
             <Button
                 @click="() => message({ content: '警告', primary: 'warning' })"
                 primary="warning"
+                size="sm"
             >
                 <template #prefix>
                     <iconify-icon icon="material-symbols:warning-rounded" />
                 </template>
                 警告
             </Button>
-            <Button @click="() => message('載入中')" auto-loading>
+            <Button @click="() => message('載入中...')" auto-loading>
                 <template #prefix="{ loading }">
                     <iconify-icon
                         icon="line-md:loading-twotone-loop"
