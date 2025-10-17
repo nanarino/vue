@@ -6,6 +6,7 @@ export interface TabGroupProps {
     primary?: boolean | "success" | "danger" | "warning"
     size?: "lg" | "md"
     renderRemoveIcon?: () => VNode
+    renderLabelsText?: (label: TabLabel) => VNode | void
 }
 
 export interface TabPanelProps {

@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import { reactive, provide, h, watch } from "vue"
+import { reactive, provide, h, watch, createTextVNode, computed } from "vue"
 import type { TabGroupProps, TabPanelInject, TabPanelProps, TabLabel } from "."
 import close from "../../assets/close.svg?raw"
 
 const props = withDefaults(defineProps<TabGroupProps>(), {
-    renderRemoveIcon: () =>
+    renderRemoveIcon: () => (
         h("i", {
             innerHTML: close,
             style: `
@@ -12,9 +12,18 @@ const props = withDefaults(defineProps<TabGroupProps>(), {
                 width: var(--font-size-tabs, var(--font-size-body));
                 height: var(--font-size-tabs, var(--font-size-body));
             `,
-        }),
+        })
+    ),
 })
 const data = reactive<TabPanelInject["data"]>([])
+const labels = computed(() =>
+    Object.fromEntries(
+        data.map(tab => [
+            tab.label,
+            props.renderLabelsText?.(tab.label) ?? createTextVNode(tab.label),
+        ])
+    )
+)
 const active = defineModel<TabLabel>("modelValue", { default: "" })
 watch(active, v =>
     emit(
@@ -47,7 +56,7 @@ provide<TabPanelInject>("tabPanelInject", {
                 :data-active="active === tab.label || null"
             >
                 <button class="na-tab-name" @click="active = tab.label">
-                    {{ tab.label }}
+                    <component :is="labels[tab.label]" />
                 </button>
                 <button
                     class="na-tab-operation"

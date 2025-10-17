@@ -1,8 +1,21 @@
 <script setup lang="ts">
 import Tabs from "@/lib/Tabs"
-import { ref, h } from "vue"
+import { ref, h, Fragment } from "vue"
 const renderRemoveIcon = () => h("iconify-icon", { icon: "line-md:remove" })
 const active = ref("夜景")
+const renderLabelsText = (label: string) => {
+    if (label !== "夜景") return
+    return h(Fragment, [
+        h("iconify-icon", {
+            icon:
+                active.value === "夜景"
+                    ? "line-md:moon-rising-filled-loop"
+                    : "line-md:moon-simple",
+            style: "vertical-align: middle;",
+        }),
+        h("span", { innerHTML: `&nbsp;${label}` }),
+    ])
+}
 const BASE = import.meta.env.BASE_URL
 </script>
 <template>
@@ -14,6 +27,7 @@ const BASE = import.meta.env.BASE_URL
                 @change="console.log"
                 @close="console.log"
                 :renderRemoveIcon
+                :renderLabelsText
             >
                 <Tabs.panel label="夜景" class="na-image">
                     <img :src="`${BASE}images/IMG_2568.JPG`" alt="夜景" />
