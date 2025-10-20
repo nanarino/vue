@@ -2,8 +2,8 @@
 import Tabs from "@/lib/Tabs"
 import { ref, h, Fragment } from "vue"
 const renderRemoveIcon = () => h("iconify-icon", { icon: "line-md:remove" })
-const active = ref("夜景")
-const renderLabelsText = (label: string) => {
+const active = ref<"夜景" | "動物" | "人像">("夜景")
+const renderLabelsText = (label: typeof active.value) => {
     if (label !== "夜景") return
     return h(Fragment, [
         h("iconify-icon", {

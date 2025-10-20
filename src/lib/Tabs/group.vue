@@ -1,10 +1,18 @@
-<script setup lang="ts">
-import { reactive, provide, h, watch, createTextVNode, computed } from "vue"
+<script setup lang="ts" generic="T extends TabLabel = TabLabel">
+import {
+    reactive,
+    provide,
+    h,
+    watch,
+    createTextVNode,
+    computed,
+    type VNode,
+} from "vue"
 import type { TabGroupProps, TabPanelInject, TabPanelProps, TabLabel } from "."
 import close from "../../assets/close.svg?raw"
 
-const props = withDefaults(defineProps<TabGroupProps>(), {
-    renderRemoveIcon: () => (
+const props = withDefaults(defineProps<TabGroupProps<T>>(), {
+    renderRemoveIcon: () =>
         h("i", {
             innerHTML: close,
             style: `
@@ -12,19 +20,20 @@ const props = withDefaults(defineProps<TabGroupProps>(), {
                 width: var(--font-size-tabs, var(--font-size-body));
                 height: var(--font-size-tabs, var(--font-size-body));
             `,
-        })
-    ),
+        }),
 })
-const data = reactive<TabPanelInject["data"]>([])
-const labels = computed(() =>
-    Object.fromEntries(
-        data.map(tab => [
-            tab.label,
-            props.renderLabelsText?.(tab.label) ?? createTextVNode(tab.label),
-        ])
-    )
+const data = reactive<TabPanelInject<T>["data"]>([])
+const labels = computed(
+    () =>
+        Object.fromEntries(
+            data.map(tab => [
+                tab.label,
+                props.renderLabelsText?.(tab.label as T) ??
+                    createTextVNode(tab.label as T),
+            ])
+        ) as Record<T, VNode>
 )
-const active = defineModel<TabLabel>("modelValue", { default: "" })
+const active = defineModel<T | undefined>("modelValue", { required: true })
 watch(active, v =>
     emit(
         "change",
@@ -55,8 +64,8 @@ provide<TabPanelInject>("tabPanelInject", {
                 :key="tab.label"
                 :data-active="active === tab.label || null"
             >
-                <button class="na-tab-name" @click="active = tab.label">
-                    <component :is="labels[tab.label]" />
+                <button class="na-tab-name" @click="active = tab.label as T">
+                    <component :is="labels[tab.label as T]" />
                 </button>
                 <button
                     class="na-tab-operation"
@@ -73,8 +82,8 @@ provide<TabPanelInject>("tabPanelInject", {
                             )
                             if (active === tab.label) {
                                 active =
-                                    data.at(index)?.label ??
-                                    data.at(-1)?.label ??
+                                    data.at(index)?.label as T ??
+                                    data.at(-1)?.label as T ??
                                     ''
                             }
                             emit('close', tab)
