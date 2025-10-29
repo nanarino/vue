@@ -12,12 +12,18 @@ import { message } from "@/scripts/client/message"
             >
                 主題
             </Button>
-            <Button
-                @click="() => message({ content: '成功', primary: 'success' })"
-                primary="success"
-            >
-                成功
-            </Button>
+            <div>
+                <Button primary="success" round title="健康碼">
+                    <template #prefix>
+                        <iconify-icon icon="line-md:cellphone-arrow-up" />
+                    </template>
+                </Button>
+                <Button primary="warning" square title="手機禁止">
+                    <template #suffix>
+                        <iconify-icon icon="line-md:cellphone-off-twotone" />
+                    </template>
+                </Button>
+            </div>
             <Button
                 @click="() => message({ content: '危險', primary: 'danger' })"
                 primary="danger"
@@ -54,5 +60,11 @@ import { message } from "@/scripts/client/message"
 section {
     display: grid;
     gap: 8px;
+}
+div {
+    --font-size-body: 32px;
+    display: flex;
+    justify-content: center;
+    gap: 1em;
 }
 </style>

@@ -1,7 +1,7 @@
 {
     "name": "@nanarino/vue",
     "type": "module",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "scripts": {
         "dev": "astro dev --host",
         "build:docs": "astro build",
@@ -23,23 +23,23 @@
         "url": "https://github.com/nanarino/vue/issues"
     },
     "peerDependencies": {
-        "@nanarino/stylus": "^1.0.0"
+        "@nanarino/stylus": "^1.0.2"
     },
     "dependencies": {
         "vue": "^3.5.22"
     },
     "devDependencies": {
-        "@astrojs/vue": "^5.1.1",
+        "@astrojs/vue": "^5.1.2",
         "@fontsource/jetbrains-mono": "^5.2.8",
-        "@holy-two/data-theme": "^0.0.6",
-        "@shikijs/transformers": "^3.13.0",
+        "@holy-two/data-theme": "^0.0.7",
+        "@shikijs/transformers": "^3.14.0",
         "@types/d3-shape": "^3.1.7",
-        "astro": "^5.14.4",
+        "astro": "^5.15.2",
         "d3-shape": "^3.2.0",
         "dedent": "^1.7.0",
         "iconify-icon": "^2.3.0",
-        "style-to-object": "^1.0.11",
-        "vite": "^6.3.6"
+        "style-to-object": "^1.0.12",
+        "vite": "^6.4.1"
     },
     "pnpm": {
         "overrides": {

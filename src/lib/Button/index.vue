@@ -19,7 +19,9 @@ async function handleClick(e: MouseEvent) {
             lg: props.size === 'lg',
             sm: props.size === 'sm',
         }"
-        :data-primary="primary || null"
+        :data-primary="primary === true ? '' : primary || null"
+        :data-square="square ? '' : null"
+        :data-round="round ? '' : null"
         :disabled
         @click="handleClick"
     >
@@ -29,6 +31,9 @@ async function handleClick(e: MouseEvent) {
     </button>
 </template>
 <style scoped>
+span:empty {
+    display: none;
+}
 button {
     gap: 8px;
 }
