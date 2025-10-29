@@ -45,6 +45,9 @@ importers:
       iconify-icon:
         specifier: ^2.3.0
         version: 2.3.0
+      smooth-corners:
+        specifier: ^1.1.0
+        version: 1.1.0
       style-to-object:
         specifier: ^1.0.12
         version: 1.0.12
@@ -1724,6 +1727,9 @@ packages:
   smol-toml@1.4.2:
     resolution: {integrity: sha512-rInDH6lCNiEyn3+hH8KVGFdbjc099j47+OSgbMrfDYX1CmXLfdKd7qi6IfcWj2wFxvSVkuI46M+wPGYfEOEj6g==}
     engines: {node: '>= 18'}
+
+  smooth-corners@1.1.0:
+    resolution: {integrity: sha512-ugdNZe/w4dHs7gNj1KvfatEGtvcH3BqsVfqJAfDbilta2puqu/95ncgOom7y10JwBTyMH+8vOOz7wdPcrZlJdw==}
 
   source-map-js@1.2.1:
     resolution: {integrity: sha512-UXWMKhLOwVKb728IUtQPXxfYU+usdybtUrK/8uGE8CQMvrhOpwvzDBwj0QhSL7MQc7vIsISBG8VQ8+IDQxpfQA==}
@@ -4148,6 +4154,8 @@ snapshots:
   sisteransi@1.0.5: {}
 
   smol-toml@1.4.2: {}
+
+  smooth-corners@1.1.0: {}
 
   source-map-js@1.2.1: {}
 

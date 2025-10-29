@@ -38,6 +38,7 @@
         "d3-shape": "^3.2.0",
         "dedent": "^1.7.0",
         "iconify-icon": "^2.3.0",
+        "smooth-corners": "^1.1.0",
         "style-to-object": "^1.0.12",
         "vite": "^6.4.1"
     },
