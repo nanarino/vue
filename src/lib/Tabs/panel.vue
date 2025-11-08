@@ -33,7 +33,7 @@ onUnmounted(async () => {
     </section>
 </template>
 <style scoped>
-.na-tab-panel {
+:where(.na-tab-panel) {
     display: contents;
 }
 </style>
