@@ -19,6 +19,8 @@ const props = withDefaults(defineProps<ImageUploaderProps>(), {
     limit: Infinity,
     customCreateUrl: defaultCreateUrl,
     customRevokeUrl: defaultRevokeUrl,
+    appendText: "點擊添加或拖拽相片",
+    removeText: "移除該相片",
     renderAppendIcon: () =>
         h("i", { innerHTML: plus, style: "display: inline-flex" }),
     renderRemoveIcon: () =>
@@ -145,6 +147,7 @@ onBeforeUnmount(async () => {
                         class="icon na-link"
                         @click="remove(index)"
                         style="font-size: 22px"
+                        :title="removeText"
                     >
                         <component :is="renderRemoveIcon" />
                     </span>
@@ -173,7 +176,7 @@ onBeforeUnmount(async () => {
             <span class="icon" style="font-size: 48px; pointer-events: none">
                 <component :is="renderAppendIcon" />
             </span>
-            <span> 點擊添加或拖拽相片 </span>
+            <span> {{ appendText }} </span>
         </div>
     </div>
 </template>

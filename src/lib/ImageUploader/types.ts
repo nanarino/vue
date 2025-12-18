@@ -26,6 +26,8 @@ export interface ImageUploaderProps {
     ) => Promise<Image> | Image
     /**自訂銷毀 銷毀先前挂到File上URL */
     customRevokeUrl?: (img: Image | LocalInputFileImage) => Promise<void> | void
+    appendText?: string
+    removeText?: string
     renderAppendIcon?: () => VNode
     renderRemoveIcon?: () => VNode
 }
