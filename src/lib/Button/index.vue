@@ -22,6 +22,7 @@ async function handleClick(e: MouseEvent) {
         :data-primary="primary === true ? '' : primary || null"
         :data-square="square ? '' : null"
         :data-round="round ? '' : null"
+        :data-ghost="ghost ? '' : null"
         :disabled
         @click="handleClick"
     >

@@ -13,7 +13,7 @@ import { message } from "@/scripts/client/message"
                 主題
             </Button>
             <div>
-                <Button primary="success" round title="健康碼">
+                <Button ghost primary="success" round title="健康碼">
                     <template #prefix>
                         <iconify-icon icon="line-md:cellphone-arrow-up" />
                     </template>
@@ -44,7 +44,7 @@ import { message } from "@/scripts/client/message"
                 </template>
                 警告
             </Button>
-            <Button @click="() => message('載入中...')" auto-loading>
+            <Button ghost @click="() => message('載入中...')" auto-loading>
                 <template #prefix="{ loading }">
                     <iconify-icon
                         icon="line-md:loading-twotone-loop"
@@ -63,6 +63,7 @@ section {
 }
 div {
     --font-size-body: 32px;
+    --border-width-button: 4px;
     display: flex;
     justify-content: center;
     gap: 1em;
