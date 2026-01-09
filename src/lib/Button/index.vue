@@ -4,12 +4,16 @@ import type { ButtonProps } from "."
 
 const props = defineProps<ButtonProps>()
 const loading = defineModel<boolean>("loading", { default: false })
-// 沒有設計內置 loading 所以只 disabled 但是外部可以獲取 然後修改 prefix
 const disabled = computed(() => loading.value || props.disabled)
-async function handleClick(e: MouseEvent) {
-    if (props.autoLoading) loading.value = true
-    await props.onClick?.(e)
-    loading.value = false
+async function handleClick(event: MouseEvent) {
+    try {
+        if (props.autoLoading) loading.value = true
+        await props.onClick?.(event)
+    } catch (error) {
+        console.error(error)
+    } finally {
+        if (props.autoLoading) loading.value = false
+    }
 }
 </script>
 <template>
