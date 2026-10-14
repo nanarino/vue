@@ -7,17 +7,17 @@ const count = ref(0)
 const strokeWidth = ref(18)
 const items = computed(() =>
     [
-        { color: "rgb(var(--red-4)", key: "red" },
-        { color: "rgb(var(--orange-4)", key: "orange", title: "orange" },
-        { color: "rgb(var(--gold-4)", key: "gold" },
-        { color: "rgb(var(--yellow-4)", key: "yellow" },
-        { color: "rgb(var(--lime-4)", key: "lime" },
-        { color: "rgb(var(--green-4)", key: "green" },
-        { color: "rgb(var(--cyan-4)", key: "cyan" },
-        { color: "rgb(var(--blue-4)", key: "blue" },
-        { color: "rgb(var(--purple-4)", key: "purple" },
-        { color: "rgb(var(--pinkpurple-4)", key: "pinkpurple" },
-        { color: "rgb(var(--magenta-4)", key: "magenta" },
+        { color: "oklch(var(--red-4)", key: "red" },
+        { color: "oklch(var(--orange-4)", key: "orange", title: "orange" },
+        { color: "oklch(var(--gold-4)", key: "gold" },
+        { color: "oklch(var(--yellow-4)", key: "yellow" },
+        { color: "oklch(var(--lime-4)", key: "lime" },
+        { color: "oklch(var(--green-4)", key: "green" },
+        { color: "oklch(var(--cyan-4)", key: "cyan" },
+        { color: "oklch(var(--blue-4)", key: "blue" },
+        { color: "oklch(var(--purple-4)", key: "purple" },
+        { color: "oklch(var(--pinkpurple-4)", key: "pinkpurple" },
+        { color: "oklch(var(--magenta-4)", key: "magenta" },
     ].slice(0, count.value)
 )
 

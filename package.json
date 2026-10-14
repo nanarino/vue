@@ -1,7 +1,7 @@
 {
     "name": "@nanarino/vue",
     "type": "module",
-    "version": "1.0.7",
+    "version": "2.0.1",
     "scripts": {
         "dev": "astro dev --host",
         "build:docs": "astro build",
@@ -23,28 +23,29 @@
         "url": "https://github.com/nanarino/vue/issues"
     },
     "peerDependencies": {
-        "@nanarino/stylus": "^1.0.7"
+        "@nanarino/stylus": "^2.0.1"
     },
     "dependencies": {
-        "vue": "^3.5.26"
+        "vue": "^3.5.44"
     },
     "devDependencies": {
-        "@astrojs/vue": "^5.1.4",
-        "@fontsource/jetbrains-mono": "^5.2.8",
+        "@astrojs/vue": "^7.0.3",
+        "@fontsource/jetbrains-mono": "^5.3.0",
         "@holy-two/data-theme": "^0.0.7",
-        "@shikijs/transformers": "^3.21.0",
-        "@types/d3-shape": "^3.1.7",
-        "astro": "^5.16.7",
+        "@shikijs/transformers": "^4.5.0",
+        "@types/d3-shape": "^3.2.0",
+        "astro": "^7.3.8",
         "d3-shape": "^3.2.0",
-        "dedent": "^1.7.1",
+        "dedent": "^1.7.2",
         "iconify-icon": "^2.3.0",
         "smooth-corners": "^1.1.0",
         "style-to-object": "^1.0.14",
-        "vite": "^6.4.1"
+        "vite": "^8.3.4"
     },
     "pnpm": {
         "overrides": {
-            "vite": "$vite"
+            "vite": "$vite",
+            "@shikijs/transformers": "$@shikijs/transformers"
         }
     },
     "files": [

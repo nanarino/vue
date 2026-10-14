@@ -13,39 +13,41 @@ const base = import.meta.env.BASE_URL
 ---
 
 <App github="https://github.com/nanarino/vue">
-    <header>
-        <section class="logo-bg">
-            <LiquidLogo imageUrl={cloverUrl} client:only="vue" />
-        </section>
-        <nav class="logo">
-            <a
-                class="logo clover"
-                title="@nanarino/stylus"
-                href="https://nanarino.github.io/stylus/"
-                target="_blank"
-            >
-                <Fragment set:html={cloverRaw} />
-                <i>nanarino stylus design</i>
-            </a>
-            <a
-                class="logo vue"
-                title="vue"
-                href="https://vuejs.org/"
-                target="_blank"
-            >
-                <Fragment set:html={vue} />
-                <i>vuejs</i>
-            </a>
-        </nav>
-        <h1 class="na-font-mono" style="font-size: 5.5rem;font-weight: 400;">
-            {"<na-vue/>"}
-        </h1>
-        <p class="na-paragraph" data-size="4" style="margin: 0;">
-            一個<span class="na-font-mono">
-                @nanarino/stylus
-            </span>設計語言試作的<span class="na-font-mono"> vue </span>元件合集
-        </p>
-    </header>
+    <div class="hero">
+        <header>
+            <section class="logo-bg">
+                <LiquidLogo imageUrl={cloverUrl} client:only="vue" />
+            </section>
+            <nav class="logo">
+                <a
+                    class="logo clover"
+                    title="@nanarino/stylus"
+                    href="https://nanarino.github.io/stylus/"
+                    target="_blank"
+                >
+                    <Fragment set:html={cloverRaw} />
+                    <i>nanarino stylus design</i>
+                </a>
+                <a
+                    class="logo vue"
+                    title="vue"
+                    href="https://vuejs.org/"
+                    target="_blank"
+                >
+                    <Fragment set:html={vue} />
+                    <i>vuejs</i>
+                </a>
+            </nav>
+            <h1 class="na-font-mono" style="font-size: 5.5rem;font-weight: 400;">
+                {"<na-vue/>"}
+            </h1>
+            <p class="na-paragraph" data-size="4" style="margin: 0;">
+                一個<span class="na-font-mono">
+                    @nanarino/stylus
+                </span>設計語言試作的<span class="na-font-mono"> vue </span>元件合集
+            </p>
+        </header>
+    </div>
     <nav class="pages">
         <h2 class="na-title">元件列表</h2>
         <Menu menu={menu} base={base} />
@@ -66,7 +68,7 @@ const base = import.meta.env.BASE_URL
         gap: 16px;
         align-content: center;
         height: 100vh;
-        background-color: rgb(var(--white));
+        background-color: oklch(var(--white));
 
         @supports (height: 100dvh) {
             & {
@@ -75,8 +77,9 @@ const base = import.meta.env.BASE_URL
         }
 
         .logo-bg {
+            --inset: 99px;
             position: absolute;
-            inset: 99px;
+            inset: var(--inset);
         }
 
         h1,
@@ -89,6 +92,41 @@ const base = import.meta.env.BASE_URL
             :root[data-theme="dark"] & {
                 color: #f0f;
             }
+        }
+    }
+
+    /*
+     * 多出来的一屏滚动距离里 header 吸顶，logo-bg 先被推出画面；
+     * 这段滚完 sticky 松开，页面才继续往下走。
+     */
+    @supports (animation-timeline: view()) {
+        @media (prefers-reduced-motion: no-preference) {
+            .hero {
+                height: 200vh;
+                view-timeline-name: --hero;
+                view-timeline-axis: block;
+
+                @supports (height: 100dvh) {
+                    height: 200dvh;
+                }
+            }
+
+            header {
+                position: sticky;
+                top: 0;
+
+                .logo-bg {
+                    animation: logo-bg-exit linear both;
+                    animation-timeline: --hero;
+                    animation-range: contain 0% contain 100%;
+                }
+            }
+        }
+    }
+
+    @keyframes logo-bg-exit {
+        to {
+            transform: translateY(calc(-100% - var(--inset)));
         }
     }
 
@@ -137,10 +175,10 @@ const base = import.meta.env.BASE_URL
 
     nav.pages {
         padding: 2em;
-        background: rgb(var(--black));
+        background: oklch(var(--black));
         h2 {
             padding: 0 2rem;
-            color: rgb(var(--white));
+            color: oklch(var(--white));
         }
     }
 

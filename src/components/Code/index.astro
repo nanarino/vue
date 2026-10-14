@@ -52,8 +52,8 @@ const transformers: Parameters<typeof Code>[0]["transformers"] = [
             const dark = style?.["--shiki-dark"]
             if (light && dark) {
                 node.properties.style = dedent`
-                    --color-code: from ${light} r g b;
-                    --color-code-dark: from ${dark} r g b;
+                    --color-code: from ${light} l c h;
+                    --color-code-dark: from ${dark} l c h;
                 `
             }
         },
@@ -109,13 +109,13 @@ const transformers: Parameters<typeof Code>[0]["transformers"] = [
 
 <style is:global>
     .line.diff.add {
-        background-color: rgb(var(--success-1));
+        background-color: oklch(var(--success-1));
     }
     .line.diff.remove {
-        background-color: rgb(var(--danger-1));
+        background-color: oklch(var(--danger-1));
     }
     .highlighted-word {
-        border: 2pt solid rgb(var(--primary-3));
+        border: 2pt solid oklch(var(--primary-3));
         border-radius: var(--border-radius-sm);
     }
 

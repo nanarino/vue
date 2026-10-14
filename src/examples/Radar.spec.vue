@@ -116,12 +116,12 @@ const scales = ref(5)
 <style scoped>
 :deep(.my-phone) {
     .axis {
-        stroke: rgb(var(--gray-6));
+        stroke: oklch(var(--gray-6));
         stroke-width: 0.2;
     }
 
     .scale {
-        stroke: rgb(var(--gray-4));
+        stroke: oklch(var(--gray-4));
         stroke-width: 0.2;
     }
 
@@ -135,18 +135,18 @@ const scales = ref(5)
     }
 
     .shape.iphone {
-        fill: rgb(var(--cyan-4));
-        stroke: rgb(var(--cyan-6));
+        fill: oklch(var(--cyan-4));
+        stroke: oklch(var(--cyan-6));
     }
 
     .shape.nexus {
-        fill: rgb(var(--yellow-4));
-        stroke: rgb(var(--yellow-6));
+        fill: oklch(var(--yellow-4));
+        stroke: oklch(var(--yellow-6));
     }
 
     .shape.galaxy {
-        fill: rgb(var(--pinkpurple-4));
-        stroke: rgb(var(--pinkpurple-6));
+        fill: oklch(var(--pinkpurple-4));
+        stroke: oklch(var(--pinkpurple-6));
     }
 }
 
