@@ -31,9 +31,9 @@ function handleItemClick(item: Item) {
         <section style="width: 200px">
             <Donut
                 :items="[
-                    { color: 'rgb(var(--blue-4)', key: 'blue', proportion: 33 },
+                    { color: 'oklch(var(--blue-4)', key: 'blue', proportion: 33 },
                     {
-                        color: 'rgb(var(--cyan-4)',
+                        color: 'oklch(var(--cyan-4)',
                         key: 'cyan',
                         proportion: 67,
                         title: 'cyan 67%',

@@ -29,7 +29,7 @@ const N = (n: number) => [
         <g
             v-if="A < 2"
             :data-citrus-item="A ? '' : null"
-            :fill="props.items.at(0)?.color || `rgb(var(--gray-2))`"
+            :fill="props.items.at(0)?.color || `oklch(var(--gray-2))`"
             :data-key="props.items.at(0)?.key ?? null"
             @click="() => A && props.onItemClick?.(props.items.at(0)!)"
             :style="{
@@ -42,7 +42,7 @@ const N = (n: number) => [
                 r="100"
                 stroke-linejoin="round"
                 stroke-linecap="round"
-                :stroke="props.items.at(0)?.color || `rgb(var(--gray-2))`"
+                :stroke="props.items.at(0)?.color || `oklch(var(--gray-2))`"
                 :stroke-width
             >
                 <title
@@ -70,7 +70,7 @@ const N = (n: number) => [
                     Z`"
                 stroke-linejoin="round"
                 stroke-linecap="round"
-                :stroke="item.color || `rgb(var(--primary-4))`"
+                :stroke="item.color || `oklch(var(--primary-4))`"
                 :stroke-width
                 :transform="`translate(${N(n)})`"
             >

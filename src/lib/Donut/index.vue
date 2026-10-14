@@ -43,7 +43,7 @@ const P = (n: number) => [X(n), Y(n)]
             fill="transparent"
             stroke-linejoin="round"
             stroke-linecap="round"
-            stroke="rgb(var(--gray-2))"
+            stroke="oklch(var(--gray-2))"
             :stroke-width
         />
         <g
@@ -66,7 +66,7 @@ const P = (n: number) => [X(n), Y(n)]
                     `"
                 stroke-linejoin="round"
                 stroke-linecap="round"
-                :stroke="item.color || `rgb(var(--primary-4))`"
+                :stroke="item.color || `oklch(var(--primary-4))`"
                 :stroke-width
             >
                 <title v-if="item.title" v-text="item.title"></title>
@@ -79,7 +79,7 @@ const P = (n: number) => [X(n), Y(n)]
                 fill="transparent"
                 stroke-linejoin="round"
                 stroke-linecap="round"
-                :stroke="item.color || `rgb(var(--primary-4))`"
+                :stroke="item.color || `oklch(var(--primary-4))`"
                 :stroke-width
             >
                 <title v-if="item.title" v-text="item.title"></title>
