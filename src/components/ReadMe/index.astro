@@ -2,6 +2,7 @@
 import Code from "../Code/index.astro"
 import dedent from "dedent"
 // 就一個 readme 不想引入 mdx
+// script 標籤拆開寫：結束標籤字面量會被編譯器插反斜線；完整標籤也會讓編輯器把字串當 HTML 上色。
 ---
 
 <h3 class="na-title">先決條件</h3>
@@ -33,15 +34,12 @@ import dedent from "dedent"
     若使用 <code class="na-code na-code-no-bg">css in js</code> 方式引入，有些打包器（如<code
         class="na-code na-code-no-bg">vite</code
     >）在構建后纔會將其置於
-    <code class="na-code na-code-no-bg">{"<head />"}</code> 中，開發環境出現
-    <a
-        class="na-link"
+    <code class="na-code na-code-no-bg">{"<head/>"}</code>
+    中，開發環境出現<a
+        class="na-link na-link-space"
         href="https://en.wikipedia.org/wiki/Flash_of_unstyled_content"
-        target="_blank"
-    >
-        FOUC
-    </a>
-    問題是正常的
+        target="_blank">FOUC</a
+    >問題是正常的
 </p>
 
 <Code
@@ -62,13 +60,13 @@ import dedent from "dedent"
         // [!code word:is\:inline]
         <html lang="en-HK">
             <head>
-                <script is:inline>
+                <${"script"} is:inline>
                     document.documentElement.dataset["theme"] =
                         localStorage.getItem("theme") ??
                         ["dark", "light"][
                             +!window.matchMedia?.("(prefers-color-scheme: dark)")?.matches
                         ]
-                </script>
+                </${"script"}>
             </head>
             <body>
                 <slot />
@@ -82,9 +80,13 @@ import dedent from "dedent"
 
 <p class="na-paragraph">
     元件暫時未計劃發佈到
-    <a class="na-code na-link" href="https://www.npmjs.com/" target="_blank">
+    <a
+        class="na-code na-link na-link-space"
+        href="https://www.npmjs.com/"
+        target="_blank"
+    >
         npm
-    </a> ，可以按以下方式安裝, 或者直接拷貝到自己的專案。
+    </a>，可以按以下方式安裝, 或者直接拷貝到自己的專案。
 </p>
 
 <Code
@@ -116,9 +118,9 @@ import dedent from "dedent"
 
 <Code
     code={dedent`
-        <script setup lang="ts">
+        <${"script"} setup lang="ts">
         import Button from "@nanarino/vue/src/lib/Button" // [!code ++]
-        </script>
+        </${"script"}>
         <template>
             <Button> HOLA </Button> // [!code ++]
         </template>
@@ -129,5 +131,8 @@ import dedent from "dedent"
 <style>
     .na-code-no-bg {
         --background-color-code: 0 0 0 / 0;
+    }
+    .na-link-space {
+        padding: 0 0.5rem;
     }
 </style>

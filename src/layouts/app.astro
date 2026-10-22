@@ -38,7 +38,7 @@ const github = Astro.props.github || Astro.props.frontmatter?.github
         <script src="@/scripts/client/init"></script>
     </head>
     <body>
-        <ThemeToggle client:only="vue" style="opacity: .8" />
+        <ThemeToggle client:only="vue" />
         <slot />
         <Code />
         <Footer github={github} />

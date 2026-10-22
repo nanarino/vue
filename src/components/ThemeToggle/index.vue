@@ -2,13 +2,22 @@
 import toggle from "@holy-two/data-theme/dist/toggle"
 </script>
 <template>
-    <button class="na-button" title="theme toggle" data-round @click="toggle">
+    <button
+        data-primary
+        class="na-button"
+        title="theme toggle"
+        data-round
+        @click="toggle"
+    >
         <iconify-icon icon="line-md:moon-simple" />
         <iconify-icon icon="line-md:sunny" />
     </button>
 </template>
 <style scoped>
 button {
+    --hue-primary: 328 / 0.5;
+    mix-blend-mode: difference;
+    backdrop-filter: blur(8px);
     position: fixed;
     z-index: 9;
     bottom: 16px;

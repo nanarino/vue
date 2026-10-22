@@ -7,11 +7,11 @@ interface Props {
 {
     Astro.props.github && (
         <footer class="na-layout-footer">
-            &nbsp; &nbsp; &nbsp; 由
+            <span>由</span>
             <a class="na-link" href="https://astro.build" target="_blank">
                 {Astro.generator}
             </a>
-            構建 &nbsp;
+            構建
             <a
                 class="na-link"
                 title="github"
@@ -30,6 +30,7 @@ interface Props {
 
 <style>
     footer {
+        opacity: 0.7;
         display: flex;
         gap: 0.5em;
         justify-content: center;
@@ -37,6 +38,38 @@ interface Props {
         line-height: var(--line-height-2);
         font-size: var(--font-size-2);
         color: oklch(var(--gray-8));
-        --color-link-hover: var(--primary-8);
+        :first-child {
+            text-indent: 2em;
+        }
+    }
+    a[title="github"] {
+        padding-left: 12px;
+
+        & iconify-icon {
+            @media (prefers-reduced-motion: no-preference) {
+                transform-origin: center;
+                animation: github-notice 2.4s ease-in-out infinite;
+            }
+        }
+    }
+
+    @keyframes github-notice {
+        0%,
+        58%,
+        100% {
+            transform: translateY(0) rotate(0deg) scale(1);
+            color: oklch(var(--gray-8));
+            filter: drop-shadow(0 0 0 transparent);
+        }
+        72% {
+            transform: translateY(-4px) rotate(-16deg) scale(1.35);
+            color: oklch(var(--primary-8));
+            filter: drop-shadow(0 0 6px oklch(var(--primary-8) / 0.75));
+        }
+        84% {
+            transform: translateY(-1px) rotate(12deg) scale(1.18);
+            color: oklch(var(--primary-8));
+            filter: drop-shadow(0 0 4px oklch(var(--primary-8) / 0.45));
+        }
     }
 </style>

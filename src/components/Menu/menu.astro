@@ -24,7 +24,7 @@ const getName = (path: string) => path?.match?.(/[^/]*$/)?.[0]
                         name="menu"
                         class="na-menu"
                         open={RegExp(`^${base}${item.path}`).test(
-                            Astro.url.pathname
+                            Astro.url.pathname,
                         )}
                         style="order:1"
                     >
@@ -72,7 +72,7 @@ const getName = (path: string) => path?.match?.(/[^/]*$/)?.[0]
                         class="na-menu-item-link na-font-mono"
                         href={base + item.path}
                     >
-                        {`<${getName(item.path)} />` || "readme"}
+                        {`<${getName(item.path)}/>` || "readme"}
                     </a>
                 </div>
             )
@@ -82,7 +82,15 @@ const getName = (path: string) => path?.match?.(/[^/]*$/)?.[0]
 
 <style>
     .na-menu-item {
+        /** 负片强制主题互补色 */
         mix-blend-mode: difference;
         color: #fff;
+        /** 牺牲多级菜单的能力 换取自适应宽度 */
+        position: unset;
+        width: 0;
+        a {
+            text-decoration: underline;
+            inset: unset;
+        }
     }
 </style>

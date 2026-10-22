@@ -13,8 +13,8 @@ importers:
   .:
     dependencies:
       '@nanarino/stylus':
-        specifier: ^2.0.2
-        version: 2.0.2(stylus@0.64.0)
+        specifier: ^2.0.5
+        version: 2.0.5(stylus@0.64.0)
       vue:
         specifier: ^3.5.44
         version: 3.5.44(typescript@5.7.3)
@@ -563,8 +563,8 @@ packages:
   '@jridgewell/trace-mapping@0.3.31':
     resolution: {integrity: sha512-zzNR+SdQSDJzc8joaeP8QQoCQr8NuYx2dIIytl1QeBEZHJ9uW6hebsrYgbz8hJwUQao3TWCMtmfV8Nu1twOLAw==}
 
-  '@nanarino/stylus@2.0.2':
-    resolution: {integrity: sha512-ndCezZ2EIyJC0fCU3n08w34u7auBq0NtWAFQdtrY9nuVLj1xabsZQr7zyQOMCrs8jS/mdthLxZNvhoKRnsU7rw==}
+  '@nanarino/stylus@2.0.5':
+    resolution: {integrity: sha512-Ib9fHRR2UNQsL+yLllrKIiEbl9+Ph5LR1xdfr9NmVDT7a2GJBHjgbJe7GGqjHgXJHqtcNn+rwULD4dZ46jCjNg==}
     peerDependencies:
       stylus: ^0.64.0
 
@@ -2446,7 +2446,7 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.6.0
 
-  '@nanarino/stylus@2.0.2(stylus@0.64.0)':
+  '@nanarino/stylus@2.0.5(stylus@0.64.0)':
     dependencies:
       stylus: 0.64.0
 

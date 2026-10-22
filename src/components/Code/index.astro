@@ -109,11 +109,38 @@ const transformers: Parameters<typeof Code>[0]["transformers"] = [
 
 <style is:global>
     .line.diff.add {
-        background-color: oklch(var(--success-1));
+        background-image: linear-gradient(
+            90deg,
+            oklch(var(--success-4) / 0.5) 0%,
+            oklch(var(--success-2) / 0.1) 100%
+        );
+
+        @media (prefers-reduced-motion: no-preference) {
+            /* 光带占行宽一半：-100% 停在行外左侧，200% 停在行外右侧 */
+            background-color: oklch(var(--success-4) / 0.16);
+            background-image: linear-gradient(
+                90deg,
+                transparent 0%,
+                oklch(var(--success-3) / 0.4) 20%,
+                oklch(var(--success-2) / 0.1) 50%,
+                oklch(var(--success-3) / 0.4) 80%,
+                transparent 100%
+            );
+            background-repeat: no-repeat;
+            background-size: 50% 100%;
+            animation: diff-add-progress 2s linear infinite;
+        }
     }
-    .line.diff.remove {
-        background-color: oklch(var(--danger-1));
+
+    @keyframes diff-add-progress {
+        from {
+            background-position: -100% 0;
+        }
+        to {
+            background-position: 200% 0;
+        }
     }
+    /** .line.diff.remove {...} */
     .highlighted-word {
         border: 2pt solid oklch(var(--primary-3));
         border-radius: var(--border-radius-sm);
